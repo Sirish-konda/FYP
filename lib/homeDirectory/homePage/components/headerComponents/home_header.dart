@@ -1,0 +1,59 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../constants/constant_colors.dart';
+
+class HomeHeader extends StatelessWidget {
+  const HomeHeader({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Positioned(
+          child: Container(
+            height: 100.h,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(20.h),
+                    bottomRight: Radius.circular(20.h)),
+                color: ConstantColors.kDarkGreen.withOpacity(0.7)),
+            padding: EdgeInsets.all(20.h),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Welcome,",
+                      style: TextStyle(
+                          fontSize: 25.sp, color: ConstantColors.kNeutralSkin),
+                    ),
+                    Text(
+                      "User Name",
+                      style: TextStyle(
+                          fontSize: 15.sp,
+                          fontWeight: FontWeight.w500,
+                          color: ConstantColors.kNeutralSkin),
+                    ),
+                  ],
+                ),
+                CircleAvatar(
+                  radius: 30.h,
+                  child: GestureDetector(
+                    child: Image.asset(
+                      "assets/images/profile.png",
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
