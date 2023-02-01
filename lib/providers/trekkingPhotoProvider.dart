@@ -36,6 +36,7 @@ class TrekkingPhotoProvider extends ChangeNotifier {
 \u27A4 Pokhara – Kathmandu driving distance: 205km/127miles duration: 6-7 hours
 
       ''',
+      id: 1,
     ),
     TrekkingModel(
         title: "Everest Base Camp",
@@ -65,8 +66,10 @@ class TrekkingPhotoProvider extends ChangeNotifier {
 \u27A4 Lukla – Kathmandu distance 135km/84miles flight duration:40minutes
 
         
-        '''),
+        ''',
+        id: 2),
     TrekkingModel(
+        id: 3,
         title: "Gokyo re Camp",
         imagePath: "assets/images/trekkingDestination/gokyo.PNG",
         desc: '''
@@ -95,6 +98,7 @@ class TrekkingPhotoProvider extends ChangeNotifier {
 
         '''),
     TrekkingModel(
+        id: 4,
         title: "Gosaikunda Trek",
         imagePath: "assets/images/trekkingDestination/gosaikunda.PNG",
         desc: '''
@@ -110,6 +114,7 @@ class TrekkingPhotoProvider extends ChangeNotifier {
 
         '''),
     TrekkingModel(
+        id: 5,
         title: "Khopra ridge trek",
         imagePath: "assets/images/trekkingDestination/khopra.PNG",
         desc: '''
@@ -136,6 +141,7 @@ class TrekkingPhotoProvider extends ChangeNotifier {
 
         '''),
     TrekkingModel(
+        id: 6,
         title: "Langtang National Park",
         imagePath: "assets/images/trekkingDestination/langtang.PNG",
         desc: '''
@@ -156,6 +162,7 @@ class TrekkingPhotoProvider extends ChangeNotifier {
 
         '''),
     TrekkingModel(
+        id: 7,
         title: "Makalu Base Camp Trek",
         imagePath: "assets/images/trekkingDestination/makalu.PNG",
         desc: '''
@@ -198,6 +205,7 @@ class TrekkingPhotoProvider extends ChangeNotifier {
 
         '''),
     TrekkingModel(
+        id: 8,
         title: "Manasalu Base Camp Trek",
         imagePath: "assets/images/trekkingDestination/manasalu.PNG",
         desc: '''
@@ -230,6 +238,7 @@ class TrekkingPhotoProvider extends ChangeNotifier {
 
         '''),
     TrekkingModel(
+        id: 9,
         title: "Mardi Base Camp",
         imagePath: "assets/images/trekkingDestination/mardi.PNG",
         desc: '''
@@ -256,6 +265,7 @@ class TrekkingPhotoProvider extends ChangeNotifier {
 
         '''),
     TrekkingModel(
+        id: 10,
         title: "Nar phu valley Trek",
         imagePath: "assets/images/trekkingDestination/narPhu.PNG",
         desc: '''
@@ -292,6 +302,7 @@ class TrekkingPhotoProvider extends ChangeNotifier {
 
         '''),
     TrekkingModel(
+        id: 11,
         title: "Ghandruk Poonhill",
         imagePath: "assets/images/trekkingDestination/poonhill.PNG",
         desc: '''
@@ -318,6 +329,7 @@ class TrekkingPhotoProvider extends ChangeNotifier {
 
         '''),
     TrekkingModel(
+        id: 12,
         title: "Jumla Rara Lake Trek",
         imagePath: "assets/images/trekkingDestination/rara.PNG",
         desc: '''
@@ -348,6 +360,7 @@ class TrekkingPhotoProvider extends ChangeNotifier {
         
         '''),
     TrekkingModel(
+        id: 13,
         title: "Tsum Valley Trek",
         imagePath: "assets/images/trekkingDestination/TsumValley.PNG",
         desc: '''
@@ -382,6 +395,7 @@ class TrekkingPhotoProvider extends ChangeNotifier {
 
         '''),
     TrekkingModel(
+        id: 14,
         title: "Upper Mustang",
         imagePath: "assets/images/trekkingDestination/upperMustang.PNG",
         desc: '''
