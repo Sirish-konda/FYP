@@ -429,8 +429,24 @@ class TrekkingPhotoProvider extends ChangeNotifier {
         '''),
   ];
 
+  final List<TrekkingModel> _favouriteTrekkingDesc = [];
+
   UnmodifiableListView<TrekkingModel> get trekkingDesc {
     return UnmodifiableListView(_trekkingDesc);
+  }
+
+  UnmodifiableListView<TrekkingModel> get favouriteTrekkingDesc {
+    return UnmodifiableListView(_favouriteTrekkingDesc);
+  }
+
+  void add(TrekkingModel trekkingModel) {
+    _favouriteTrekkingDesc.add(trekkingModel);
+    notifyListeners();
+  }
+
+  void remove(TrekkingModel trekkingModel) {
+    _favouriteTrekkingDesc.remove(trekkingModel);
+    notifyListeners();
   }
 
   int get imgLength => _trekkingDesc.length;

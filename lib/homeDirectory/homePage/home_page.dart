@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/constants/constant_colors.dart';
-import 'package:fyp_project/models/trekking_model.dart';
 import 'components/bodyComponents/sliderImages.dart';
 import 'components/headerComponents/home_header.dart';
 import 'components/bodyComponents/popular_title.dart';

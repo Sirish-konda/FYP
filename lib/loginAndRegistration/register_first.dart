@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fyp_project/constants/constant_colors.dart';
 import 'package:fyp_project/loginAndRegistration/register_second.dart';
 import 'login.dart';
 
@@ -21,12 +23,11 @@ class _RegisterFirstState extends State<RegisterFirst> {
                 ClipPath(
                   clipper: FirstClipper(),
                   child: Container(
-                    decoration: const BoxDecoration(
-                      color: Color(0xFF95D5B2),
-                    ),
+                    decoration:
+                        const BoxDecoration(color: ConstantColors.kLightGreen),
                     alignment: Alignment.center,
-                    height: 400,
-                    width: 400,
+                    height: 400.h,
+                    width: 400.w,
                     // color: const Color(0xFF656AEC),
                   ),
                 ),
@@ -36,12 +37,12 @@ class _RegisterFirstState extends State<RegisterFirst> {
                     child: Image.asset('assets/images/logo.png'))
               ],
             ),
-            const Text(
+            Text(
               'Register',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 24.sp, fontWeight: FontWeight.bold),
             ),
             Padding(
-              padding: const EdgeInsets.all(20),
+              padding: EdgeInsets.only(left: 20.0.w, right: 20.0.w, top: 10.h),
               child: Column(
                 children: [
                   TextFormField(
@@ -51,7 +52,7 @@ class _RegisterFirstState extends State<RegisterFirst> {
                       border: OutlineInputBorder(),
                     ),
                   ),
-                  const SizedBox(height: 25),
+                  SizedBox(height: 20.h),
                   TextFormField(
                     // controller: email,
                     validator: (value) {
@@ -70,7 +71,7 @@ class _RegisterFirstState extends State<RegisterFirst> {
                       border: OutlineInputBorder(),
                     ),
                   ),
-                  const SizedBox(height: 25),
+                  SizedBox(height: 5.h),
                   TextButton(
                       onPressed: () {
                         Navigator.push(
@@ -80,26 +81,27 @@ class _RegisterFirstState extends State<RegisterFirst> {
                       },
                       child: Container(
                         alignment: Alignment.center,
-                        height: 58,
-                        width: 328,
+                        height: 45.h,
+                        width: 328.w,
                         decoration: BoxDecoration(
-                          color: const Color(0xFF95D5B2),
-                          borderRadius: BorderRadius.circular(10),
+                          color: ConstantColors.kLightGreen,
+                          borderRadius: BorderRadius.circular(20.r),
                         ),
-                        child: const Text(
+                        child: Text(
                           'Next',
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
-                              fontSize: 21),
+                              fontSize: 21.sp),
                         ),
                       )),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text(
+                      Text(
                         "Already registered?",
-                        style: TextStyle(fontSize: 18, color: Colors.black26),
+                        style:
+                            TextStyle(fontSize: 18.sp, color: Colors.black26),
                       ),
                       TextButton(
                           onPressed: () {
@@ -110,7 +112,7 @@ class _RegisterFirstState extends State<RegisterFirst> {
                           },
                           child: const Text(
                             'Sign In',
-                            style: TextStyle(color: Color(0xFF95D5B2)),
+                            style: TextStyle(color: ConstantColors.kLightGreen),
                           ))
                     ],
                   )

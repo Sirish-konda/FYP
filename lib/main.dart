@@ -21,7 +21,7 @@ class TravelApp extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) {
-          return MaterialApp(
+          return const MaterialApp(
             home: Login(),
           );
         },
