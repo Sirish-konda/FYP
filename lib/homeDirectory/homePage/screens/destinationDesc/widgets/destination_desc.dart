@@ -7,6 +7,7 @@ import 'package:fyp_project/homeDirectory/homePage/screens/destinationDesc/compo
 import 'package:fyp_project/models/trekking_model.dart';
 import 'package:fyp_project/providers/trekkingPhotoProvider.dart';
 import 'package:provider/provider.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../components/desc_button.dart';
 
@@ -20,11 +21,13 @@ class DestinationDesc extends StatefulWidget {
 }
 
 class _DestinationDescState extends State<DestinationDesc> {
+  int indexActive = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ConstantColors.kLightGreen,
+      backgroundColor: ConstantColors.kDarkGreen,
       body: CustomScrollView(
+        physics: const ClampingScrollPhysics(),
         slivers: [
           SliverAppBar(
             automaticallyImplyLeading: false,
@@ -69,29 +72,54 @@ class _DestinationDescState extends State<DestinationDesc> {
           SliverToBoxAdapter(
             child: Column(
               children: [
-                CarouselSlider.builder(
-                  itemCount: widget.trekkingModel.images.length,
-                  itemBuilder: (context, index, realIndex) {
-                    return Card(
-                      color: Colors.black,
-                      margin: EdgeInsets.only(left: 7.w, right: 7.w),
-                      elevation: 20,
-                      child: Image.asset(
-                        widget.trekkingModel.images[index].imageUrl,
-                        fit: BoxFit.fitHeight,
-                      ),
-                    );
-                  },
-                  options: CarouselOptions(
-                    height: 250.h,
-                    autoPlay: true,
-                    viewportFraction: 0.8,
-                    enableInfiniteScroll: true,
-                    enlargeCenterPage: true,
+                SizedBox(
+                  height: 270.h,
+                  width: MediaQuery.of(context).size.width.w,
+                  child: CarouselSlider.builder(
+                    itemCount: widget.trekkingModel.images.length,
+                    itemBuilder: (context, index, realIndex) {
+                      return Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                              width: 5, color: ConstantColors.kLightGreen),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(15),
+                          child: Image.asset(
+                            widget.trekkingModel.images[index].imageUrl,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      );
+                    },
+                    options: CarouselOptions(
+                      onPageChanged: (index, reason) {
+                        setState(() {
+                          indexActive = index;
+                        });
+                      },
+                      height: 250.h,
+                      autoPlay: true,
+                      viewportFraction: 0.8,
+                      enableInfiniteScroll: true,
+                      enlargeCenterPage: true,
+                    ),
                   ),
                 ),
+                AnimatedSmoothIndicator(
+                  activeIndex: indexActive,
+                  count: widget.trekkingModel.images.length,
+                  effect: const WormEffect(
+                    spacing: 10.0,
+                    activeDotColor: ConstantColors.kNeutralSkin,
+                    dotColor: ConstantColors.kLightGreen,
+                    dotHeight: 10,
+                    dotWidth: 10,
+                  ),
+                ),
+                SizedBox(height: 10.h),
                 Container(
-                  margin: EdgeInsets.only(top: 20.h),
                   padding: EdgeInsets.all(20.h),
                   decoration: BoxDecoration(
                     color: ConstantColors.kNeutralSkin,
@@ -114,6 +142,11 @@ class _DestinationDescState extends State<DestinationDesc> {
                         ),
                       ),
                       SizedBox(height: 10.h),
+                      Text(
+                        widget.trekkingModel.intro,
+                        style: TextStyle(),
+                        textAlign: TextAlign.justify,
+                      ),
                       Text(
                         'How to reach?',
                         style: TextStyle(

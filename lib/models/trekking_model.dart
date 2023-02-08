@@ -2,11 +2,13 @@ class TrekkingModel {
   final int id;
   final String imagePath;
   final String title;
+  final String intro;
   final String desc;
   bool isFavorited;
   List<TrekkingImgModel> images;
 
   TrekkingModel({
+    required this.intro,
     required this.id,
     required this.title,
     required this.imagePath,

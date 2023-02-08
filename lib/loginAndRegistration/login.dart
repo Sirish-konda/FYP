@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fyp_project/constants/constant_colors.dart';
 import 'package:fyp_project/loginAndRegistration/register_first.dart';
 import 'package:fyp_project/loginAndRegistration/widgets/lower_button.dart';
 import 'package:fyp_project/loginAndRegistration/widgets/lower_part.dart';
@@ -21,6 +20,7 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
+        physics: const ClampingScrollPhysics(),
         child: Column(
           children: <Widget>[
             const UpperPart(),

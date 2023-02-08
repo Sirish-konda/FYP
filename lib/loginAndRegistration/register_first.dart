@@ -32,6 +32,7 @@ class _RegisterFirstState extends State<RegisterFirst> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
+        physics: const ClampingScrollPhysics(),
         child: Column(
           children: <Widget>[
             SizedBox(

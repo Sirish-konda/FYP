@@ -12,7 +12,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(Provider.of<TrekkingPhotoProvider>(context).imgLength);
     return Scaffold(
       backgroundColor: ConstantColors.kLightGreen,
       body: SafeArea(
@@ -25,9 +24,11 @@ class HomePage extends StatelessWidget {
                   children: [
                     const HomeHeader(),
                     SizedBox(height: 20.h),
-                    const PopularTitle(title: "Popular Trek's"),
-                    SizedBox(height: 20.h),
                     const SliderImages(),
+                    SizedBox(height: 20.h),
+                    SizedBox(height: 20.h),
+                    
+                    SliderImages()
                   ],
                 ),
               ),
