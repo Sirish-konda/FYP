@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/constants/constant_colors.dart';
 import 'package:fyp_project/loginAndRegistration/register_first.dart';
+import 'package:fyp_project/loginAndRegistration/widgets/lower_button.dart';
+import 'package:fyp_project/loginAndRegistration/widgets/lower_part.dart';
+import 'package:fyp_project/loginAndRegistration/widgets/upper_part.dart';
+import 'package:fyp_project/loginAndRegistration/widgets/upper_text.dart';
 import 'package:fyp_project/navigation_bar.dart';
 
 class Login extends StatefulWidget {
@@ -19,28 +23,8 @@ class _LoginState extends State<Login> {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Stack(
-              children: [
-                ClipPath(
-                  clipper: FirstClipper(),
-                  child: Container(
-                    decoration:
-                        const BoxDecoration(color: ConstantColors.kLightGreen),
-                    alignment: Alignment.center,
-                    height: 400.h,
-                    width: 400.w,
-                  ),
-                ),
-                Positioned(
-                    right: 0,
-                    bottom: 0,
-                    child: Image.asset('assets/images/logo.png'))
-              ],
-            ),
-            Text(
-              'Login',
-              style: TextStyle(fontSize: 24.sp, fontWeight: FontWeight.bold),
-            ),
+            const UpperPart(),
+            const UpperText(title: "Login"),
             Padding(
               padding: EdgeInsets.only(left: 20.0.w, right: 20.0.w, top: 10.h),
               child: Column(
@@ -78,61 +62,37 @@ class _LoginState extends State<Login> {
                     keyboardType: TextInputType.visiblePassword,
                     obscureText: _isHidden,
                     decoration: InputDecoration(
+                      contentPadding: EdgeInsets.all(15.w),
                       labelText: "Password",
-                      border: OutlineInputBorder(),
-                      // suffix: InkWell(
-                      //   onTap: _togglePasswordView,
-                      //   child: Icon(
-                      //     _isHidden ? Icons.visibility : Icons.visibility_off,
-                      //   ),
-                      // ),
+                      border: const OutlineInputBorder(),
+                      suffix: InkWell(
+                        hoverColor: Colors.black,
+                        onTap: _togglePasswordView,
+                        child: Icon(
+                          _isHidden ? Icons.visibility : Icons.visibility_off,
+                        ),
+                      ),
                     ),
                   ),
                   SizedBox(height: 5.h),
-                  TextButton(
+                  LowerButton(
+                    title: 'Login',
                     onPressed: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) => GoogleNavigationBar()));
                     },
-                    child: Container(
-                      alignment: Alignment.center,
-                      height: 45.h,
-                      width: 328.w,
-                      decoration: BoxDecoration(
-                        color: ConstantColors.kLightGreen,
-                        borderRadius: BorderRadius.circular(20.r),
-                      ),
-                      child: Text(
-                        'Login',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 21.sp),
-                      ),
-                    ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Haven't registered?",
-                        style:
-                            TextStyle(fontSize: 18.sp, color: Colors.black26),
-                      ),
-                      TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => RegisterFirst()));
-                          },
-                          child: const Text(
-                            'Sign Up',
-                            style: TextStyle(color: ConstantColors.kLightGreen),
-                          ))
-                    ],
+                  LowerPart(
+                    title: "Haven't registered?",
+                    buttonText: 'Sign Up',
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => RegisterFirst()));
+                    },
                   )
                 ],
               ),
@@ -150,45 +110,3 @@ class _LoginState extends State<Login> {
     });
   }
 }
-
-class FirstClipper extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    Path path0 = Path();
-    path0.moveTo(0, size.height);
-    path0.lineTo(0, 0);
-    path0.lineTo(size.width, 0);
-    path0.quadraticBezierTo(size.width * 1.0021250, size.height * 0.1936833,
-        size.width, size.height * 0.3828167);
-    path0.quadraticBezierTo(
-        size.width * 0.8928875, size.height, 1, size.height);
-    path0.close();
-    return path0;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) {
-    return true;
-  }
-}
-
-// class FirstClipper extends CustomClipper<Path> {
-//   @override
-//   Path getClip(Size size) {
-//     Path path0 = Path();
-//     path0.moveTo(0, size.height);
-//     path0.lineTo(0, 0);
-//     path0.lineTo(size.width, 0);
-//     path0.quadraticBezierTo(size.width * 1.0021250, size.height * 0.1936833,
-//         size.width, size.height * 0.3828167);
-//     path0.quadraticBezierTo(
-//         size.width * 0.8928875, size.height, 1, size.height);
-//     path0.close();
-//     return path0;
-//   }
-//
-//   @override
-//   bool shouldReclip(CustomClipper<Path> oldClipper) {
-//     return true;
-//   }
-// }

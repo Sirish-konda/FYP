@@ -5,6 +5,8 @@ import 'package:fyp_project/constants/constant_colors.dart';
 import 'package:fyp_project/homeDirectory/homePage/screens/destinationDesc/components/feedbackScreen/feedback_bottomsheet.dart';
 import 'package:fyp_project/homeDirectory/homePage/screens/destinationDesc/components/mapsScreen/maps_screen.dart';
 import 'package:fyp_project/models/trekking_model.dart';
+import 'package:fyp_project/providers/trekkingPhotoProvider.dart';
+import 'package:provider/provider.dart';
 
 import '../components/desc_button.dart';
 
@@ -25,6 +27,13 @@ class _DestinationDescState extends State<DestinationDesc> {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
+            automaticallyImplyLeading: false,
+            leading: IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: const Icon(Icons.arrow_back_ios_rounded),
+            ),
             backgroundColor: ConstantColors.kLightGreen,
             title: RichText(
               text: TextSpan(
@@ -45,8 +54,15 @@ class _DestinationDescState extends State<DestinationDesc> {
             ),
             actions: [
               IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.favorite_border),
+                onPressed: () {
+                  setState(() {
+                    Provider.of<TrekkingPhotoProvider>(context, listen: false)
+                        .toggleFavorites(widget.trekkingModel.id);
+                  });
+                },
+                icon: widget.trekkingModel.isFavorited
+                    ? const Icon(Icons.favorite, color: Colors.red)
+                    : const Icon(Icons.favorite_border),
               ),
             ],
           ),
@@ -54,14 +70,14 @@ class _DestinationDescState extends State<DestinationDesc> {
             child: Column(
               children: [
                 CarouselSlider.builder(
-                  itemCount: 5,
+                  itemCount: widget.trekkingModel.images.length,
                   itemBuilder: (context, index, realIndex) {
                     return Card(
                       color: Colors.black,
                       margin: EdgeInsets.only(left: 7.w, right: 7.w),
                       elevation: 20,
                       child: Image.asset(
-                        widget.trekkingModel.imagePath,
+                        widget.trekkingModel.images[index].imageUrl,
                         fit: BoxFit.fitHeight,
                       ),
                     );
@@ -140,122 +156,3 @@ class _DestinationDescState extends State<DestinationDesc> {
     );
   }
 }
-
-// body: SafeArea(
-//   bottom: false,
-//   child: SingleChildScrollView(
-//     child: Container(
-//       height: MediaQuery.of(context).size.height.h,
-//       width: MediaQuery.of(context).size.width.w,
-//       color: ConstantColors.kLightGreen,
-//       child: Column(
-//         children: [
-//           ListTile(
-//             iconColor: Colors.black,
-//             contentPadding: EdgeInsets.zero,
-//             leading: IconButton(
-//               onPressed: () {
-//                 Navigator.pop(context);
-//               },
-//               icon: Icon(
-//                 Icons.arrow_back_ios_rounded,
-//                 size: 25.sp,
-//               ),
-//             ),
-//             title: Center(
-//               child: RichText(
-//                 text: TextSpan(
-//                   style: TextStyle(
-//                       fontSize: 25.sp, fontWeight: FontWeight.w700),
-//                   children: const [
-//                     TextSpan(
-//                       text: 'About ',
-//                       style:
-//                           TextStyle(color: ConstantColors.kNeutralSkin),
-//                     ),
-//                     TextSpan(
-//                       text: 'Location',
-//                       style: TextStyle(
-//                         color: Colors.black,
-//                       ),
-//                     ),
-//                   ],
-//                 ),
-//               ),
-//             ),
-//             trailing: IconButton(
-//               onPressed: () {},
-//               icon: Icon(
-//                 Icons.favorite_border,
-//                 size: 25.sp,
-//               ),
-//             ),
-//           ),
-//           Image.asset(widget.trekkingModel.imagePath),
-//           Expanded(
-//             child: Container(
-//               margin: EdgeInsets.only(top: 20.h),
-//               padding: EdgeInsets.all(20.h),
-//               decoration: BoxDecoration(
-//                 color: ConstantColors.kNeutralSkin,
-//                 borderRadius: BorderRadius.only(
-//                   topLeft: Radius.circular(30.h),
-//                   topRight: Radius.circular(30.h),
-//                 ),
-//               ),
-//               child: SingleChildScrollView(
-//                 child: Column(
-//                   crossAxisAlignment: CrossAxisAlignment.start,
-//                   children: [
-//                     Center(
-//                       child: Text(
-//                         widget.trekkingModel.title,
-//                         style: TextStyle(
-//                             color: ConstantColors.kDarkGreen,
-//                             fontWeight: FontWeight.bold,
-//                             fontSize: 30.sp,
-//                             decoration: TextDecoration.underline),
-//                       ),
-//                     ),
-//                     SizedBox(height: 10.h),
-//                     Text(
-//                       'How to reach?',
-//                       style: TextStyle(
-//                           fontSize: 20.sp, fontWeight: FontWeight.bold),
-//                     ),
-//                     Text(
-//                       widget.trekkingModel.desc,
-//                       style: TextStyle(
-//                         fontSize: 18.sp,
-//                       ),
-//                     ),
-//                     DescButtons(
-//                       title: 'Show in maps',
-//                       onPressed: () {
-//                         Navigator.push(
-//                             context,
-//                             MaterialPageRoute(
-//                                 builder: (context) => MapsScreen()));
-//                       },
-//                     ),
-//                     DescButtons(
-//                       title: 'Give Feedback',
-//                       onPressed: () {
-//                         showModalBottomSheet(
-//                           context: context,
-//                           builder: (context) {
-//                             return const FeedbackBottomSheet();
-//                           },
-//                         );
-//                       },
-//                     )
-//                   ],
-//                 ),
-//               ),
-//             ),
-//           ),
-//         ],
-//       ),
-//     ),
-//   ),
-// ),

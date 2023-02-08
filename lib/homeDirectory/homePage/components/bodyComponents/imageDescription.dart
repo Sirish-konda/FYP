@@ -29,12 +29,12 @@ class ImageDescription extends StatelessWidget {
             color: ConstantColors.kMidGreen.withOpacity(0.4)),
         child: Column(
           children: [
-            Container(
-              height: 350.h,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(trekking.imagePath),
-                    fit: BoxFit.fitHeight),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10.r),
+              child: Image.asset(
+                trekking.imagePath,
+                height: 250.h,
+                fit: BoxFit.cover,
               ),
             ),
             SizedBox(

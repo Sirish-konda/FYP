@@ -16,12 +16,9 @@ class ProfilePage extends StatelessWidget {
         automaticallyImplyLeading: false,
         elevation: 10,
         backgroundColor: ConstantColors.kDarkGreen,
-        title: Text(
+        title: const Text(
           "Profile",
-          style: TextStyle(
-              fontSize: 40.sp,
-              fontWeight: FontWeight.w600,
-              color: Colors.white),
+          style: TextStyle(fontWeight: FontWeight.w600, color: Colors.white),
         ),
       ),
       backgroundColor: ConstantColors.kLightGreen,

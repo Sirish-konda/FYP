@@ -15,11 +15,11 @@ class SliderImages extends StatelessWidget {
     return CarouselSlider.builder(
       itemCount: Provider.of<TrekkingPhotoProvider>(context).imgLength,
       options: CarouselOptions(
-        height: 450.h,
+        height: 350.h,
         pageSnapping: true,
         enableInfiniteScroll: false,
         initialPage: 0,
-        viewportFraction: 0.8,
+        viewportFraction: 0.75,
         // enlargeCenterPage: true,
       ),
       itemBuilder: (context, index, realIndex) {

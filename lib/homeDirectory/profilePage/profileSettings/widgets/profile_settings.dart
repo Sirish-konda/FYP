@@ -14,7 +14,7 @@ class ProfileSettings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 50.h,
+      height: 45.h,
       width: 300.w,
       child: TextButton(
           onPressed: buttonPressed,
@@ -31,7 +31,7 @@ class ProfileSettings extends StatelessWidget {
           ),
           child: Text(
             title,
-            style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18.sp),
+            style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16.sp),
           )),
     );
   }

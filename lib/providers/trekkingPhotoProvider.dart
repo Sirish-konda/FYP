@@ -8,9 +8,9 @@ class TrekkingPhotoProvider extends ChangeNotifier {
       title: "Annapurna Base Camp",
       imagePath: "assets/images/trekkingDestination/ABC.png",
       desc: '''
-      
+
 \u27A4 Kathmandu – pokhara driving distance: 205km/127miles duration: 6-7 hours
-      
+
 \u27A4 Pokhara – tikhedhunga altitude: 1570m driving duration: 2hours
 
 \u27A4 Tikhedhunga – ulleri distance: 7km/4.34miles duration: 3-4hours
@@ -28,7 +28,7 @@ class TrekkingPhotoProvider extends ChangeNotifier {
 \u27A4 ABC – bamboo distance: 14km/8.6miles duration: 6hours
 
 \u27A4 Bamboo – jhinu danda distance: 8.5km/ 5.2miles duration: 3-4hours
-
+`
 \u27A4 Jhinu danda – ghandruk phedi distance: 4km/2.4miles duration: 2-3 hours
 
 \u27A4 Ghandruk phedi – pokhara altitude: 820m/2697ft duration: 2-3 hours
@@ -37,8 +37,22 @@ class TrekkingPhotoProvider extends ChangeNotifier {
 
       ''',
       id: 1,
+      images: [
+        TrekkingImgModel("assets/images/descImages/ABC1.PNG"),
+        TrekkingImgModel("assets/images/descImages/ABC2.PNG"),
+        TrekkingImgModel("assets/images/descImages/ABC3.PNG"),
+        TrekkingImgModel("assets/images/descImages/ABC4.PNG"),
+        TrekkingImgModel("assets/images/descImages/ABC5.PNG"),
+      ],
     ),
     TrekkingModel(
+        images: [
+          TrekkingImgModel("assets/images/descImages/EBC1.PNG"),
+          TrekkingImgModel("assets/images/descImages/EBC2.PNG"),
+          TrekkingImgModel("assets/images/descImages/EBC3.PNG"),
+          TrekkingImgModel("assets/images/descImages/EBC4.PNG"),
+          TrekkingImgModel("assets/images/descImages/EBC5.PNG"),
+        ],
         title: "Everest Base Camp",
         imagePath: "assets/images/trekkingDestination/EBC.PNG",
         desc: '''
@@ -69,13 +83,20 @@ class TrekkingPhotoProvider extends ChangeNotifier {
         ''',
         id: 2),
     TrekkingModel(
+        images: [
+          TrekkingImgModel("assets/images/descImages/gokyo1.PNG"),
+          TrekkingImgModel("assets/images/descImages/gokyo2.PNG"),
+          TrekkingImgModel("assets/images/descImages/gokyo3.PNG"),
+          TrekkingImgModel("assets/images/descImages/gokyo4.PNG"),
+          TrekkingImgModel("assets/images/descImages/gokyo5.PNG"),
+        ],
         id: 3,
         title: "Gokyo re Camp",
         imagePath: "assets/images/trekkingDestination/gokyo.PNG",
         desc: '''
-        
+
 \u27A4 Kathmandu – lukla distance 135km/84miles flight  duration:40minutes
-        
+
 \u27A4 Lukla – phakding distance: 6.2km/3.8miles duration: 3hours
 
 \u27A4 Phakding – Namche bazaar distance:7.4km/4.6miles duration:6hours
@@ -99,11 +120,18 @@ class TrekkingPhotoProvider extends ChangeNotifier {
         '''),
     TrekkingModel(
         id: 4,
+        images: [
+          TrekkingImgModel("assets/images/descImages/gosaikunda1.PNG"),
+          TrekkingImgModel("assets/images/descImages/gosaikunda2.PNG"),
+          TrekkingImgModel("assets/images/descImages/gosaikunda3.PNG"),
+          TrekkingImgModel("assets/images/descImages/gosaikunda4.PNG"),
+          TrekkingImgModel("assets/images/descImages/gosaikunda5.PNG"),
+        ],
         title: "Gosaikunda Trek",
         imagePath: "assets/images/trekkingDestination/gosaikunda.PNG",
         desc: '''
 \u27A4 Kathmandu – dhunche altitude: 2000m driving duration: 7 – 8 hours
-        
+
 \u27A4 Dhunche – sing gompa altitude: 3250m duration: 5-6 hours
 
 \u27A4 Sing gompa – gosaikunda lake altitude: 4380m duration: 6 hours
@@ -114,13 +142,20 @@ class TrekkingPhotoProvider extends ChangeNotifier {
 
         '''),
     TrekkingModel(
+        images: [
+          TrekkingImgModel("assets/images/descImages/khopra1.PNG"),
+          TrekkingImgModel("assets/images/descImages/khopra2.PNG"),
+          TrekkingImgModel("assets/images/descImages/khopra3.PNG"),
+          TrekkingImgModel("assets/images/descImages/khopra4.PNG"),
+          TrekkingImgModel("assets/images/descImages/khopra5.PNG"),
+        ],
         id: 5,
         title: "Khopra ridge trek",
         imagePath: "assets/images/trekkingDestination/khopra.PNG",
         desc: '''
-        
+
 \u27A4 Kathmandu – pokhara driving distance: 205km/127miles duration: 6-7 hours
-        
+
 \u27A4 Pokhara – nayapul/syauli bazaar/ kimche altitude: 1784m driving duration: 2 and 30 hours
 
 \u27A4 Kimche – ghandruk distance: 8km/ 4.9miles duration: 2hours
@@ -141,13 +176,20 @@ class TrekkingPhotoProvider extends ChangeNotifier {
 
         '''),
     TrekkingModel(
+        images: [
+          TrekkingImgModel("assets/images/descImages/langtang1.PNG"),
+          TrekkingImgModel("assets/images/descImages/langtang2.PNG"),
+          TrekkingImgModel("assets/images/descImages/langtang3.PNG"),
+          TrekkingImgModel("assets/images/descImages/langtang4.PNG"),
+          TrekkingImgModel("assets/images/descImages/langtang5.PNG"),
+        ],
         id: 6,
         title: "Langtang National Park",
         imagePath: "assets/images/trekkingDestination/langtang.PNG",
         desc: '''
-        
+
 \u27A4 Kathmandu to syabrubesi  by bus. Distance 145km/90miles duration 6-7 hours
-        
+
 \u27A4 Trekking from syabrubesi to lama hotel Distance 11.3+km/7+miles duration 6hours
 
 \u27A4 Lamahotel to langtang village Distance 14.8km/9.1miles duration 6 hours
@@ -162,13 +204,20 @@ class TrekkingPhotoProvider extends ChangeNotifier {
 
         '''),
     TrekkingModel(
+        images: [
+          TrekkingImgModel("assets/images/descImages/makalu1.PNG"),
+          TrekkingImgModel("assets/images/descImages/makalu2.PNG"),
+          TrekkingImgModel("assets/images/descImages/makalu3.PNG"),
+          TrekkingImgModel("assets/images/descImages/makalu4.PNG"),
+          TrekkingImgModel("assets/images/descImages/makalu5.PNG"),
+        ],
         id: 7,
         title: "Makalu Base Camp Trek",
         imagePath: "assets/images/trekkingDestination/makalu.PNG",
         desc: '''
-        
+
 \u27A4 Kathmandu –  tumlingtar distance: 193km duration: 3-4hours
-        
+
 \u27A4 Tumlingtar – chichila altitude: 1980m/ 6496ft duration:4hours
 
 \u27A4 Chichila – num altitude: 1040m/3412ft duration: 6hours
@@ -205,14 +254,21 @@ class TrekkingPhotoProvider extends ChangeNotifier {
 
         '''),
     TrekkingModel(
+        images: [
+          TrekkingImgModel("assets/images/descImages/manaslu1.PNG"),
+          TrekkingImgModel("assets/images/descImages/manaslu2.PNG"),
+          TrekkingImgModel("assets/images/descImages/manaslu3.PNG"),
+          TrekkingImgModel("assets/images/descImages/manaslu4.PNG"),
+          TrekkingImgModel("assets/images/descImages/manaslu5.PNG"),
+        ],
         id: 8,
         title: "Manasalu Base Camp Trek",
         imagePath: "assets/images/trekkingDestination/manasalu.PNG",
         desc: '''
-        
+
 \u27A4 Drive from Kathmandu to sotikhola via arughat distance: 140 km, duration: 8 hours
-        
-\u27A4 Soltikhola to maccha khola walking distance:14.2km/8.8miles, duration: 5-6 hours 
+
+\u27A4 Soltikhola to maccha khola walking distance:14.2km/8.8miles, duration: 5-6 hours
 
 \u27A4 Machha khola to jagat walking distance:22.2km/13.8miles, duration: 5-6 hours
 
@@ -238,15 +294,22 @@ class TrekkingPhotoProvider extends ChangeNotifier {
 
         '''),
     TrekkingModel(
+        images: [
+          TrekkingImgModel("assets/images/descImages/mardi1.PNG"),
+          TrekkingImgModel("assets/images/descImages/mardi2.PNG"),
+          TrekkingImgModel("assets/images/descImages/mardi3.PNG"),
+          TrekkingImgModel("assets/images/descImages/mardi4.PNG"),
+          TrekkingImgModel("assets/images/descImages/mardi5.PNG"),
+        ],
         id: 9,
         title: "Mardi Base Camp",
         imagePath: "assets/images/trekkingDestination/mardi.PNG",
         desc: '''
-        
+
 \u27A4 Kathmandu – pokhara distance: 205km/127miles duration 6-7 hours
-        
+
 \u27A4 Pokhara – kande duration 1 hour
- 
+
 \u27A4 Kande – pittam deurali via Australian camp and pothana distance: 5.8km/3.6miles duration: 4 hours
 
 \u27A4 Pittam deurali – forest camp distance:8.3km/5.1 miles and duration 5hours
@@ -265,13 +328,20 @@ class TrekkingPhotoProvider extends ChangeNotifier {
 
         '''),
     TrekkingModel(
+        images: [
+          TrekkingImgModel("assets/images/descImages/nar1.PNG"),
+          TrekkingImgModel("assets/images/descImages/nar2.PNG"),
+          TrekkingImgModel("assets/images/descImages/nar3.PNG"),
+          TrekkingImgModel("assets/images/descImages/nar4.PNG"),
+          TrekkingImgModel("assets/images/descImages/nar5.PNG"),
+        ],
         id: 10,
         title: "Nar phu valley Trek",
         imagePath: "assets/images/trekkingDestination/narPhu.PNG",
         desc: '''
-        
+
 \u27A4 Kathmandu – besisahar  - jagat distance: 198km / 123miles duration: 8-10hours
-        
+
 \u27A4 Jatat – dharapani distance: 15.8km/9.8miles duration: 5hours
 
 \u27A4 Dharapani – koto altitude: 2610m/8563ft duration: 5-6hours
@@ -302,13 +372,20 @@ class TrekkingPhotoProvider extends ChangeNotifier {
 
         '''),
     TrekkingModel(
+        images: [
+          TrekkingImgModel("assets/images/descImages/ghandruk1.PNG"),
+          TrekkingImgModel("assets/images/descImages/ghandruk2.PNG"),
+          TrekkingImgModel("assets/images/descImages/ghandruk3.PNG"),
+          TrekkingImgModel("assets/images/descImages/ghandruk4.PNG"),
+          TrekkingImgModel("assets/images/descImages/ghandruk5.PNG"),
+        ],
         id: 11,
         title: "Ghandruk Poonhill",
         imagePath: "assets/images/trekkingDestination/poonhill.PNG",
         desc: '''
-        
+
 \u27A4 Kathmandu – pokhara driving distance: 205km/127miles duration: 6-7 hours
-        
+
 \u27A4 Pokhara – nayapul driving distance: 40km duration 1hour 30min
 
 \u27A4 Nayapul – ghandruk distance: 13.2km/8.2miles duration: 6hours
@@ -329,13 +406,20 @@ class TrekkingPhotoProvider extends ChangeNotifier {
 
         '''),
     TrekkingModel(
+        images: [
+          TrekkingImgModel("assets/images/descImages/rara1.PNG"),
+          TrekkingImgModel("assets/images/descImages/rara2.PNG"),
+          TrekkingImgModel("assets/images/descImages/rara3.PNG"),
+          TrekkingImgModel("assets/images/descImages/rara4.PNG"),
+          TrekkingImgModel("assets/images/descImages/rara5.PNG"),
+        ],
         id: 12,
         title: "Jumla Rara Lake Trek",
         imagePath: "assets/images/trekkingDestination/rara.PNG",
         desc: '''
-        
+
 \u27A4 Kathmandu – Nepalgunj altitude 150m/492ft flight duration:1hour
-        
+
 \u27A4 Nepalgunj – jumla altitude 2540m/8333ft flight duration:20mins
 
 \u27A4 Jumla – chere chaur altitude 3055m/10022ft duration: 6hours
@@ -357,18 +441,25 @@ class TrekkingPhotoProvider extends ChangeNotifier {
 \u27A4 Bumra – Jumla altitude: 2540m/8333ft duration: 6hours
 
 \u27A4 Jumla -  Nepalgunj (Flight) - Kathmandu (Flight) altitude:1300m/4265ft duration: 3hours
-        
+
         '''),
     TrekkingModel(
+        images: [
+          TrekkingImgModel("assets/images/descImages/Tsum1.PNG"),
+          TrekkingImgModel("assets/images/descImages/Tsum2.PNG"),
+          TrekkingImgModel("assets/images/descImages/Tsum3.PNG"),
+          TrekkingImgModel("assets/images/descImages/Tsum4.PNG"),
+          TrekkingImgModel("assets/images/descImages/Tsum5.PNG"),
+        ],
         id: 13,
         title: "Tsum Valley Trek",
         imagePath: "assets/images/trekkingDestination/TsumValley.PNG",
         desc: '''
-        
+
 \u27A4 Drive from Kathmandu to sotikhola via arughat distance: 140 km, duration: 8 hours
-        
+
 \u27A4 Soltikhola to maccha khola walking distance:14.2km/8.8miles, duration: 5-6 hours
- 
+
 \u27A4 Machha khola to jagat walking distance:22.2km/13.8miles, duration: 5-6 hours
 
 \u27A4 Jagat – lokpa altitude: 2240m/7349ft duration: 5hours
@@ -395,13 +486,20 @@ class TrekkingPhotoProvider extends ChangeNotifier {
 
         '''),
     TrekkingModel(
+        images: [
+          TrekkingImgModel("assets/images/descImages/upper1.PNG"),
+          TrekkingImgModel("assets/images/descImages/upper2.PNG"),
+          TrekkingImgModel("assets/images/descImages/upper3.PNG"),
+          TrekkingImgModel("assets/images/descImages/upper4.PNG"),
+          TrekkingImgModel("assets/images/descImages/upper5.PNG"),
+        ],
         id: 14,
         title: "Upper Mustang",
         imagePath: "assets/images/trekkingDestination/upperMustang.PNG",
         desc: '''
-        
+
 \u27A4 Kathmandu – pokhara drive distance: 205km/127miles duration 6-7 hours
-        
+
 \u27A4 Pokhara – jomsom altitude:27432m flight duration: 25min
 
 \u27A4 Jomsom – kagbeni altitude:2804m duration: 2hours
@@ -429,23 +527,15 @@ class TrekkingPhotoProvider extends ChangeNotifier {
         '''),
   ];
 
-  final List<TrekkingModel> _favouriteTrekkingDesc = [];
-
   UnmodifiableListView<TrekkingModel> get trekkingDesc {
     return UnmodifiableListView(_trekkingDesc);
   }
 
-  UnmodifiableListView<TrekkingModel> get favouriteTrekkingDesc {
-    return UnmodifiableListView(_favouriteTrekkingDesc);
-  }
-
-  void add(TrekkingModel trekkingModel) {
-    _favouriteTrekkingDesc.add(trekkingModel);
-    notifyListeners();
-  }
-
-  void remove(TrekkingModel trekkingModel) {
-    _favouriteTrekkingDesc.remove(trekkingModel);
+  void toggleFavorites(int trekkingId) {
+    final trekkingIndex =
+        _trekkingDesc.indexWhere((trekking) => trekking.id == trekkingId);
+    _trekkingDesc[trekkingIndex].isFavorited =
+        !_trekkingDesc[trekkingIndex].isFavorited;
     notifyListeners();
   }
 

@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../constants/constant_colors.dart';
 
-class WhileEmpty extends StatelessWidget {
-  const WhileEmpty({Key? key}) : super(key: key);
+class WhenEmpty extends StatelessWidget {
+  const WhenEmpty({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

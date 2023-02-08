@@ -15,10 +15,7 @@ class HomeHeader extends StatelessWidget {
           child: Container(
             height: 100.h,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(20.h),
-                    bottomRight: Radius.circular(20.h)),
-                color: ConstantColors.kDarkGreen.withOpacity(0.7)),
+                color: ConstantColors.kDarkGreen.withOpacity(0.3)),
             padding: EdgeInsets.all(20.h),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
