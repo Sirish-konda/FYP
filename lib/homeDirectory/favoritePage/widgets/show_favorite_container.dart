@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../constants/constant_colors.dart';
 import '../../../models/trekking_model.dart';
-import '../../homePage/screens/destinationDesc/widgets/destination_desc.dart';
+import '../../homePage/screens/destination_desc.dart';
 
 class ShowFavoriteContainer extends StatefulWidget {
   final TrekkingModel trekking;

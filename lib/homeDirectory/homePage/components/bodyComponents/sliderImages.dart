@@ -30,7 +30,7 @@ class _SliderImagesState extends State<SliderImages> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 455.h,
+      height: 460.h,
       alignment: Alignment.topCenter,
       color: ConstantColors.kNeutralSkin.withOpacity(0.1),
       padding: EdgeInsets.only(top: 9.h),
@@ -66,9 +66,9 @@ class _SliderImagesState extends State<SliderImages> {
                     backgroundColor: ConstantColors.kLightGreen,
                     foregroundColor: ConstantColors.kNeutralSkin),
                 onPressed: back,
-                child: const Icon(
+                child: Icon(
                   Icons.keyboard_arrow_left_rounded,
-                  size: 30,
+                  size: 30.h,
                 ),
               ),
               const Spacer(
@@ -79,9 +79,9 @@ class _SliderImagesState extends State<SliderImages> {
                     backgroundColor: ConstantColors.kLightGreen,
                     foregroundColor: ConstantColors.kNeutralSkin),
                 onPressed: forward,
-                child: const Icon(
+                child: Icon(
                   Icons.keyboard_arrow_right_rounded,
-                  size: 30,
+                  size: 30.h,
                 ),
               ),
               const Spacer(),
