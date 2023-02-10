@@ -66,8 +66,10 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - assets/images/descImages/
+    - assets/images/hikingDestination/
+    - assets/images/hikingDestination/descImages/
     - assets/images/trekkingDestination/
+    - assets/images/trekkingDestination/descImages/
     - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -7,16 +7,16 @@ import 'package:fyp_project/providers/trekkingPhotoProvider.dart';
 import 'package:provider/provider.dart';
 import 'imageDescription.dart';
 
-class SliderImages extends StatefulWidget {
-  const SliderImages({
+class TrekkingSliderImages extends StatefulWidget {
+  const TrekkingSliderImages({
     super.key,
   });
 
   @override
-  State<SliderImages> createState() => _SliderImagesState();
+  State<TrekkingSliderImages> createState() => _TrekkingSliderImagesState();
 }
 
-class _SliderImagesState extends State<SliderImages> {
+class _TrekkingSliderImagesState extends State<TrekkingSliderImages> {
   final controller = CarouselController();
 
   void back() {

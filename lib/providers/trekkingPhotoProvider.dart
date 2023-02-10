@@ -38,11 +38,16 @@ class TrekkingPhotoProvider extends ChangeNotifier {
       ''',
       id: 1,
       images: [
-        TrekkingImgModel("assets/images/descImages/ABC1.PNG"),
-        TrekkingImgModel("assets/images/descImages/ABC2.PNG"),
-        TrekkingImgModel("assets/images/descImages/ABC3.PNG"),
-        TrekkingImgModel("assets/images/descImages/ABC4.PNG"),
-        TrekkingImgModel("assets/images/descImages/ABC5.PNG"),
+        TrekkingImgModel(
+            "assets/images/trekkingDestination/descImages/ABC1.PNG"),
+        TrekkingImgModel(
+            "assets/images/trekkingDestination/descImages/ABC2.PNG"),
+        TrekkingImgModel(
+            "assets/images/trekkingDestination/descImages/ABC3.PNG"),
+        TrekkingImgModel(
+            "assets/images/trekkingDestination/descImages/ABC4.PNG"),
+        TrekkingImgModel(
+            "assets/images/trekkingDestination/descImages/ABC5.PNG"),
       ],
       intro: '''
 The Annapurna Region Trekking is a difficult journey to a high altitude adventure vacation. This area is full of adventure and is ideal for trekkers who want to enjoy the natural splendor of nature's flora and fauna.
@@ -53,11 +58,16 @@ The Annapurna Region Trekking is a difficult journey to a high altitude adventur
 The EBC trek is one of the world's finest treks, centered on the world's highest peak, Mt. Everest. It has a special place in the hearts of people from all walks of life, not just hikers. It is a revered landmark and source of cash for locals, a formidable conquest for adventurers, a journey to lose and find yourself for casual hikers, a wonderland of diverse flora and fauna for biologists.
 ''',
         images: [
-          TrekkingImgModel("assets/images/descImages/EBC1.PNG"),
-          TrekkingImgModel("assets/images/descImages/EBC2.PNG"),
-          TrekkingImgModel("assets/images/descImages/EBC3.PNG"),
-          TrekkingImgModel("assets/images/descImages/EBC4.PNG"),
-          TrekkingImgModel("assets/images/descImages/EBC5.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/EBC1.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/EBC2.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/EBC3.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/EBC4.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/EBC5.PNG"),
         ],
         title: "Everest Base Camp",
         imagePath: "assets/images/trekkingDestination/EBC.PNG",
@@ -93,11 +103,16 @@ The EBC trek is one of the world's finest treks, centered on the world's highest
 Gokyo Ri is an Everest region hidden treasure that gives breathtaking views of Gokyo Lake, cold rivers, glaciers, and snow-capped pinnacles such as Everest, Cho Oyu, Lhotse, Pumori, and Makalu.
 ''',
         images: [
-          TrekkingImgModel("assets/images/descImages/gokyo1.PNG"),
-          TrekkingImgModel("assets/images/descImages/gokyo2.PNG"),
-          TrekkingImgModel("assets/images/descImages/gokyo3.PNG"),
-          TrekkingImgModel("assets/images/descImages/gokyo4.PNG"),
-          TrekkingImgModel("assets/images/descImages/gokyo5.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/gokyo1.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/gokyo2.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/gokyo3.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/gokyo4.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/gokyo5.PNG"),
         ],
         id: 3,
         title: "Gokyo re Camp",
@@ -133,11 +148,16 @@ The Gosainkunda Trek is well-known for its spectacular beauty. The place also ga
 ''',
         id: 4,
         images: [
-          TrekkingImgModel("assets/images/descImages/gosaikunda1.PNG"),
-          TrekkingImgModel("assets/images/descImages/gosaikunda2.PNG"),
-          TrekkingImgModel("assets/images/descImages/gosaikunda3.PNG"),
-          TrekkingImgModel("assets/images/descImages/gosaikunda4.PNG"),
-          TrekkingImgModel("assets/images/descImages/gosaikunda5.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/gosaikunda1.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/gosaikunda2.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/gosaikunda3.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/gosaikunda4.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/gosaikunda5.PNG"),
         ],
         title: "Gosaikunda Trek",
         imagePath: "assets/images/trekkingDestination/gosaikunda.PNG",
@@ -158,11 +178,16 @@ The Gosainkunda Trek is well-known for its spectacular beauty. The place also ga
 It is magnificient eco-friendly nature trek. This trek provides stunning views of Mt Dhaulagiri, Annapurna, Nilgiri, Tukuche Peak, and Dhampus Peak, as well as one of the most beautiful valleys on the Kali Gandaki River.
 ''',
         images: [
-          TrekkingImgModel("assets/images/descImages/khopra1.PNG"),
-          TrekkingImgModel("assets/images/descImages/khopra2.PNG"),
-          TrekkingImgModel("assets/images/descImages/khopra3.PNG"),
-          TrekkingImgModel("assets/images/descImages/khopra4.PNG"),
-          TrekkingImgModel("assets/images/descImages/khopra5.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/khopra1.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/khopra2.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/khopra3.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/khopra4.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/khopra5.PNG"),
         ],
         id: 5,
         title: "Khopra ridge trek",
@@ -195,11 +220,16 @@ It is magnificient eco-friendly nature trek. This trek provides stunning views o
 Langtang Trek is a beautiful trekking trail via Tamang heritage that is dominated by Tamang culture. It provides a magnificent view of the mountain with a broad countryside. The walk encompasses the best of Himalayan trekking, including breathtaking scenery and the traditions and cultures of indigenous tribes.
 ''',
         images: [
-          TrekkingImgModel("assets/images/descImages/langtang1.PNG"),
-          TrekkingImgModel("assets/images/descImages/langtang2.PNG"),
-          TrekkingImgModel("assets/images/descImages/langtang3.PNG"),
-          TrekkingImgModel("assets/images/descImages/langtang4.PNG"),
-          TrekkingImgModel("assets/images/descImages/langtang5.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/langtang1.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/langtang2.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/langtang3.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/langtang4.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/langtang5.PNG"),
         ],
         id: 6,
         title: "Langtang National Park",
@@ -226,11 +256,16 @@ Langtang Trek is a beautiful trekking trail via Tamang heritage that is dominate
 The Makalu Base Camp journey is great for nature lovers looking to explore a diversity of landscapes and cultures, as well as unique views of some of the world's tallest mountains, including Everest.
 ''',
         images: [
-          TrekkingImgModel("assets/images/descImages/makalu1.PNG"),
-          TrekkingImgModel("assets/images/descImages/makalu2.PNG"),
-          TrekkingImgModel("assets/images/descImages/makalu3.PNG"),
-          TrekkingImgModel("assets/images/descImages/makalu4.PNG"),
-          TrekkingImgModel("assets/images/descImages/makalu5.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/makalu1.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/makalu2.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/makalu3.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/makalu4.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/makalu5.PNG"),
         ],
         id: 7,
         title: "Makalu Base Camp Trek",
@@ -279,11 +314,16 @@ The Makalu Base Camp journey is great for nature lovers looking to explore a div
 The Manaslu Circuit Trek circles the Manaslu Conservation Area, giving trekkers a taste of the trails beneath the magnificent Manaslu range. Another worthwhile experience is firsthand exposure to Tibetan cultural treasures along the Tibetan plateau.
 ''',
         images: [
-          TrekkingImgModel("assets/images/descImages/manaslu1.PNG"),
-          TrekkingImgModel("assets/images/descImages/manaslu2.PNG"),
-          TrekkingImgModel("assets/images/descImages/manaslu3.PNG"),
-          TrekkingImgModel("assets/images/descImages/manaslu4.PNG"),
-          TrekkingImgModel("assets/images/descImages/manaslu5.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/manaslu1.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/manaslu2.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/manaslu3.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/manaslu4.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/manaslu5.PNG"),
         ],
         id: 8,
         title: "Manasalu Base Camp Trek",
@@ -322,11 +362,16 @@ The Manaslu Circuit Trek circles the Manaslu Conservation Area, giving trekkers 
 The Mardi Himal Trek provides stunning views of the Himalayan range minus the crowds. The trek is culturally rich and beautiful, passing through sparkling rivers and streams as well as the forest.
 ''',
         images: [
-          TrekkingImgModel("assets/images/descImages/mardi1.PNG"),
-          TrekkingImgModel("assets/images/descImages/mardi2.PNG"),
-          TrekkingImgModel("assets/images/descImages/mardi3.PNG"),
-          TrekkingImgModel("assets/images/descImages/mardi4.PNG"),
-          TrekkingImgModel("assets/images/descImages/mardi5.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/mardi1.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/mardi2.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/mardi3.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/mardi4.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/mardi5.PNG"),
         ],
         id: 9,
         title: "Mardi Base Camp",
@@ -359,11 +404,16 @@ The Mardi Himal Trek provides stunning views of the Himalayan range minus the cr
 The Nar Phu Valley trek is a true Himalayan wilderness adventure that is as breathtaking as it is unforgettable. Nar Phu is a true hidden gem that provides trekkers with a once-in-a-lifetime opportunity to experience pristine valleys brimming with raw Himalayan environment and ancient Buddhist culture. 
 ''',
         images: [
-          TrekkingImgModel("assets/images/descImages/nar1.PNG"),
-          TrekkingImgModel("assets/images/descImages/nar2.PNG"),
-          TrekkingImgModel("assets/images/descImages/nar3.PNG"),
-          TrekkingImgModel("assets/images/descImages/nar4.PNG"),
-          TrekkingImgModel("assets/images/descImages/nar5.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/nar1.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/nar2.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/nar3.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/nar4.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/nar5.PNG"),
         ],
         id: 10,
         title: "Nar phu valley Trek",
@@ -406,11 +456,16 @@ The Nar Phu Valley trek is a true Himalayan wilderness adventure that is as brea
 The Ghandruk Poonhill trek provides breathtaking views of the Himalayas. This is a short yet breathtaking walk that will make you fall in love with the Himalayas. Aside from mountain views, this trek offers a wealth of cultural experiences in the well-known Ghandruk village.
 ''',
         images: [
-          TrekkingImgModel("assets/images/descImages/ghandruk1.PNG"),
-          TrekkingImgModel("assets/images/descImages/ghandruk2.PNG"),
-          TrekkingImgModel("assets/images/descImages/ghandruk3.PNG"),
-          TrekkingImgModel("assets/images/descImages/ghandruk4.PNG"),
-          TrekkingImgModel("assets/images/descImages/ghandruk5.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/ghandruk1.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/ghandruk2.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/ghandruk3.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/ghandruk4.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/ghandruk5.PNG"),
         ],
         id: 11,
         title: "Ghandruk Poonhill",
@@ -443,11 +498,16 @@ The Ghandruk Poonhill trek provides breathtaking views of the Himalayas. This is
 The Jumla Rara Lake trip takes place in the Karnali Region's remote districts of Mugu and Jumla. It is an excellent location for bird watchers, who can expect to see water birds, coots, common teal, blood pheasants, and the Danfe, Nepal's national bird.
 ''',
         images: [
-          TrekkingImgModel("assets/images/descImages/rara1.PNG"),
-          TrekkingImgModel("assets/images/descImages/rara2.PNG"),
-          TrekkingImgModel("assets/images/descImages/rara3.PNG"),
-          TrekkingImgModel("assets/images/descImages/rara4.PNG"),
-          TrekkingImgModel("assets/images/descImages/rara5.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/rara1.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/rara2.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/rara3.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/rara4.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/rara5.PNG"),
         ],
         id: 12,
         title: "Jumla Rara Lake Trek",
@@ -484,11 +544,16 @@ The Jumla Rara Lake trip takes place in the Karnali Region's remote districts of
 Tsum Valley Trek Nepal is a sacred Himalayan Buddhist pilgrimage valley in the northern Gorkha district of Nepal. The Tsum Valley Trekking Trails are dotted with artistic Chortens and lined by Mani walls constructed of thousands of stone slabs carved with deity drawings and prayers.
 ''',
         images: [
-          TrekkingImgModel("assets/images/descImages/Tsum1.PNG"),
-          TrekkingImgModel("assets/images/descImages/Tsum2.PNG"),
-          TrekkingImgModel("assets/images/descImages/Tsum3.PNG"),
-          TrekkingImgModel("assets/images/descImages/Tsum4.PNG"),
-          TrekkingImgModel("assets/images/descImages/Tsum5.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/Tsum1.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/Tsum2.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/Tsum3.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/Tsum4.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/Tsum5.PNG"),
         ],
         id: 13,
         title: "Tsum Valley Trek",
@@ -529,11 +594,16 @@ Tsum Valley Trek Nepal is a sacred Himalayan Buddhist pilgrimage valley in the n
 The Upper Mustang Trek is all about discovering the secret world of Mustang's historic Buddhist monarchy. It is a perfect combination of culture and trekking far away from the more inhabited world and in the middle of the wilderness.
 ''',
         images: [
-          TrekkingImgModel("assets/images/descImages/upper1.PNG"),
-          TrekkingImgModel("assets/images/descImages/upper2.PNG"),
-          TrekkingImgModel("assets/images/descImages/upper3.PNG"),
-          TrekkingImgModel("assets/images/descImages/upper4.PNG"),
-          TrekkingImgModel("assets/images/descImages/upper5.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/upper1.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/upper2.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/upper3.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/upper4.PNG"),
+          TrekkingImgModel(
+              "assets/images/trekkingDestination/descImages/upper5.PNG"),
         ],
         id: 14,
         title: "Upper Mustang",

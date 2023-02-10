@@ -24,10 +24,9 @@ class HomePage extends StatelessWidget {
                   children: [
                     const HomeHeader(),
                     SizedBox(height: 20.h),
-                    const SliderImages(),
+                    const TrekkingSliderImages(),
                     SizedBox(height: 20.h),
                     SizedBox(height: 20.h),
-                    SliderImages()
                   ],
                 ),
               ),
