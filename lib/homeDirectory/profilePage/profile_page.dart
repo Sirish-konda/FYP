@@ -4,6 +4,7 @@ import 'package:fyp_project/constants/constant_colors.dart';
 import 'package:fyp_project/homeDirectory/profilePage/profileSettings/about_app.dart';
 import 'package:fyp_project/homeDirectory/profilePage/profileSettings/change_email.dart';
 import 'package:fyp_project/homeDirectory/profilePage/profileSettings/change_password.dart';
+import 'package:fyp_project/homeDirectory/profilePage/profileSettings/widgets/custom_dialog.dart';
 import 'package:fyp_project/homeDirectory/profilePage/profileSettings/widgets/profile_settings.dart';
 import 'package:fyp_project/homeDirectory/profilePage/profileSettings/widgets/square_settings.dart';
 
@@ -76,7 +77,12 @@ class ProfilePage extends StatelessWidget {
                       ),
                       SquareSettings(
                           onPressed: () {
-                            Navigator.pop(context);
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return const CustomDialog();
+                              },
+                            );
                           },
                           title: 'Log out',
                           icon: Icons.logout_outlined)
