@@ -1,5 +1,6 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fyp_project/navigation_bar.dart';
 
 import '../../constants/constant_colors.dart';
 
@@ -25,7 +26,16 @@ class UpperPart extends StatelessWidget {
           ),
         ),
         Positioned(
-            right: 0, bottom: 0, child: Image.asset('assets/images/logo.png'))
+            right: 0,
+            bottom: 0,
+            child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const GoogleNavigationBar()));
+                },
+                child: Image.asset('assets/images/logo.png')))
       ],
     );
   }

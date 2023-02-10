@@ -36,7 +36,7 @@ class _SliderImagesState extends State<SliderImages> {
       padding: EdgeInsets.only(top: 9.h),
       child: Column(
         children: [
-          const PopularTitle(title: "Popular Trek's"),
+          const PopularTitle(title: "Popular Hike's"),
           SizedBox(height: 10.h),
           CarouselSlider.builder(
             carouselController: controller,
@@ -47,7 +47,6 @@ class _SliderImagesState extends State<SliderImages> {
               enableInfiniteScroll: true,
               initialPage: 0,
               viewportFraction: 0.75,
-              // enlargeCenterPage: true,
             ),
             itemBuilder: (context, index, realIndex) {
               return ImageDescription(

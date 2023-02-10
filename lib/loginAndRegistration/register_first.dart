@@ -1,11 +1,8 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:fyp_project/apiConnection/api_connection.dart';
-import 'package:fyp_project/loginAndRegistration/register_second.dart';
-import 'package:fyp_project/loginAndRegistration/widgets/lower_button.dart';
 import 'package:fyp_project/loginAndRegistration/widgets/lower_part.dart';
 import 'package:fyp_project/loginAndRegistration/widgets/upper_part.dart';
 import 'package:fyp_project/loginAndRegistration/widgets/upper_text.dart';
@@ -105,9 +102,13 @@ class _RegisterFirstState extends State<RegisterFirst> {
                     TextButton(
                       onPressed: () {
                         if (formKey.currentState!.validate()) {
-                          registerAndSaveUserRecord();
+                          validateUserEmail();
                         } else {
-                          print('as');
+                          Fluttertoast.showToast(
+                              msg: "Please fill the form properly.",
+                              fontSize: 16,
+                              backgroundColor: Colors.red,
+                              textColor: Colors.white);
                         }
                       },
                       child: Container(
@@ -163,13 +164,15 @@ class _RegisterFirstState extends State<RegisterFirst> {
       if (res.statusCode == 200) {
         var resBodyOfValidatingEmail = jsonDecode(res.body);
         if (resBodyOfValidatingEmail['emailFound'] == true) {
-          Fluttertoast.showToast(msg: "Email already exists.");
+          Fluttertoast.showToast(
+              msg: "Email already exists.",
+              backgroundColor: Colors.red,
+              fontSize: 16);
         } else {
           registerAndSaveUserRecord();
         }
       }
     } catch (e) {
-      print(e.toString());
       Fluttertoast.showToast(msg: e.toString());
     }
   }
@@ -187,19 +190,25 @@ class _RegisterFirstState extends State<RegisterFirst> {
         Uri.parse(API.signUp),
         body: userModel.toJson(),
       );
-      print(res.statusCode);
+
       if (res.statusCode == 200) {
-        final resBodyOfSignUp = jsonDecode(res.body);
-        if (resBodyOfSignUp['success']) {
-          Fluttertoast.showToast(msg: 'Signed up');
+        var resBodyOfSignUp = jsonDecode(res.body);
+        if (resBodyOfSignUp['success'] == true) {
+          Fluttertoast.showToast(
+              msg: 'You have been successfully registered.',
+              backgroundColor: Colors.green,
+              fontSize: 16);
+          setState(() {
+            Navigator.pop(context);
+          });
         } else {
-          Fluttertoast.showToast(msg: 'Error');
+          Fluttertoast.showToast(
+              msg: 'Error occured try again',
+              backgroundColor: Colors.red,
+              fontSize: 16);
         }
-      } else {
-        print('erroe');
       }
     } catch (e) {
-      print(e.toString());
       Fluttertoast.showToast(msg: e.toString());
     }
   }

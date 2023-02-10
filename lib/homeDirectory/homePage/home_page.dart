@@ -27,7 +27,6 @@ class HomePage extends StatelessWidget {
                     const SliderImages(),
                     SizedBox(height: 20.h),
                     SizedBox(height: 20.h),
-                    
                     SliderImages()
                   ],
                 ),

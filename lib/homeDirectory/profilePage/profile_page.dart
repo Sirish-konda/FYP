@@ -5,6 +5,7 @@ import 'package:fyp_project/homeDirectory/profilePage/profileSettings/about_app.
 import 'package:fyp_project/homeDirectory/profilePage/profileSettings/change_email.dart';
 import 'package:fyp_project/homeDirectory/profilePage/profileSettings/change_password.dart';
 import 'package:fyp_project/homeDirectory/profilePage/profileSettings/widgets/profile_settings.dart';
+import 'package:fyp_project/homeDirectory/profilePage/profileSettings/widgets/square_settings.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -24,50 +25,66 @@ class ProfilePage extends StatelessWidget {
       backgroundColor: ConstantColors.kLightGreen,
       body: Center(
         child: SafeArea(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              CircleAvatar(
-                radius: 70.r,
-                child: Image.asset('assets/images/profile.png'),
-              ),
-              Text(
-                "User Name",
-                style: TextStyle(
-                  fontSize: 35.sp,
-                  color: Colors.white,
+          child: Padding(
+            padding: EdgeInsets.only(top: 20.h, bottom: 70.h),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                CircleAvatar(
+                  radius: 70.r,
+                  child: Image.asset('assets/images/profile.png'),
                 ),
-              ),
-              ProfileSettings(
-                title: 'Change your email',
-                buttonPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => ChangeEmail()));
-                },
-              ),
-              ProfileSettings(
-                title: 'Change your password',
-                buttonPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => ChangePassword()));
-                },
-              ),
-              ProfileSettings(
-                title: 'About the app',
-                buttonPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => AboutApp()));
-                },
-              ),
-              ProfileSettings(
-                title: 'Log out',
-                buttonPressed: () {
-                  Navigator.pop(context);
-                },
-              ),
-            ],
+                Text(
+                  "User Name",
+                  style: TextStyle(
+                    fontSize: 35.sp,
+                    color: Colors.white,
+                  ),
+                ),
+                ProfileSettings(
+                  title: 'Change your email',
+                  buttonPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => ChangeEmail()));
+                  },
+                ),
+                ProfileSettings(
+                  title: 'Change your password',
+                  buttonPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ChangePassword()));
+                  },
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 20.h, right: 20.h),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SquareSettings(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => AboutApp(),
+                            ),
+                          );
+                        },
+                        title: 'About us',
+                        icon: Icons.info_outline,
+                      ),
+                      SquareSettings(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          title: 'Log out',
+                          icon: Icons.logout_outlined)
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
