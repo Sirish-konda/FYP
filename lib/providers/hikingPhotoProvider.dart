@@ -23,6 +23,12 @@ Highlights:- Stupa and murals
         images: [
           HikingImgModel(
               "assets/images/hikingDestination/descImages/amitabha1.PNG"),
+          HikingImgModel(
+              "assets/images/hikingDestination/descImages/amitabha2.PNG"),
+          HikingImgModel(
+              "assets/images/hikingDestination/descImages/amitabha3.PNG"),
+          HikingImgModel(
+              "assets/images/hikingDestination/descImages/amitabha4.PNG"),
         ],
         intro:
             "The Amitabha Monastery is perched atop Druk Amitabha Mountain, with a panoramic view of Kathmandu Valley. It is a spiritual practice center as well as a humanitarian cause. It contains a 2,000-person capacity hall, a library, the Drukpa Lineage's administration office, a nunnery, dormitories for 300 nuns, and a medical facility.",
@@ -44,7 +50,16 @@ Highlights:
 
 ''',
       imagePath: "assets/images/hikingDestination/kakani MAIN.PNG",
-      images: [HikingImgModel("")],
+      images: [
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/kakani 1.PNG"),
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/kakani 2.PNG"),
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/kakani 3.PNG"),
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/kakani 4.PNG"),
+      ],
       intro:
           "Kakani Hiking is an ideal one-day hike in Kathmandu that takes you away from the hustle and bustle of city life and into the simple beauty of hills and fields.  The trip is famous for the panoramic views of mountain ranges, Kakani’s cultivated Japanese strawberries, rhododendron-flavored liquor and rainbow trout dishes, and Mountain Memorial Park.",
       location: Geo(lat: 27.96939, long: 85.54724),
@@ -66,7 +81,16 @@ Highlights:
 
 ''',
       imagePath: "assets/images/hikingDestination/pulchowki MAIN.PNG",
-      images: [HikingImgModel("")],
+      images: [
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/pulchowki 1.PNG"),
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/pulchowki 2.PNG"),
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/pulchowki 3.PNG"),
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/pulchowki 4.PNG"),
+      ],
       intro:
           "It is the highest and the most scenic hill around kathmandu valley rim. As the tallest hill in the Kathmandu valley, it is covered with snow throughout the winter and remains chilly even in the summer.",
       location: Geo(lat: 27.5711026, long: 85.4055504),
@@ -88,7 +112,16 @@ Highlights:
 
 ''',
       imagePath: "assets/images/hikingDestination/nagarkot MAIN.PNG",
-      images: [HikingImgModel("")],
+      images: [
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/nagarkot 1.PNG"),
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/nagarkot 2.PNG"),
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/nagarkot 3.PNG"),
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/nagarkot 4.PNG"),
+      ],
       intro:
           "Nagarkot is a gorgeous hill station known for its sunrise and sunset views of the Himalayan Mountains.That includes Annapurna, Langtang, Manaslu, Jugal, Maha Langur and Ganesh Himal ranges.",
       location: Geo(lat: 27.717358, long: 85.504571),
@@ -111,7 +144,16 @@ Highlights:
 
 ''',
       imagePath: "assets/images/hikingDestination/sundarijal MAIN.PNG",
-      images: [HikingImgModel("")],
+      images: [
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/sundarijal 1.PNG"),
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/sundarijal 2.PNG"),
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/sundarijal 3.PNG"),
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/sundarijal 4.PNG"),
+      ],
       intro:
           "Sundarijal tour takes us towards the north of Kathmandu Valley and offers great short hiking opportunities. Sundarijal is itself located at the center of an ancient forest, belonging to the Sivapuri National Park, and is highly diverse in vegetation like pine, oak, rhododendron and wildlife like Himalaya Black bear, leopard, jungle cat and rhesus monkey.",
       location: Geo(lat: 28.0, long: 84.0),
@@ -132,7 +174,16 @@ Highlights:
 
 ''',
       imagePath: "assets/images/hikingDestination/shivapuri MAIN.PNG",
-      images: [HikingImgModel("")],
+      images: [
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/shivapuri 1.PNG"),
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/shivapuri 2.PNG"),
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/shivapuri 3.PNG"),
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/shivapuri 4.PNG"),
+      ],
       intro:
           "Shivapuri is a famous short hiking trip from Kathmandu valley. Shivapuri treks offer a rich insight into the lives, history, culture and religion of its inhabitants.  Likewise, this is not just a trail, but a spot that provides a panoramic view of Kathmandu valley, Langtang and Mustang, and the mighty Manaslu.",
       location: Geo(lat: 27.45, long: 85.16),
@@ -155,7 +206,16 @@ Highlights:
 
 ''',
       imagePath: "assets/images/hikingDestination/namo buddha MAIN.PNG",
-      images: [HikingImgModel("")],
+      images: [
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/namo buddha 1.PNG"),
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/namo buddha 2.PNG"),
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/namo buddha 3.PNG"),
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/namo buddha 4.PNG"),
+      ],
       intro:
           "Namobuddha Day Hike is a fabulous hiking trip near Kathmandu Valley that lets hikers admire the elegance of Buddhist culture and tradition. Namo Budhha is also famous for rice, mustard and millet; so you can also experience the beautiful hillside terraced farms throughout the walk. ",
       location: Geo(lat: 27.5520134, long: 85.6354449),
@@ -177,7 +237,16 @@ Highlights:
 
 ''',
       imagePath: "assets/images/hikingDestination/champadevi MAIN.PNG",
-      images: [HikingImgModel("")],
+      images: [
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/champadevi 1.PNG"),
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/champadevi 2.PNG"),
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/champadevi 3.PNG"),
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/champadevi 4.PNG"),
+      ],
       intro:
           "Champadevi, a beautiful hill in the southeast of Kathmandu Valley, is home to an important Hindu pilgrimage site. Following the hike, you'll also reach the summit of a nearby hill, Chandragiri, which has similarly magnificent views of the mountains and valley below.",
       location: Geo(lat: 27.6786, long: 85.3273),
@@ -199,7 +268,16 @@ Highlights:
 
 ''',
       imagePath: "assets/images/hikingDestination/chisapani MAIN.PNG",
-      images: [HikingImgModel("")],
+      images: [
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/chisapani 1.PNG"),
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/chisapani 2.PNG"),
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/chisapani 3.PNG"),
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/chisapani 4.PNG"),
+      ],
       intro:
           "It is a popular trekking destination located in the Shivapuri National Park near Kathmandu. The trek offers stunning views of the Himalayas, lush forests, and traditional rural villages, making it a great opportunity for nature lovers and adventure seekers.",
       location: Geo(lat: 28.0, long: 84.0),
@@ -223,7 +301,16 @@ Highlights:
 
 ''',
       imagePath: "assets/images/hikingDestination/nagarjuna MAIN.PNG",
-      images: [HikingImgModel("")],
+      images: [
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/nagarjuna 1.PNG"),
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/nagarjuna 2.PNG"),
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/nagarjuna 3.PNG"),
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/nagarjuna 4.PNG"),
+      ],
       intro:
           "Hiking to Nagarjuna is easy and short adventure activity near Kathmandu Valley. The mountain is very famous for Nagarjuna’s cave where he performed meditation. Along with Nagarjuna cave there is some other cave of Buddha, Mahasiddhas.",
       location: null,
@@ -247,7 +334,18 @@ Highlights:
 
 ''',
       imagePath: "assets/images/hikingDestination/chandragiri MAIN.PNG",
-      images: [HikingImgModel("")],
+      images: [
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/chandragiri 1.PNG"),
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/chandragiri 2.PNG"),
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/chandragiri 3.PNG"),
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/chandragiri 4.PNG"),
+        HikingImgModel(
+            "assets/images/hikingDestination/descImages/chandragiri 5.PNG"),
+      ],
       intro:
           "Chandragiri Hill Hiking is the best hiking location in Kathmandu Valley, located in the south at a height of 2250 meters and covered in evergreen forest, 14 kilometers from Thamel. This hike provides a spectacular perspective of Kathmandu Valley, as well as the culture, lifestyle, flora, and fauna of the local people.",
       location: Geo(lat: 27.6672261, long: 85.2058437),

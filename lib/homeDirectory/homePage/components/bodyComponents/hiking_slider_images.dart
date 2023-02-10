@@ -3,20 +3,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/constants/constant_colors.dart';
 import 'package:fyp_project/homeDirectory/homePage/components/bodyComponents/popular_title.dart';
-import 'package:fyp_project/providers/trekkingPhotoProvider.dart';
-import 'package:provider/provider.dart';
-import 'imageDescription.dart';
 
-class TrekkingSliderImages extends StatefulWidget {
-  const TrekkingSliderImages({
+import 'package:provider/provider.dart';
+
+import '../../../../providers/hikingPhotoProvider.dart';
+
+class HikingSliderImages extends StatefulWidget {
+  const HikingSliderImages({
     super.key,
   });
 
   @override
-  State<TrekkingSliderImages> createState() => _TrekkingSliderImagesState();
+  State<HikingSliderImages> createState() => _HikingSliderImagesState();
 }
 
-class _TrekkingSliderImagesState extends State<TrekkingSliderImages> {
+class _HikingSliderImagesState extends State<HikingSliderImages> {
   final controller = CarouselController();
 
   void back() {
@@ -40,7 +41,7 @@ class _TrekkingSliderImagesState extends State<TrekkingSliderImages> {
           SizedBox(height: 10.h),
           CarouselSlider.builder(
             carouselController: controller,
-            itemCount: Provider.of<TrekkingPhotoProvider>(context).imgLength,
+            itemCount: Provider.of<HikingPhotoProvider>(context).imgLength,
             options: CarouselOptions(
               height: 350.h,
               pageSnapping: true,
@@ -49,9 +50,43 @@ class _TrekkingSliderImagesState extends State<TrekkingSliderImages> {
               viewportFraction: 0.75,
             ),
             itemBuilder: (context, index, realIndex) {
-              return ImageDescription(
-                trekking: Provider.of<TrekkingPhotoProvider>(context)
-                    .trekkingDesc[index],
+              return GestureDetector(
+                onTap: () {},
+                child: Container(
+                  margin: EdgeInsets.only(left: 10.h, right: 10.h),
+                  padding: EdgeInsets.all(10.h),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: ConstantColors.kMidGreen.withOpacity(0.4)),
+                  child: Column(
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(10.r),
+                        child: Image.asset(
+                          Provider.of<HikingPhotoProvider>(context)
+                              .hikingDesc[index]
+                              .imagePath,
+                          height: 250.h,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10.h,
+                      ),
+                      Text(
+                        Provider.of<HikingPhotoProvider>(context)
+                            .hikingDesc[index]
+                            .title,
+                        style: TextStyle(
+                            decorationColor: Colors.black26,
+                            fontSize: 30.sp,
+                            color: ConstantColors.kNeutralSkin,
+                            decoration: TextDecoration.underline),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                ),
               );
             },
           ),

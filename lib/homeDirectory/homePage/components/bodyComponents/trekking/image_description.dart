@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/homeDirectory/homePage/screens/destination_desc.dart';
 import 'package:fyp_project/models/trekking_model.dart';
-import '../../../../constants/constant_colors.dart';
+import '../../../../../constants/constant_colors.dart';
 
 class ImageDescription extends StatelessWidget {
   final TrekkingModel trekking;
