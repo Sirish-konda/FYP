@@ -31,7 +31,7 @@ class CustomDialog extends StatelessWidget {
                   style: TextStyle(fontSize: 20.sp, color: Colors.black),
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: 40.h),
+                SizedBox(height: 35.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
