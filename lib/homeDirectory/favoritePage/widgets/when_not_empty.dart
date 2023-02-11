@@ -13,12 +13,6 @@ class WhenNotEmpty extends StatelessWidget {
       backgroundColor: ConstantColors.kLightGreen,
       body: CustomScrollView(
         slivers: [
-          const SliverAppBar(
-            automaticallyImplyLeading: false,
-            centerTitle: true,
-            title: Text("Favorite"),
-            backgroundColor: ConstantColors.kDarkGreen,
-          ),
           SliverToBoxAdapter(
             child: ListView.builder(
               padding: EdgeInsets.zero,

@@ -30,19 +30,26 @@ class _TrekkingSliderImagesState extends State<TrekkingSliderImages> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 460.h,
-      alignment: Alignment.topCenter,
-      color: ConstantColors.kNeutralSkin.withOpacity(0.1),
-      padding: EdgeInsets.only(top: 9.h),
+      padding: EdgeInsets.only(top: 20.h),
+      decoration: BoxDecoration(
+        color: ConstantColors.kNeutralSkin.withOpacity(0.4),
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(20.r),
+          bottomRight: Radius.circular(20.r),
+        ),
+      ),
       child: Column(
         children: [
-          const PopularTitle(title: "Popular Trek's"),
+          const PopularTitle(
+            title: "Popular Trek's",
+          ),
+          // const PopularTitle(title: "Popular Trek's"),
           SizedBox(height: 10.h),
           CarouselSlider.builder(
             carouselController: controller,
             itemCount: Provider.of<TrekkingPhotoProvider>(context).imgLength,
             options: CarouselOptions(
-              height: 350.h,
+              height: 300.h,
               pageSnapping: true,
               enableInfiniteScroll: true,
               initialPage: 0,
@@ -56,36 +63,6 @@ class _TrekkingSliderImagesState extends State<TrekkingSliderImages> {
             },
           ),
           SizedBox(height: 10.h),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              const Spacer(),
-              ElevatedButton(
-                style: TextButton.styleFrom(
-                    backgroundColor: ConstantColors.kLightGreen,
-                    foregroundColor: ConstantColors.kNeutralSkin),
-                onPressed: back,
-                child: Icon(
-                  Icons.keyboard_arrow_left_rounded,
-                  size: 30.h,
-                ),
-              ),
-              const Spacer(
-                flex: 5,
-              ),
-              ElevatedButton(
-                style: TextButton.styleFrom(
-                    backgroundColor: ConstantColors.kLightGreen,
-                    foregroundColor: ConstantColors.kNeutralSkin),
-                onPressed: forward,
-                child: Icon(
-                  Icons.keyboard_arrow_right_rounded,
-                  size: 30.h,
-                ),
-              ),
-              const Spacer(),
-            ],
-          ),
         ],
       ),
     );

@@ -16,9 +16,11 @@ class PopularTitle extends StatelessWidget {
       title,
       style: TextStyle(
           fontSize: 30.sp,
-          fontWeight: FontWeight.w500,
-          color: ConstantColors.kNeutralSkin,
-          decoration: TextDecoration.overline),
+          fontWeight: FontWeight.w900,
+          color: ConstantColors.kDarkGreen,
+          decoration: TextDecoration.overline,
+          decorationThickness: 0.6,
+          decorationStyle: TextDecorationStyle.dashed),
     );
   }
 }

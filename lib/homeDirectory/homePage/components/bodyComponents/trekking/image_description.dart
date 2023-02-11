@@ -22,9 +22,16 @@ class ImageDescription extends StatelessWidget {
                     DestinationDesc(trekkingModel: trekking)));
       },
       child: Container(
-        margin: EdgeInsets.only(left: 10.h, right: 10.h),
+        margin: EdgeInsets.all(20.h),
         padding: EdgeInsets.all(10.h),
         decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: ConstantColors.kDarkGreen.withOpacity(0.5),
+                blurRadius: 10.r,
+                offset: Offset(0, 10.r),
+              ),
+            ],
             borderRadius: BorderRadius.circular(20),
             color: ConstantColors.kMidGreen.withOpacity(0.4)),
         child: Column(
@@ -33,7 +40,7 @@ class ImageDescription extends StatelessWidget {
               borderRadius: BorderRadius.circular(10.r),
               child: Image.asset(
                 trekking.imagePath,
-                height: 250.h,
+                height: 150.h,
                 fit: BoxFit.cover,
               ),
             ),
@@ -44,7 +51,7 @@ class ImageDescription extends StatelessWidget {
               trekking.title,
               style: TextStyle(
                   decorationColor: Colors.black26,
-                  fontSize: 30.sp,
+                  fontSize: 28.sp,
                   color: ConstantColors.kNeutralSkin,
                   decoration: TextDecoration.underline),
               textAlign: TextAlign.center,

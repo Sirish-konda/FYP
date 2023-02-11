@@ -10,11 +10,6 @@ class WhenEmpty extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ConstantColors.kLightGreen,
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: ConstantColors.kDarkGreen,
-        title: const Text('Favorite'),
-      ),
       body: Container(
         alignment: Alignment.center,
         padding: EdgeInsets.all(30.h),
