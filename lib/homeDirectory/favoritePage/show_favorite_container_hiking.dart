@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/constant_colors.dart';
-import '../../../models/trekking_model.dart';
-import '../../homePage/screens/destination_desc.dart';
+import '../../models/hikking_model.dart';
+import '../homePage/destination_desc_hiking.dart';
 
-class ShowFavoriteContainer extends StatefulWidget {
-  final TrekkingModel trekking;
-  const ShowFavoriteContainer({Key? key, required this.trekking})
+class ShowFavoriteContainerHiking extends StatefulWidget {
+  final HikingModel hiking;
+  const ShowFavoriteContainerHiking({Key? key, required this.hiking})
       : super(key: key);
 
   @override
-  State<ShowFavoriteContainer> createState() => _ShowFavoriteContainerState();
+  State<ShowFavoriteContainerHiking> createState() =>
+      _ShowFavoriteContainerHikingState();
 }
 
-class _ShowFavoriteContainerState extends State<ShowFavoriteContainer> {
+class _ShowFavoriteContainerHikingState
+    extends State<ShowFavoriteContainerHiking> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -43,7 +45,7 @@ class _ShowFavoriteContainerState extends State<ShowFavoriteContainer> {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(20.r),
                     child: Image.asset(
-                      widget.trekking.imagePath,
+                      widget.hiking.imagePath,
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -61,11 +63,11 @@ class _ShowFavoriteContainerState extends State<ShowFavoriteContainer> {
             ],
           ),
           Text(
-            widget.trekking.title,
+            widget.hiking.title,
             style:
                 TextStyle(color: ConstantColors.kNeutralSkin, fontSize: 20.sp),
           ),
-          Text(widget.trekking.id.toString()),
+          Text(widget.hiking.id.toString()),
           Container(
             alignment: Alignment.bottomRight,
             child: TextButton(
@@ -74,7 +76,7 @@ class _ShowFavoriteContainerState extends State<ShowFavoriteContainer> {
                   context,
                   MaterialPageRoute(
                     builder: (context) =>
-                        DestinationDesc(trekkingModel: widget.trekking),
+                        DestinationDescHiking(hikingModel: widget.hiking),
                   ),
                 );
               },

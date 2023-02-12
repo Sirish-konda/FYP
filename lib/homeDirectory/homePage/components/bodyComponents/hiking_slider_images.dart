@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/constants/constant_colors.dart';
 import 'package:fyp_project/homeDirectory/homePage/components/bodyComponents/popular_title.dart';
+import 'package:fyp_project/homeDirectory/homePage/destination_desc_hiking.dart';
 
 import 'package:provider/provider.dart';
 
@@ -35,7 +36,14 @@ class _HikingSliderImagesState extends State<HikingSliderImages> {
             itemBuilder: (context, index, realIndex) {
               return GestureDetector(
                 onTap: () {
-                  
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DestinationDescHiking(
+                          hikingModel: Provider.of<HikingPhotoProvider>(context)
+                              .hikingDesc[index]),
+                    ),
+                  );
                 },
                 child: Container(
                   margin: EdgeInsets.all(20.h),
