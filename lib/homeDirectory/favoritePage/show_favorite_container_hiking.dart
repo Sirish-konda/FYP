@@ -6,6 +6,7 @@ import '../homePage/destination_desc_hiking.dart';
 
 class ShowFavoriteContainerHiking extends StatefulWidget {
   final HikingModel hiking;
+
   const ShowFavoriteContainerHiking({Key? key, required this.hiking})
       : super(key: key);
 
@@ -18,77 +19,83 @@ class _ShowFavoriteContainerHikingState
     extends State<ShowFavoriteContainerHiking> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(20.h),
-      height: 255.h,
-      padding: EdgeInsets.all(10.h),
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30.r),
-          boxShadow: [
-            BoxShadow(
-              color: ConstantColors.kDarkGreen.withOpacity(0.5),
-              blurRadius: 20.r,
-              offset: Offset(0, 20.r),
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => DestinationDescHiking(
+              hikingModel: widget.hiking,
             ),
-          ],
-          color: ConstantColors.kMidGreen.withOpacity(0.5)),
-      child: Column(
-        children: [
-          Stack(
-            children: [
-              Positioned(
-                child: Container(
-                  decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(30.r)),
-                  height: 150.h,
-                  width: MediaQuery.of(context).size.width.w,
+          ),
+        );
+      },
+      child: Container(
+        height: 400.h,
+        width: 300.w,
+        decoration: BoxDecoration(
+          color: ConstantColors.kNeutralSkin,
+          border: Border.all(color: ConstantColors.kDarkGreen, width: 5),
+          borderRadius: BorderRadius.circular(20.r),
+          // border: Border.all(color: Colors.black, width: 4),
+        ),
+        child: Column(
+          children: [
+            Column(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  height: 200.h,
+                  width: 300.w,
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20.r),
+                    borderRadius: BorderRadius.circular(15),
                     child: Image.asset(
                       widget.hiking.imagePath,
                       fit: BoxFit.cover,
                     ),
                   ),
                 ),
-              ),
-              Positioned(
-                top: 10.h,
-                left: 225.h,
-                child: Icon(
-                  Icons.favorite,
-                  color: Colors.red,
-                  size: 30.r,
-                ),
-              ),
-            ],
-          ),
-          Text(
-            widget.hiking.title,
-            style:
-                TextStyle(color: ConstantColors.kNeutralSkin, fontSize: 20.sp),
-          ),
-          Text(widget.hiking.id.toString()),
-          Container(
-            alignment: Alignment.bottomRight,
-            child: TextButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        DestinationDescHiking(hikingModel: widget.hiking),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SizedBox(
+                    height: 200,
+                    child: Column(
+                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          widget.hiking.title,
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 22.sp,
+                              fontWeight: FontWeight.w700,
+                              decoration: TextDecoration.underline),
+                        ),
+                        const Spacer(
+                          flex: 5,
+                        ),
+                        Text(
+                          widget.hiking.intro,
+                          style: TextStyle(
+                            color: ConstantColors.kDarkGreen,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 14.sp,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                          maxLines: 9,
+                        ),
+                        const Spacer(
+                          flex: 20,
+                        )
+                      ],
+                    ),
                   ),
-                );
-              },
-              child: const Text(
-                "View More",
-                style: TextStyle(
-                    color: ConstantColors.kDarkGreen,
-                    decoration: TextDecoration.underline),
-              ),
+                ),
+              ],
             ),
-          )
-        ],
+          ],
+        ),
       ),
     );
   }

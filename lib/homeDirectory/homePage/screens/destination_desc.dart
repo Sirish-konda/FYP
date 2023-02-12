@@ -20,6 +20,37 @@ class DestinationDesc extends StatefulWidget {
 }
 
 class _DestinationDescState extends State<DestinationDesc> {
+  showSnackBarAdded(BuildContext context) {
+    final addedSnackBar = SnackBar(
+      backgroundColor: ConstantColors.kLightGreen,
+      content: Center(
+        child: Text(
+          'Added to favorite',
+          style: TextStyle(fontSize: 18.sp, color: ConstantColors.kNeutralSkin),
+        ),
+      ),
+      duration: const Duration(milliseconds: 800),
+    );
+    ScaffoldMessenger.of(context).showSnackBar(addedSnackBar);
+  }
+
+  showSnackBarRemoved(BuildContext context) {
+    final removedSnackBar = SnackBar(
+      content: Center(
+        child: Text(
+          "Removed from favorite",
+          style: TextStyle(
+            fontSize: 18.sp,
+            color: ConstantColors.kNeutralSkin,
+          ),
+        ),
+      ),
+      backgroundColor: ConstantColors.kLightGreen,
+      duration: const Duration(milliseconds: 800),
+    );
+    ScaffoldMessenger.of(context).showSnackBar(removedSnackBar);
+  }
+
   int indexActive = 0;
   @override
   Widget build(BuildContext context) {
@@ -58,10 +89,16 @@ class _DestinationDescState extends State<DestinationDesc> {
             actions: [
               IconButton(
                 onPressed: () {
-                  setState(() {
-                    Provider.of<TrekkingPhotoProvider>(context, listen: false)
-                        .toggleFavorites(widget.trekkingModel.id);
-                  });
+                  setState(
+                    () {
+                      Provider.of<TrekkingPhotoProvider>(context, listen: false)
+                          .toggleFavorites(widget.trekkingModel.id);
+
+                      widget.trekkingModel.isFavorited
+                          ? showSnackBarAdded(context)
+                          : showSnackBarRemoved(context);
+                    },
+                  );
                 },
                 icon: widget.trekkingModel.isFavorited
                     ? const Icon(Icons.favorite, color: Colors.red)
