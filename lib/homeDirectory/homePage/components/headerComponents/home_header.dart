@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 import '../../../../constants/constant_colors.dart';
+import '../../../../users/current_user.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({
@@ -30,7 +32,10 @@ class HomeHeader extends StatelessWidget {
                           fontSize: 25.sp, color: ConstantColors.kNeutralSkin),
                     ),
                     Text(
-                      "User Name",
+                      Provider.of<CurrentUser>(context)
+                          .user
+                          .userName
+                          .toUpperCase(),
                       style: TextStyle(
                           fontSize: 15.sp,
                           fontWeight: FontWeight.w500,

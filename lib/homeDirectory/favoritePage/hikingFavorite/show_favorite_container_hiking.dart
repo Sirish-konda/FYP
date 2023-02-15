@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../constants/constant_colors.dart';
-import '../../models/hikking_model.dart';
-import '../homePage/destination_desc_hiking.dart';
+import '../../../../constants/constant_colors.dart';
+import '../../../models/hiking_model.dart';
+import '../../homePage/hikingHome/destination_desc_hiking.dart';
 
 class ShowFavoriteContainerHiking extends StatefulWidget {
   final HikingModel hiking;
@@ -47,7 +47,7 @@ class _ShowFavoriteContainerHikingState
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  height: 200.h,
+                  height: 180.h,
                   width: 300.w,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(15),
@@ -60,7 +60,7 @@ class _ShowFavoriteContainerHikingState
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: SizedBox(
-                    height: 200,
+                    height: 180.h,
                     child: Column(
                       // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

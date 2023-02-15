@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fyp_project/homeDirectory/favoritePage/widgets/when_empty.dart';
-import 'package:fyp_project/homeDirectory/favoritePage/widgets/when_not_empty.dart';
+import 'package:fyp_project/homeDirectory/favoritePage/trekkingFavorite/when_not_empty_trekking.dart';
 import 'package:fyp_project/providers/trekkingPhotoProvider.dart';
 import 'package:provider/provider.dart';
 
@@ -21,6 +21,6 @@ class _FavoriteTrekScreenState extends State<FavoriteTrekScreen> {
 
     return favorites.isEmpty
         ? const WhenEmpty()
-        : WhenNotEmpty(favorites: favorites);
+        : WhenNotEmptyTrekking(favorites: favorites);
   }
 }

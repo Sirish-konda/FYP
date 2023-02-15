@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fyp_project/homeDirectory/homePage/screens/destination_desc.dart';
+import 'package:fyp_project/homeDirectory/homePage/trekkingHome/destination_desc_trekking.dart';
 import 'package:fyp_project/models/trekking_model.dart';
 import '../../../../../constants/constant_colors.dart';
 
-class ImageDescription extends StatelessWidget {
+class TrekkkingImageDescription extends StatelessWidget {
   final TrekkingModel trekking;
-  const ImageDescription({
+  const TrekkkingImageDescription({
     super.key,
     required this.trekking,
   });
@@ -19,7 +19,7 @@ class ImageDescription extends StatelessWidget {
             context,
             MaterialPageRoute(
                 builder: (context) =>
-                    DestinationDesc(trekkingModel: trekking)));
+                    DestinationDescTrekking(trekkingModel: trekking)));
       },
       child: Container(
         margin: EdgeInsets.all(20.h),

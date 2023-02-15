@@ -5,7 +5,9 @@ import 'package:fyp_project/homeDirectory/favoritePage/favorite_page.dart';
 import 'package:fyp_project/homeDirectory/homePage/home_page.dart';
 import 'package:fyp_project/homeDirectory/photosPage/photos_page.dart';
 import 'package:fyp_project/homeDirectory/profilePage/profile_page.dart';
+import 'package:fyp_project/users/current_user.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:provider/provider.dart';
 
 class GoogleNavigationBar extends StatefulWidget {
   const GoogleNavigationBar({Key? key}) : super(key: key);
@@ -20,7 +22,7 @@ class _GoogleNavigationBarState extends State<GoogleNavigationBar> {
     const HomePage(),
     const FavoritePage(),
     const PhotosPage(),
-    const ProfilePage(),
+    ProfilePage(),
   ];
 
   @override

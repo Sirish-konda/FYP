@@ -151,13 +151,19 @@ class _LoginState extends State<Login> {
             fontSize: 16,
           );
           User userInfo = User.fromJson(resBodyOfLogin["userData"]);
-          //save userInfo to local storage using Shared preferences
-          await RememberUsersPrefs.saveRememberUser(userInfo);
 
-          Future.delayed(const Duration(milliseconds: 2000), () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => GoogleNavigationBar()));
-          });
+          //save userInfo to local storage using Shared preferences
+          await RememberUsersPrefs.storeUserInfo(userInfo);
+
+          Future.delayed(
+            const Duration(milliseconds: 2000),
+            () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => GoogleNavigationBar()));
+            },
+          );
         } else {
           Fluttertoast.showToast(
               msg: "Incorrect email or password",

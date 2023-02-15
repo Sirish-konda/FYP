@@ -183,6 +183,7 @@ class _RegisterFirstState extends State<RegisterFirst> {
       nameController.text.trim(),
       emailController.text.trim(),
       passwordController.text,
+      " NO IMAGE",
     );
 
     try {
@@ -209,6 +210,7 @@ class _RegisterFirstState extends State<RegisterFirst> {
         }
       }
     } catch (e) {
+      print(e);
       Fluttertoast.showToast(msg: e.toString());
     }
   }

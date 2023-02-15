@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fyp_project/homeDirectory/favoritePage/hikingFavorite/show_favorite_container_hiking.dart';
+import 'package:fyp_project/models/hiking_model.dart';
 import 'package:card_swiper/card_swiper.dart';
-import '../../constants/constant_colors.dart';
-import '../../models/hiking_model.dart';
-import 'hikingFavorite/show_favorite_container_hiking.dart';
+import '../../../constants/constant_colors.dart';
 
 class WhenNotEmptyHiking extends StatelessWidget {
   final List<HikingModel> favorites;

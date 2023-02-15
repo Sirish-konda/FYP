@@ -1,14 +1,16 @@
 class User {
-  int user_id;
-  String user_name;
-  String user_email;
-  String user_password;
+  int userId;
+  String userName;
+  String userEmail;
+  String userPassword;
+  String? userProfile;
 
   User(
-    this.user_id,
-    this.user_name,
-    this.user_email,
-    this.user_password,
+    this.userId,
+    this.userName,
+    this.userEmail,
+    this.userPassword,
+    this.userProfile,
   );
 
   factory User.fromJson(Map<String, dynamic> json) {
@@ -17,13 +19,34 @@ class User {
       (json['user_name']),
       (json['user_email']),
       (json['user_password']),
+      (json['user_profile']),
     );
   }
 
   Map<String, dynamic> toJson() => {
-        'user_id': user_id.toString(),
-        'user_name': user_name,
-        'user_email': user_email,
-        'user_password': user_password,
+        'user_id': userId.toString(),
+        'user_name': userName,
+        'user_email': userEmail,
+        'user_password': userPassword,
+        'user_profile': userProfile,
+      };
+}
+
+class UserPhoto {
+  String userEmail;
+  String userProfile;
+
+  UserPhoto({required this.userEmail, required this.userProfile});
+
+  factory UserPhoto.fromJson(Map<String, dynamic> json) {
+    return UserPhoto(
+      userEmail: json['user_email'],
+      userProfile: 'user_profile',
+    );
+  }
+
+  Map<String, dynamic> toJson() => {
+        'user_email': userEmail,
+        'user_profile': userProfile,
       };
 }

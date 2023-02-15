@@ -2,24 +2,25 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/constants/constant_colors.dart';
-import 'package:fyp_project/homeDirectory/homePage/screens/destinationDesc/components/feedbackScreen/feedback_bottomsheet.dart';
-import 'package:fyp_project/homeDirectory/homePage/screens/destinationDesc/components/mapsScreen/maps_screen.dart';
 import 'package:fyp_project/models/trekking_model.dart';
 import 'package:fyp_project/providers/trekkingPhotoProvider.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'destinationDesc/components/desc_button.dart';
+import '../screens/components/desc_button.dart';
+import '../screens/components/feedbackScreen/feedback_bottomsheet.dart';
+import '../screens/components/mapsScreen/maps_screen.dart';
 
-class DestinationDesc extends StatefulWidget {
+class DestinationDescTrekking extends StatefulWidget {
   final TrekkingModel trekkingModel;
-  const DestinationDesc({Key? key, required this.trekkingModel})
+  const DestinationDescTrekking({Key? key, required this.trekkingModel})
       : super(key: key);
 
   @override
-  State<DestinationDesc> createState() => _DestinationDescState();
+  State<DestinationDescTrekking> createState() =>
+      _DestinationDescTrekkingState();
 }
 
-class _DestinationDescState extends State<DestinationDesc> {
+class _DestinationDescTrekkingState extends State<DestinationDescTrekking> {
   showSnackBarAdded(BuildContext context) {
     final addedSnackBar = SnackBar(
       backgroundColor: ConstantColors.kLightGreen,

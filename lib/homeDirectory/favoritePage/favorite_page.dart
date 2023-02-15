@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/constants/constant_colors.dart';
 import 'package:fyp_project/homeDirectory/favoritePage/widgets/when_empty.dart';
-import 'package:fyp_project/homeDirectory/favoritePage/widgets/when_not_empty.dart';
+import 'package:fyp_project/homeDirectory/favoritePage/trekkingFavorite/when_not_empty_trekking.dart';
 import 'package:provider/provider.dart';
 import '../../providers/trekkingPhotoProvider.dart';
-import 'favorite_hike_screen.dart';
-import 'favorite_trek_screen.dart';
+import 'hikingFavorite/favorite_hike_screen.dart';
+import 'trekkingFavorite/favorite_trek_screen.dart';
 
 class FavoritePage extends StatefulWidget {
   const FavoritePage({Key? key}) : super(key: key);
@@ -26,6 +26,7 @@ class _FavoritePageState extends State<FavoritePage>
     return Scaffold(
       backgroundColor: ConstantColors.kLightGreen,
       appBar: AppBar(
+        centerTitle: true,
         automaticallyImplyLeading: false,
         elevation: 0,
         backgroundColor: Colors.transparent,
@@ -77,7 +78,6 @@ class _FavoritePageState extends State<FavoritePage>
     );
   }
 }
-
 
 //second
 
@@ -161,5 +161,3 @@ class _FavoritePageState extends State<FavoritePage>
 //     );
 
 //first
-
-

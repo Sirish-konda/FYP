@@ -2,13 +2,13 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/constants/constant_colors.dart';
-import 'package:fyp_project/homeDirectory/homePage/screens/destinationDesc/components/desc_button.dart';
-import 'package:fyp_project/homeDirectory/homePage/screens/destinationDesc/components/feedbackScreen/feedback_bottomsheet.dart';
-import 'package:fyp_project/homeDirectory/homePage/screens/destinationDesc/components/mapsScreen/maps_screen.dart';
-import 'package:fyp_project/models/hikking_model.dart';
+import 'package:fyp_project/models/hiking_model.dart';
 import 'package:fyp_project/providers/hikingPhotoProvider.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import '../screens/components/desc_button.dart';
+import '../screens/components/feedbackScreen/feedback_bottomsheet.dart';
+import '../screens/components/mapsScreen/maps_screen.dart';
 
 class DestinationDescHiking extends StatefulWidget {
   final HikingModel hikingModel;

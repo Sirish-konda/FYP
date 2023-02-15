@@ -462,10 +462,6 @@ The Ghandruk Poonhill trek provides breathtaking views of the Himalayas. This is
               "assets/images/trekkingDestination/descImages/ghandruk2.PNG"),
           TrekkingImgModel(
               "assets/images/trekkingDestination/descImages/ghandruk3.PNG"),
-          TrekkingImgModel(
-              "assets/images/trekkingDestination/descImages/ghandruk4.PNG"),
-          TrekkingImgModel(
-              "assets/images/trekkingDestination/descImages/ghandruk5.PNG"),
         ],
         id: 11,
         title: "Ghandruk Poonhill",

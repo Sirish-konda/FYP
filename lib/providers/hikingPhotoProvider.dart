@@ -1,8 +1,6 @@
 import 'dart:collection';
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:fyp_project/models/hikking_model.dart';
+import 'package:fyp_project/models/hiking_model.dart';
 
 class HikingPhotoProvider extends ChangeNotifier {
   final List<HikingModel> _hikingDesc = [

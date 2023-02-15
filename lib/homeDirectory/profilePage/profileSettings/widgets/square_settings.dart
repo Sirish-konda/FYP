@@ -25,7 +25,7 @@ class SquareSettings extends StatelessWidget {
         style: ButtonStyle(
           elevation: const MaterialStatePropertyAll<double>(10),
           backgroundColor: MaterialStateProperty.all<Color>(
-              ConstantColors.kDarkGreen.withOpacity(0.7)),
+              ConstantColors.kDarkGreen.withOpacity(0.4)),
           foregroundColor: MaterialStateProperty.all(Colors.white),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(

@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/loginAndRegistration/login.dart';
 import 'package:fyp_project/providers/hikingPhotoProvider.dart';
 import 'package:fyp_project/providers/trekkingPhotoProvider.dart';
+import 'package:fyp_project/users/current_user.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
@@ -22,6 +23,7 @@ class TravelApp extends StatelessWidget {
             create: (BuildContext context) => TrekkingPhotoProvider()),
         ChangeNotifierProvider(
             create: (BuildContext context) => HikingPhotoProvider()),
+        ChangeNotifierProvider(create: (BuildContext context) => CurrentUser())
       ],
       child: ScreenUtilInit(
         designSize: const Size(360, 690),
@@ -37,18 +39,3 @@ class TravelApp extends StatelessWidget {
     );
   }
 }
-
-// ChangeNotifierProvider(
-//       create: (BuildContext context) => TrekkingPhotoProvider(),
-//       child: ScreenUtilInit(
-//         designSize: const Size(360, 690),
-//         minTextAdapt: true,
-//         splitScreenMode: true,
-//         builder: (context, child) {
-//           return const MaterialApp(
-//             debugShowCheckedModeBanner: false,
-//             home: Login(),
-//           );
-//         },
-//       ),
-//     );

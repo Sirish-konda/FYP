@@ -2,10 +2,10 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/constants/constant_colors.dart';
-import 'package:fyp_project/homeDirectory/homePage/components/bodyComponents/popular_title.dart';
 import 'package:fyp_project/providers/trekkingPhotoProvider.dart';
 import 'package:provider/provider.dart';
-import 'image_description.dart';
+import '../screens/widgets/popular_title.dart';
+import 'trekking_image_description.dart';
 
 class TrekkingSliderImages extends StatefulWidget {
   const TrekkingSliderImages({
@@ -56,7 +56,7 @@ class _TrekkingSliderImagesState extends State<TrekkingSliderImages> {
               viewportFraction: 0.75,
             ),
             itemBuilder: (context, index, realIndex) {
-              return ImageDescription(
+              return TrekkkingImageDescription(
                 trekking: Provider.of<TrekkingPhotoProvider>(context)
                     .trekkingDesc[index],
               );
