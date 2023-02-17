@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/user.dart';
 
@@ -14,9 +15,10 @@ class RememberUsersPrefs {
     User? currentUserInfo;
     SharedPreferences preferences = await SharedPreferences.getInstance();
     String? userInfo = preferences.getString("currentUser");
-
+    log(userInfo.toString());
     if (userInfo != null) {
       Map<String, dynamic> userDataMap = jsonDecode(userInfo);
+
       currentUserInfo = User.fromJson(userDataMap);
     }
     return currentUserInfo;

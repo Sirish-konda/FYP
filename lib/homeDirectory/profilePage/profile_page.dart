@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,7 +6,7 @@ import 'package:fyp_project/constants/constant_colors.dart';
 import 'package:fyp_project/homeDirectory/profilePage/profileSettings/about_app.dart';
 import 'package:fyp_project/homeDirectory/profilePage/profileSettings/change_email.dart';
 import 'package:fyp_project/homeDirectory/profilePage/profileSettings/change_password.dart';
-import 'package:fyp_project/homeDirectory/profilePage/profileSettings/widgets/ProfileListTile.dart';
+import 'package:fyp_project/homeDirectory/profilePage/profileSettings/widgets/profile_list_tile.dart';
 import 'package:fyp_project/homeDirectory/profilePage/profileSettings/widgets/custom_dialog.dart';
 import 'package:fyp_project/homeDirectory/profilePage/profileSettings/widgets/square_settings.dart';
 import 'package:fyp_project/users/current_user.dart';
@@ -63,10 +62,16 @@ class _ProfilePageState extends State<ProfilePage> {
                             height: 150.h,
                             fit: BoxFit.cover,
                           )
-                        : Image.asset(
-                            'assets/images/profile.png',
-                            fit: BoxFit.cover,
-                          ),
+                        : Provider.of<CurrentUser>(context).user.userProfile !=
+                                ""
+                            ? Image.network(
+                                "${API.hostConnect}/profilePicture/${Provider.of<CurrentUser>(context).user.userProfile!}",
+                                fit: BoxFit.cover,
+                              )
+                            : Image.asset(
+                                'assets/images/profile.png',
+                                fit: BoxFit.cover,
+                              ),
                   ),
                 ),
                 TextButton(
@@ -103,19 +108,7 @@ class _ProfilePageState extends State<ProfilePage> {
             Container(
               width: MediaQuery.of(context).size.width.w,
               alignment: Alignment.topCenter,
-              child:
-                  //  Provider.of<CurrentUser>(context).user.userName.isEmpty
-                  //     ? Text(
-                  //         "User Name",
-                  //         style: TextStyle(
-                  //             fontSize: 30.sp,
-                  //             color: Colors.white,
-                  //             overflow: TextOverflow.ellipsis),
-                  //         maxLines: 1,
-                  //         softWrap: false,
-                  //       )
-                  //     :
-                  Text(
+              child: Text(
                 Provider.of<CurrentUser>(context).user.userName.toUpperCase(),
                 style: TextStyle(
                     fontSize: 30.sp,
@@ -129,16 +122,20 @@ class _ProfilePageState extends State<ProfilePage> {
             ProfileListTile(
               leadingIcon: Icons.email_outlined,
               buttonPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ChangeEmail()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ChangeEmail()));
               },
               title: "Change Your Email",
             ),
             ProfileListTile(
               leadingIcon: Icons.password_outlined,
               buttonPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ChangePassword()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ChangePassword()));
               },
               title: "Change Your Password",
             ),
@@ -153,7 +150,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => AboutApp(),
+                          builder: (context) => const AboutApp(),
                         ),
                       );
                     },
@@ -267,31 +264,36 @@ class _ProfilePageState extends State<ProfilePage> {
         pickedFile = File(pickedImage!.path);
       },
     );
+    uploadImage(
+      userEmail:
+          Provider.of<CurrentUser>(context, listen: false).user.userEmail,
+      image: pickedFile,
+    );
+    print(pickedFile);
+
     Navigator.pop(context);
   }
 }
 
 Future uploadImage({
   required String userEmail,
-  required String image,
+  required File? image,
 }) async {
   try {
-    final response = await http.post(
-      Uri.parse(API.updateProfile),
-      body: {
-        'user_email': userEmail,
-        'user_profile': image,
-      },
-    );
+    var uri = Uri.parse(API.updateProfile);
+    var request = http.MultipartRequest('POST', uri);
+    request.fields['user_email'] = userEmail;
+    var pic = await http.MultipartFile.fromPath("image", image!.path);
+    request.files.add(pic);
+
+    var response = await request.send();
 
     if (response.statusCode == 200) {
-      final result = jsonDecode(response.body);
-      return result;
+      print("working");
     } else {
-      print('error1');
-      return "Error";
+      print('not');
     }
   } catch (e) {
-    return 'Error';
+    return e;
   }
 }

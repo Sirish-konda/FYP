@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/constants/constant_colors.dart';
-import 'package:fyp_project/homeDirectory/favoritePage/widgets/when_empty.dart';
-import 'package:fyp_project/homeDirectory/favoritePage/trekkingFavorite/when_not_empty_trekking.dart';
-import 'package:provider/provider.dart';
-import '../../providers/trekkingPhotoProvider.dart';
 import 'hikingFavorite/favorite_hike_screen.dart';
 import 'trekkingFavorite/favorite_trek_screen.dart';
 
@@ -22,7 +18,7 @@ class _FavoritePageState extends State<FavoritePage>
 
   @override
   Widget build(BuildContext context) {
-    TabController _tabController = TabController(length: 2, vsync: this);
+    TabController tabController = TabController(length: 2, vsync: this);
     return Scaffold(
       backgroundColor: ConstantColors.kLightGreen,
       appBar: AppBar(
@@ -46,7 +42,7 @@ class _FavoritePageState extends State<FavoritePage>
                 Padding(
                   padding: EdgeInsets.all(5.h),
                   child: TabBar(
-                    controller: _tabController,
+                    controller: tabController,
                     indicatorColor: kDefaultIconDarkColor,
                     labelStyle: TextStyle(fontSize: 20.sp),
                     indicator: BoxDecoration(
@@ -66,7 +62,7 @@ class _FavoritePageState extends State<FavoritePage>
           Expanded(
             child: TabBarView(
               physics: const NeverScrollableScrollPhysics(),
-              controller: _tabController,
+              controller: tabController,
               children: const [
                 FavoriteHikeScreen(),
                 FavoriteTrekScreen(),

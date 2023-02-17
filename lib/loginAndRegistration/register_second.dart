@@ -91,7 +91,7 @@ class _RegisterSecondState extends State<RegisterSecond> {
                       buttonText: 'Sign In',
                       onPressed: () {
                         Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Login()));
+                            MaterialPageRoute(builder: (context) => const Login()));
                       },
                     )
                   ],

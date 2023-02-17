@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/constants/constant_colors.dart';
-import 'package:fyp_project/providers/trekkingPhotoProvider.dart';
+import 'package:fyp_project/providers/trekking_photo_provider.dart';
 import 'package:provider/provider.dart';
 import '../screens/widgets/popular_title.dart';
 import 'trekking_image_description.dart';

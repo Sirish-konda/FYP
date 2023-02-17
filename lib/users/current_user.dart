@@ -16,5 +16,8 @@ class CurrentUser extends ChangeNotifier {
   getUserInfo() async {
     User? getUserInfoFromLocalStorage = await RememberUsersPrefs.readUserInfo();
     _currentUser = getUserInfoFromLocalStorage!;
+    notifyListeners();
   }
+
+  
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:provider/provider.dart';
+import '../../../../apiConnection/api_connection.dart';
 import '../../../../constants/constant_colors.dart';
 import '../../../../users/current_user.dart';
 
@@ -43,11 +45,23 @@ class HomeHeader extends StatelessWidget {
                     ),
                   ],
                 ),
-                CircleAvatar(
-                  radius: 30.h,
-                  child: GestureDetector(
-                    child: Image.asset(
-                      "assets/images/profile.png",
+                SizedBox(
+                  height: 60.h,
+                  width: 60.w,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(100.r),
+                    child: GestureDetector(
+                      child:
+                          Provider.of<CurrentUser>(context).user.userProfile !=
+                                  ""
+                              ? Image.network(
+                                  "${API.hostConnect}/profilePicture/${Provider.of<CurrentUser>(context).user.userProfile!}",
+                                  fit: BoxFit.cover,
+                                )
+                              : Image.asset(
+                                  'assets/images/profile.png',
+                                  fit: BoxFit.cover,
+                                ),
                     ),
                   ),
                 ),

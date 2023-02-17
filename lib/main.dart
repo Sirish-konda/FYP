@@ -1,9 +1,8 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/loginAndRegistration/login.dart';
-import 'package:fyp_project/providers/hikingPhotoProvider.dart';
-import 'package:fyp_project/providers/trekkingPhotoProvider.dart';
+import 'package:fyp_project/providers/hiking_photo_provider.dart';
+import 'package:fyp_project/providers/trekking_photo_provider.dart';
 import 'package:fyp_project/users/current_user.dart';
 import 'package:provider/provider.dart';
 
@@ -20,10 +19,14 @@ class TravelApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-            create: (BuildContext context) => TrekkingPhotoProvider()),
+          create: (BuildContext context) => TrekkingPhotoProvider(),
+        ),
         ChangeNotifierProvider(
-            create: (BuildContext context) => HikingPhotoProvider()),
-        ChangeNotifierProvider(create: (BuildContext context) => CurrentUser())
+          create: (BuildContext context) => HikingPhotoProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (BuildContext context) => CurrentUser(),
+        ),
       ],
       child: ScreenUtilInit(
         designSize: const Size(360, 690),

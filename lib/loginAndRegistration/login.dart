@@ -10,8 +10,10 @@ import 'package:fyp_project/loginAndRegistration/widgets/lower_part.dart';
 import 'package:fyp_project/loginAndRegistration/widgets/upper_part.dart';
 import 'package:fyp_project/loginAndRegistration/widgets/upper_text.dart';
 import 'package:fyp_project/navigation_bar.dart';
+import 'package:fyp_project/users/current_user.dart';
 import 'package:fyp_project/users/user_preferences.dart';
 import 'package:http/http.dart' as http;
+import 'package:provider/provider.dart';
 import '../models/user.dart';
 
 class Login extends StatefulWidget {
@@ -30,7 +32,6 @@ class _LoginState extends State<Login> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     emailController.dispose();
     passwordController.dispose();
     super.dispose();
@@ -152,8 +153,10 @@ class _LoginState extends State<Login> {
           );
           User userInfo = User.fromJson(resBodyOfLogin["userData"]);
 
+          context.read<CurrentUser>().setUser(userInfo);
+
           //save userInfo to local storage using Shared preferences
-          await RememberUsersPrefs.storeUserInfo(userInfo);
+          // await RememberUsersPrefs.storeUserInfo(userInfo);
 
           Future.delayed(
             const Duration(milliseconds: 2000),
@@ -161,7 +164,7 @@ class _LoginState extends State<Login> {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => GoogleNavigationBar()));
+                      builder: (context) => const GoogleNavigationBar()));
             },
           );
         } else {
@@ -172,7 +175,7 @@ class _LoginState extends State<Login> {
         }
       }
     } catch (e) {
-      print(e);
+      return e;
     }
   }
 }

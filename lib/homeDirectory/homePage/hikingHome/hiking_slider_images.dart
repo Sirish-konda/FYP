@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/constants/constant_colors.dart';
 import 'package:provider/provider.dart';
-import '../../../providers/hikingPhotoProvider.dart';
+import '../../../providers/hiking_photo_provider.dart';
 import '../screens/widgets/popular_title.dart';
 import 'hiking_image_description.dart';
 

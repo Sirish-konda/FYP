@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/constants/constant_colors.dart';
 import 'package:fyp_project/models/trekking_model.dart';
-import 'package:fyp_project/providers/trekkingPhotoProvider.dart';
+import 'package:fyp_project/providers/trekking_photo_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../screens/components/desc_button.dart';

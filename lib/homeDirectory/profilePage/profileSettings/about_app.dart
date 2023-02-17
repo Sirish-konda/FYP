@@ -49,7 +49,7 @@ class _AboutAppState extends State<AboutApp> {
               onTap: _flip,
               child: TweenAnimationBuilder(
                 tween: Tween<double>(begin: 0, end: angle),
-                duration: Duration(seconds: 1),
+                duration: const Duration(seconds: 1),
                 builder: (BuildContext context, double val, __) {
                   if (val >= (pi / 2)) {
                     isBack = false;
@@ -76,7 +76,8 @@ class _AboutAppState extends State<AboutApp> {
                                   Image(
                                     height: 200.h,
                                     fit: BoxFit.fitHeight,
-                                    image: AssetImage("assets/images/logo.png"),
+                                    image: const AssetImage(
+                                        "assets/images/logo.png"),
                                   ),
                                   SizedBox(height: 40.h),
                                   Text(

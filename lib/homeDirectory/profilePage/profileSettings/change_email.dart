@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fyp_project/homeDirectory/profilePage/profileSettings/widgets/change_text_field.dart';
 import 'package:fyp_project/homeDirectory/profilePage/profileSettings/widgets/profile_settings.dart';
-import 'package:fyp_project/homeDirectory/profilePage/profile_page.dart';
 
 import '../../../constants/constant_colors.dart';
 
@@ -47,13 +46,13 @@ class ChangeEmail extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                     color: Colors.white),
               ),
-              ChangeTextField(
+              const ChangeTextField(
                 title: 'Old e-mail address',
               ),
-              ChangeTextField(
+              const ChangeTextField(
                 title: 'New e-mail address',
               ),
-              ChangeTextField(
+              const ChangeTextField(
                 title: 'Confirm',
               ),
               ProfileSettings(

@@ -45,13 +45,13 @@ class ChangePassword extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                     color: Colors.white),
               ),
-              ChangeTextField(
+              const ChangeTextField(
                 title: 'Old Password',
               ),
-              ChangeTextField(
+              const ChangeTextField(
                 title: 'New Password',
               ),
-              ChangeTextField(
+              const ChangeTextField(
                 title: 'Confirm',
               ),
               ProfileSettings(
