@@ -13,11 +13,24 @@ class CurrentUser extends ChangeNotifier {
     notifyListeners();
   }
 
+  updateUserProfile(String profileUrl) {
+    _currentUser.userProfile = profileUrl;
+    notifyListeners();
+  }
+
+  updateUserEmail(String newEmail) {
+    _currentUser.userEmail = newEmail;
+    notifyListeners();
+  }
+
+  updateUserPassword(String newPassword) {
+    _currentUser.userEmail = newPassword;
+    notifyListeners();
+  }
+
   getUserInfo() async {
     User? getUserInfoFromLocalStorage = await RememberUsersPrefs.readUserInfo();
     _currentUser = getUserInfoFromLocalStorage!;
     notifyListeners();
   }
-
-  
 }

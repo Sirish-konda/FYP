@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -62,7 +63,9 @@ class _ProfilePageState extends State<ProfilePage> {
                             height: 150.h,
                             fit: BoxFit.cover,
                           )
-                        : Provider.of<CurrentUser>(context).user.userProfile !=
+                        : Provider.of<CurrentUser>(context, listen: true)
+                                    .user
+                                    .userProfile !=
                                 ""
                             ? Image.network(
                                 "${API.hostConnect}/profilePicture/${Provider.of<CurrentUser>(context).user.userProfile!}",
@@ -123,9 +126,11 @@ class _ProfilePageState extends State<ProfilePage> {
               leadingIcon: Icons.email_outlined,
               buttonPressed: () {
                 Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const ChangeEmail()));
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ChangeEmail(),
+                  ),
+                );
               },
               title: "Change Your Email",
             ),
@@ -133,9 +138,11 @@ class _ProfilePageState extends State<ProfilePage> {
               leadingIcon: Icons.password_outlined,
               buttonPressed: () {
                 Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const ChangePassword()));
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ChangePassword(),
+                  ),
+                );
               },
               title: "Change Your Password",
             ),
@@ -269,31 +276,33 @@ class _ProfilePageState extends State<ProfilePage> {
           Provider.of<CurrentUser>(context, listen: false).user.userEmail,
       image: pickedFile,
     );
-    print(pickedFile);
 
     Navigator.pop(context);
   }
-}
 
-Future uploadImage({
-  required String userEmail,
-  required File? image,
-}) async {
-  try {
-    var uri = Uri.parse(API.updateProfile);
-    var request = http.MultipartRequest('POST', uri);
-    request.fields['user_email'] = userEmail;
-    var pic = await http.MultipartFile.fromPath("image", image!.path);
-    request.files.add(pic);
+  Future uploadImage({
+    required String userEmail,
+    required File? image,
+  }) async {
+    try {
+      var uri = Uri.parse(API.updateProfile);
+      var request = http.MultipartRequest('POST', uri);
+      request.fields['user_email'] = userEmail;
+      var pic = await http.MultipartFile.fromPath("image", image!.path);
+      request.files.add(pic);
 
-    var response = await request.send();
+      var response = await request.send();
 
-    if (response.statusCode == 200) {
-      print("working");
-    } else {
-      print('not');
+      if (response.statusCode == 200) {
+        final responseString = await response.stream.bytesToString();
+        final jsonResponse = jsonDecode(responseString);
+        Provider.of<CurrentUser>(context, listen: false)
+            .updateUserProfile(jsonResponse['imageURL']);
+      } else {
+        print('not working');
+      }
+    } catch (e) {
+      return e;
     }
-  } catch (e) {
-    return e;
   }
 }

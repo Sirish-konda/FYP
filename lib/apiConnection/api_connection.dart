@@ -23,6 +23,10 @@ class API {
   //update profile
 
   static const updateProfile = "$hostConnect/change_profile.php";
+
+  static const updateEmail = "$hostConnect/change/change_email.php";
+
+  static const updatePassword = "$hostConnect/change/change_password.php";
 }
 
 
