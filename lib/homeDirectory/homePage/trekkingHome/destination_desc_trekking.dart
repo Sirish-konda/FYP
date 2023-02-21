@@ -23,6 +23,7 @@ class DestinationDescTrekking extends StatefulWidget {
 class _DestinationDescTrekkingState extends State<DestinationDescTrekking> {
   showSnackBarAdded(BuildContext context) {
     final addedSnackBar = SnackBar(
+      behavior: SnackBarBehavior.floating,
       backgroundColor: ConstantColors.kLightGreen,
       content: Center(
         child: Text(
@@ -37,6 +38,7 @@ class _DestinationDescTrekkingState extends State<DestinationDescTrekking> {
 
   showSnackBarRemoved(BuildContext context) {
     final removedSnackBar = SnackBar(
+      behavior: SnackBarBehavior.floating,
       content: Center(
         child: Text(
           "Removed from favorite",
@@ -188,9 +190,11 @@ class _DestinationDescTrekkingState extends State<DestinationDescTrekking> {
                     widget.trekkingModel.intro,
                     style: TextStyle(
                       fontSize: 16.sp,
+                      fontWeight: FontWeight.w500,
                     ),
                     textAlign: TextAlign.justify,
                   ),
+                  SizedBox(height: 5.h),
                   Text(
                     'How to reach?',
                     style:

@@ -7,15 +7,22 @@ class HikingPhotoProvider extends ChangeNotifier {
     HikingModel(
         id: 1,
         desc: '''
-Starting point: Swayambhu
-Ending point: Seto Gumba
-Distance: 15 kilometres
-Duration: Minimum 3.5 hours
-Altitude: 1500m/4920 ft
-Highlights:- Stupa and murals
-- Sunset and sunrise view
-- A panoramic vista of Kathmandu valley
-- Clay statues
+
+\u27A4 Starting point: Swayambhu
+
+\u27A4 Ending point: Seto Gumba
+
+\u27A4 Distance: 15 kilometres
+
+\u27A4 Duration: Minimum 3.5 hours
+
+\u27A4 Altitude: 1500m/4920 ft
+
+\u27A4 Highlights:- Stupa and murals
+        - Sunset and sunrise view
+        - A panoramic vista of Kathmandu valley
+        - Clay statues
+
 ''',
         imagePath: "assets/images/hikingDestination/Amitabha MAIN.PNG",
         images: [
@@ -35,16 +42,17 @@ Highlights:- Stupa and murals
     HikingModel(
       id: 2,
       desc: '''
-Starting point: Kathmandu
-Ending point: Kakani
-Distance: 25 kilometres
-Duration: Minimum 5 hours
-Altitude: 2000 m/6560 ft
-Highlights:
-- A trek through sub-alpine forests
-- Astounding views of Kathmandu valley
-- Forests full of oak, pine and rhododendron trees
-- Views of Langtang Mountain Range, Shisha Pangma Range, Annapurna Range, Mt Manaslu
+
+\u27A4 Starting point: Kathmandu
+\u27A4 Ending point: Kakani
+\u27A4 Distance: 25 kilometres
+\u27A4 Duration: Minimum 5 hours
+\u27A4 Altitude: 2000 m/6560 ft
+\u27A4 Highlights:
+      \u2713 A trek through sub-alpine forests
+      \u2713 Astounding views of Kathmandu valley
+      \u2713 Forests full of oak, pine and rhododendron trees
+      \u2713 Views of Langtang Mountain Range, Shisha Pangma Range, Annapurna Range, Mt Manaslu
 
 ''',
       imagePath: "assets/images/hikingDestination/kakani MAIN.PNG",
@@ -66,16 +74,17 @@ Highlights:
     HikingModel(
       id: 3,
       desc: '''
-Starting point: Kathmandu
-Ending point: Godawari
-Distance: 19 kilometres
-Duration: Minimum 3.5 hours
-Altitude: 2782 m/9130 ft
-Highlights:
-- Outstanding views of Kathmandu valley
-- Vista of Annapurna and Gaurishankar mountains, Mt Everest, Mt Manaslu
-- Botanical garden
-- Diverse flora and fauna, especially birds, orchids, butterflies and rhododendrons
+
+\u27A4 Starting point: Kathmandu
+\u27A4 Ending point: Godawari
+\u27A4 Distance: 19 kilometres
+\u27A4 Duration: Minimum 3.5 hours
+\u27A4 Altitude: 2782 m/9130 ft
+\u27A4 Highlights:
+        - Outstanding views of Kathmandu valley
+        - Vista of Annapurna and Gaurishankar mountains, Mt Everest, Mt Manaslu
+        - Botanical garden
+        - Diverse flora and fauna, especially birds, orchids, butterflies and rhododendrons
 
 ''',
       imagePath: "assets/images/hikingDestination/pulchowki MAIN.PNG",
@@ -97,16 +106,17 @@ Highlights:
     HikingModel(
       id: 4,
       desc: '''
-Starting point: Sankhu
-Ending point: Nagarkot
-Distance: 28 kilometres
-Duration: Minimum 5 hours
-Altitude: 2175 m/7135 ft
-Highlights:
-- A taste of Newari culture at Sankhu
-- Sunrise and sunset points
-- Nagarkot Tower
-- View from Dhaulagiri to Kanchenjunga, Mt Everest, Mt Manaslu, Ganesh Himal, Langtang
+
+\u27A4 Starting point: Sankhu
+\u27A4 Ending point: Nagarkot
+\u27A4 Distance: 28 kilometres
+\u27A4 Duration: Minimum 5 hours
+\u27A4 Altitude: 2175 m/7135 ft
+\u27A4 Highlights:
+        - A taste of Newari culture at Sankhu
+        - Sunrise and sunset points
+        - Nagarkot Tower
+        - View from Dhaulagiri to Kanchenjunga, Mt Everest, Mt Manaslu, Ganesh Himal, Langtang
 
 ''',
       imagePath: "assets/images/hikingDestination/nagarkot MAIN.PNG",
@@ -128,17 +138,18 @@ Highlights:
     HikingModel(
       id: 5,
       desc: '''
-Starting point: Budhanilkantha
-Ending point: Sundarijal
-Distance: 22 kilometres
-Duration: Minimum 6 hours
-Altitude: 100 m/4930 ft
-Highlights:
--	Passing by lakes and waterholes
--	Shivapuri National Park
--	Chisapani settlement
--	Views of all major mountains
--	Waterfalls
+
+\u27A4 Starting point: Budhanilkantha
+\u27A4 Ending point: Sundarijal
+\u27A4 Distance: 22 kilometres
+\u27A4 Duration: Minimum 6 hours
+\u27A4 Altitude: 100 m/4930 ft
+\u27A4 Highlights:
+        -	Passing by lakes and waterholes
+        -	Shivapuri National Park
+        -	Chisapani settlement
+        -	Views of all major mountains
+        -	Waterfalls
 
 ''',
       imagePath: "assets/images/hikingDestination/sundarijal MAIN.PNG",
@@ -160,15 +171,16 @@ Highlights:
     HikingModel(
       id: 6,
       desc: '''
-Starting point: Kathmandu
-Ending point: Shivapuri
-Distance: 10 kilometres
-Duration: Minimum 5 hours
-Altitude: 2560 m/8400 ft
-Highlights:
-- Shivapuri National Park and conservation area
-- Budhanilkantha temple
-- Nagi Gompa
+
+\u27A4 Starting point: Kathmandu
+\u27A4 Ending point: Shivapuri
+\u27A4 Distance: 10 kilometres
+\u27A4 Duration: Minimum 5 hours
+\u27A4 Altitude: 2560 m/8400 ft
+\u27A4 Highlights:
+        - Shivapuri National Park and conservation area
+        - Budhanilkantha temple
+        - Nagi Gompa
 
 ''',
       imagePath: "assets/images/hikingDestination/shivapuri MAIN.PNG",
@@ -190,17 +202,17 @@ Highlights:
     HikingModel(
       id: 7,
       desc: '''
-Starting point: Kathmandu
-Ending point: Namobuddha
-Distance: 38 kilometres
-Duration: Minimum 6 hours
-Altitude: 1800 m/5900 ft
-Highlights:
-- River trail
-- The quaint town of Panauti
-- Suspension bridge
-- Buddhist Stupa and shrines
-- View of Mt Everest and Langtang Mountain Range
+\u27A4 Starting point: Kathmandu
+\u27A4 Ending point: Namobuddha
+\u27A4 Distance: 38 kilometres
+\u27A4 Duration: Minimum 6 hours
+\u27A4 Altitude: 1800 m/5900 ft
+\u27A4 Highlights:
+        - River trail
+        - The quaint town of Panauti
+        - Suspension bridge
+        - Buddhist Stupa and shrines
+        - View of Mt Everest and Langtang Mountain Range
 
 ''',
       imagePath: "assets/images/hikingDestination/namo buddha MAIN.PNG",
@@ -222,16 +234,17 @@ Highlights:
     HikingModel(
       id: 8,
       desc: '''
-Starting point: Kathmandu
-Ending point: Pharping
-Distance: 20 kilometres
-Duration: Minimum 4.5 hours
-Altitude: 2249 m/7380 ft
-Highlights:
-- Stupas and shrines
-- Monastery
-- Pine forests
-- Langtang and Annapurna range views
+
+\u27A4 Starting point: Kathmandu
+\u27A4 Ending point: Pharping
+\u27A4 Distance: 20 kilometres
+\u27A4 Duration: Minimum 4.5 hours
+\u27A4 Altitude: 2249 m/7380 ft
+\u27A4 Highlights:
+        - Stupas and shrines
+        - Monastery
+        - Pine forests
+        - Langtang and Annapurna range views
 
 ''',
       imagePath: "assets/images/hikingDestination/champadevi MAIN.PNG",
@@ -253,16 +266,17 @@ Highlights:
     HikingModel(
       id: 9,
       desc: '''
-Starting point: Sundarijal
-Ending point: Chisapani
-Distance: 13 kilometres
-Duration: Minimum 3 hours
-Altitude: 2215 m/7270 ft
-Highlights:
-- Chisapani village
-- Shivapuri National Park trek
-- Views of the sub-tropical forests
-- Views of Langtang, Ganesh Himal, Jugal Himal, Gaurishankar Himal ranges
+
+\u27A4 Starting point: Sundarijal
+\u27A4 Ending point: Chisapani
+\u27A4 Distance: 13 kilometres
+\u27A4 Duration: Minimum 3 hours
+\u27A4 Altitude: 2215 m/7270 ft
+\u27A4 Highlights:
+        - Chisapani village
+        - Shivapuri National Park trek
+        - Views of the sub-tropical forests
+        - Views of Langtang, Ganesh Himal, Jugal Himal, Gaurishankar Himal ranges
 
 ''',
       imagePath: "assets/images/hikingDestination/chisapani MAIN.PNG",
@@ -284,18 +298,19 @@ Highlights:
     HikingModel(
       id: 10,
       desc: '''
-Starting point: Kathmandu
-Ending point: Nagarjuna
-Distance: 20 kilometres
-Duration: Minimum 4 hours
-Altitude: 1950 m/6400 ft
-Highlights:
-- Padmasambhava monastery
-- Viewpoint
-- Balaju Water Garden
-- Nagarjuna's cave
-- Mahasiddha cave
-- Manjushree Cave
+
+\u27A4 Starting point: Kathmandu
+\u27A4 Ending point: Nagarjuna
+\u27A4 Distance: 20 kilometres
+\u27A4 Duration: Minimum 4 hours
+\u27A4 Altitude: 1950 m/6400 ft
+\u27A4 Highlights:
+        - Padmasambhava monastery
+        - Viewpoint
+        - Balaju Water Garden
+        - Nagarjuna's cave
+        - Mahasiddha cave
+        - Manjushree Cave
 
 ''',
       imagePath: "assets/images/hikingDestination/nagarjuna MAIN.PNG",
@@ -317,18 +332,19 @@ Highlights:
     HikingModel(
       id: 11,
       desc: '''
-Starting point: Kathmandu
-Ending point: Nagarjuna
-Distance: 20 kilometres
-Duration: Minimum 4 hours
-Altitude: 1950 m/6400 ft
-Highlights:
-- Padmasambhava monastery
-- Viewpoint
-- Balaju Water Garden
-- Nagarjuna's cave
-- Mahasiddha cave
-- Manjushree Cave
+
+\u27A4 Starting point: Kathmandu
+\u27A4 Ending point: Nagarjuna
+\u27A4 Distance: 20 kilometres
+\u27A4 Duration: Minimum 4 hours
+\u27A4 Altitude: 1950 m/6400 ft
+\u27A4 Highlights:
+        - Padmasambhava monastery
+        - Viewpoint
+        - Balaju Water Garden
+        - Nagarjuna's cave
+        - Mahasiddha cave
+        - Manjushree Cave
 
 ''',
       imagePath: "assets/images/hikingDestination/chandragiri MAIN.PNG",

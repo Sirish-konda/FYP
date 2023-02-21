@@ -163,7 +163,7 @@ class _LoginState extends State<Login> {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const GoogleNavigationBar()));
+                      builder: (context) =>  GoogleNavigationBar()));
             },
           );
         } else {
@@ -174,7 +174,10 @@ class _LoginState extends State<Login> {
         }
       }
     } catch (e) {
-      return e;
+      Fluttertoast.showToast(
+          msg: "There seems to be a problem with the internet.",
+          fontSize: 16,
+          backgroundColor: Colors.red);
     }
   }
 }

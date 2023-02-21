@@ -25,11 +25,19 @@ class _FavoritePageState extends State<FavoritePage>
         centerTitle: true,
         automaticallyImplyLeading: false,
         elevation: 0,
-        backgroundColor: Colors.transparent,
-        title: const Text("Favorite"),
+        backgroundColor: ConstantColors.kDarkGreen,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text("Favorite"),
+            SizedBox(width: 8.w),
+            const Icon(Icons.favorite_border)
+          ],
+        ),
       ),
       body: Column(
         children: [
+          SizedBox(height: 10.h),
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15.r),

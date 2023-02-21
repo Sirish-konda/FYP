@@ -34,9 +34,13 @@ class _ProfilePageState extends State<ProfilePage> {
         automaticallyImplyLeading: false,
         elevation: 10,
         backgroundColor: ConstantColors.kDarkGreen,
-        title: const Text(
-          "Profile",
-          style: TextStyle(fontWeight: FontWeight.w600, color: Colors.white),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text("Profile"),
+            SizedBox(width: 8.w),
+            const Icon(Icons.settings)
+          ],
         ),
       ),
       backgroundColor: ConstantColors.kLightGreen,
@@ -296,6 +300,7 @@ class _ProfilePageState extends State<ProfilePage> {
       if (response.statusCode == 200) {
         final responseString = await response.stream.bytesToString();
         final jsonResponse = jsonDecode(responseString);
+
         Provider.of<CurrentUser>(context, listen: false)
             .updateUserProfile(jsonResponse['imageURL']);
       } else {

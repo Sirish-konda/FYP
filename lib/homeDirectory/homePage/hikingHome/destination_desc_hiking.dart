@@ -20,6 +20,39 @@ class DestinationDescHiking extends StatefulWidget {
 }
 
 class _DestinationDescHikingState extends State<DestinationDescHiking> {
+  showSnackBarAdded(BuildContext context) {
+    final addedSnackBar = SnackBar(
+      behavior: SnackBarBehavior.floating,
+      backgroundColor: ConstantColors.kLightGreen,
+      content: Center(
+        child: Text(
+          'Added to favorite',
+          style: TextStyle(fontSize: 18.sp, color: ConstantColors.kNeutralSkin),
+        ),
+      ),
+      duration: const Duration(milliseconds: 800),
+    );
+    ScaffoldMessenger.of(context).showSnackBar(addedSnackBar);
+  }
+
+  showSnackBarRemoved(BuildContext context) {
+    final removedSnackBar = SnackBar(
+      behavior: SnackBarBehavior.floating,
+      content: Center(
+        child: Text(
+          "Removed from favorite",
+          style: TextStyle(
+            fontSize: 18.sp,
+            color: ConstantColors.kNeutralSkin,
+          ),
+        ),
+      ),
+      backgroundColor: ConstantColors.kLightGreen,
+      duration: const Duration(milliseconds: 800),
+    );
+    ScaffoldMessenger.of(context).showSnackBar(removedSnackBar);
+  }
+
   int indexActive = 0;
   @override
   Widget build(BuildContext context) {
@@ -58,10 +91,16 @@ class _DestinationDescHikingState extends State<DestinationDescHiking> {
             actions: [
               IconButton(
                 onPressed: () {
-                  setState(() {
-                    Provider.of<HikingPhotoProvider>(context, listen: false)
-                        .toggleFavorites(widget.hikingModel.id);
-                  });
+                  setState(
+                    () {
+                      Provider.of<HikingPhotoProvider>(context, listen: false)
+                          .toggleFavorites(widget.hikingModel.id);
+
+                      widget.hikingModel.isFavorited
+                          ? showSnackBarAdded(context)
+                          : showSnackBarRemoved(context);
+                    },
+                  );
                 },
                 icon: widget.hikingModel.isFavorited
                     ? const Icon(Icons.favorite, color: Colors.red)
@@ -150,9 +189,11 @@ class _DestinationDescHikingState extends State<DestinationDescHiking> {
                     widget.hikingModel.intro,
                     style: TextStyle(
                       fontSize: 16.sp,
+                      fontWeight: FontWeight.w500,
                     ),
                     textAlign: TextAlign.justify,
                   ),
+                  SizedBox(height: 5.h),
                   Text(
                     'How to reach?',
                     style:
@@ -168,9 +209,11 @@ class _DestinationDescHikingState extends State<DestinationDescHiking> {
                     title: 'Show in maps',
                     onPressed: () {
                       Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const MapsScreen()));
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const MapsScreen(),
+                        ),
+                      );
                     },
                   ),
                   DescButtons(

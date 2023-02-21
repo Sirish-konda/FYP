@@ -5,8 +5,10 @@ import 'package:fyp_project/homeDirectory/favoritePage/favorite_page.dart';
 import 'package:fyp_project/homeDirectory/homePage/home_page.dart';
 import 'package:fyp_project/homeDirectory/photosPage/photos_page.dart';
 import 'package:fyp_project/homeDirectory/profilePage/profile_page.dart';
+import 'package:fyp_project/providers/navigation_provider.dart';
 
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:provider/provider.dart';
 
 class GoogleNavigationBar extends StatefulWidget {
   const GoogleNavigationBar({Key? key}) : super(key: key);
@@ -16,7 +18,7 @@ class GoogleNavigationBar extends StatefulWidget {
 }
 
 class _GoogleNavigationBarState extends State<GoogleNavigationBar> {
-  int _selectedIndex = 0;
+  // int _selectedIndex = 0;
   static final List<Widget> _navScreen = <Widget>[
     const HomePage(),
     const FavoritePage(),
@@ -26,16 +28,15 @@ class _GoogleNavigationBarState extends State<GoogleNavigationBar> {
 
   @override
   Widget build(BuildContext context) {
+    final index = Provider.of<NavigationProvider>(context).selectedIndex;
     return Scaffold(
       body: Center(
-        child: _navScreen.elementAt(_selectedIndex),
+        child: _navScreen.elementAt(index),
       ),
       bottomNavigationBar: GNav(
-        selectedIndex: _selectedIndex,
+        selectedIndex: index,
         onTabChange: (index) {
-          setState(() {
-            _selectedIndex = index;
-          });
+          context.read<NavigationProvider>().selectedIndex = index;
         },
         tabBorderRadius: 20.r,
         backgroundColor: ConstantColors.kLightGreen,

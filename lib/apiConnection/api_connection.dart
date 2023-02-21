@@ -8,7 +8,7 @@ class API {
 
   // static const login = "$hostConnect/user/login.php";
 
-  static const hostConnect = "http://192.168.0.6/fyp_database";
+  static const hostConnect = "http://192.168.1.118/fyp_database";
   static const hostConnectUser = "$hostConnect/user";
 
   //signup User

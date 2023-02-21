@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/homeDirectory/profilePage/profile_page.dart';
+import 'package:fyp_project/navigation_bar.dart';
+import 'package:fyp_project/providers/navigation_provider.dart';
 
 import 'package:provider/provider.dart';
 import '../../../../apiConnection/api_connection.dart';
@@ -52,6 +54,9 @@ class HomeHeader extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(100.r),
                     child: GestureDetector(
+                      onTap: () {
+                        context.read<NavigationProvider>().selectedIndex = 3;
+                      },
                       child:
                           Provider.of<CurrentUser>(context).user.userProfile !=
                                   ""

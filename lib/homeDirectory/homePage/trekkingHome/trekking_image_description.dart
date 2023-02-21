@@ -16,10 +16,12 @@ class TrekkkingImageDescription extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) =>
-                    DestinationDescTrekking(trekkingModel: trekking)));
+          context,
+          MaterialPageRoute(
+            builder: (context) =>
+                DestinationDescTrekking(trekkingModel: trekking),
+          ),
+        );
       },
       child: Container(
         margin: EdgeInsets.all(20.h),
