@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fyp_project/homeDirectory/favoritePage/widgets/when_empty.dart';
 import 'package:fyp_project/homeDirectory/favoritePage/trekkingFavorite/when_not_empty_trekking.dart';
+import 'package:fyp_project/models/trekking_model.dart';
+import 'package:fyp_project/providers/trekking_favourite_provider.dart';
 import 'package:fyp_project/providers/trekking_photo_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -15,9 +17,17 @@ class _FavoriteTrekScreenState extends State<FavoriteTrekScreen> {
   @override
   Widget build(BuildContext context) {
     final trekkingProvider = Provider.of<TrekkingPhotoProvider>(context);
-    final favorites = trekkingProvider.trekkingDesc
-        .where((trekking) => trekking.isFavorited)
-        .toList();
+
+    List<TrekkingModel> favorites = [];
+
+    final favoriteTrekIds =
+        context.watch<TrekkingPhotoFavouriteProvider>().favourites;
+
+    for (int i = 0; i < favoriteTrekIds.length; i++) {
+      final favTrek = trekkingProvider.trekkingDesc
+          .firstWhere((element) => element.id == favoriteTrekIds[i]);
+      favorites.add(favTrek);
+    }
 
     return favorites.isEmpty
         ? const WhenEmpty()

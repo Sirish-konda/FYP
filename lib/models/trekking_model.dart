@@ -4,7 +4,7 @@ class TrekkingModel {
   final String title;
   final String intro;
   final String desc;
-  bool isFavorited;
+  // bool isFavorited;
   List<TrekkingImgModel> images;
 
   TrekkingModel({
@@ -13,7 +13,7 @@ class TrekkingModel {
     required this.title,
     required this.imagePath,
     required this.desc,
-    this.isFavorited = false,
+    // this.isFavorited = false,
     required this.images,
   });
 }

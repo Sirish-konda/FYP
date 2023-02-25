@@ -20,7 +20,7 @@ class UpperPart extends StatelessWidget {
               color: ConstantColors.kLightGreen,
             ),
             alignment: Alignment.center,
-            height: 400.h,
+            height: 350.h,
             width: 400.w,
             // color: const Color(0xFF656AEC),
           ),

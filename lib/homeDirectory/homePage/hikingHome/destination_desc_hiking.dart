@@ -204,6 +204,7 @@ class _DestinationDescHikingState extends State<DestinationDescHiking> {
                     style: TextStyle(
                       fontSize: 16.sp,
                     ),
+                    textAlign: TextAlign.justify,
                   ),
                   DescButtons(
                     title: 'Show in maps',

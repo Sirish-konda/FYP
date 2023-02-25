@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:fyp_project/apiConnection/api_connection.dart';
 import 'package:fyp_project/loginAndRegistration/register_first.dart';
+import 'package:fyp_project/loginAndRegistration/admin_login.dart';
 import 'package:fyp_project/loginAndRegistration/widgets/lower_button.dart';
 import 'package:fyp_project/loginAndRegistration/widgets/lower_part.dart';
 import 'package:fyp_project/loginAndRegistration/widgets/upper_part.dart';
@@ -114,6 +115,19 @@ class _LoginState extends State<Login> {
                             MaterialPageRoute(
                                 builder: (context) => const RegisterFirst()));
                       },
+                    ),
+                    const Text('or'),
+                    LowerPart(
+                      title: "If you are an admin!",
+                      buttonText: 'Click Me',
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AdminLogin(),
+                          ),
+                        );
+                      },
                     )
                   ],
                 ),
@@ -163,7 +177,7 @@ class _LoginState extends State<Login> {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) =>  GoogleNavigationBar()));
+                      builder: (context) => GoogleNavigationBar()));
             },
           );
         } else {

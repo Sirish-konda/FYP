@@ -1,9 +1,12 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:fyp_project/constants/constant_colors.dart';
 import 'package:fyp_project/models/trekking_model.dart';
-import 'package:fyp_project/providers/trekking_photo_provider.dart';
+import 'package:fyp_project/providers/trekking_favourite_provider.dart';
+
+import 'package:fyp_project/users/current_user.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../screens/components/desc_button.dart';
@@ -92,20 +95,32 @@ class _DestinationDescTrekkingState extends State<DestinationDescTrekking> {
             actions: [
               IconButton(
                 onPressed: () {
-                  setState(
-                    () {
-                      Provider.of<TrekkingPhotoProvider>(context, listen: false)
-                          .toggleFavorites(widget.trekkingModel.id);
-
-                      widget.trekkingModel.isFavorited
-                          ? showSnackBarAdded(context)
-                          : showSnackBarRemoved(context);
-                    },
+                  Provider.of<TrekkingPhotoFavouriteProvider>(context,
+                              listen: false)
+                          .favourites
+                          .contains(widget.trekkingModel.id)
+                      ? showSnackBarRemoved(context)
+                      : showSnackBarAdded(context);
+                  final user =
+                      Provider.of<CurrentUser>(context, listen: false).user;
+                  Provider.of<TrekkingPhotoFavouriteProvider>(context,
+                          listen: false)
+                      .toggleFavorites(
+                    widget.trekkingModel.id,
+                    widget.trekkingModel.title,
+                    user.userId,
                   );
                 },
-                icon: widget.trekkingModel.isFavorited
-                    ? const Icon(Icons.favorite, color: Colors.red)
-                    : const Icon(Icons.favorite_border),
+                icon: Consumer<TrekkingPhotoFavouriteProvider>(
+                  builder: (context, value, child) {
+                    final isFavourite =
+                        value.favourites.contains(widget.trekkingModel.id);
+
+                    return isFavourite
+                        ? const Icon(Icons.favorite, color: Colors.red)
+                        : const Icon(Icons.favorite_border);
+                  },
+                ),
               ),
             ],
           ),
@@ -205,6 +220,7 @@ class _DestinationDescTrekkingState extends State<DestinationDescTrekking> {
                     style: TextStyle(
                       fontSize: 16.sp,
                     ),
+                    textAlign: TextAlign.justify,
                   ),
                   DescButtons(
                     title: 'Show in maps',
