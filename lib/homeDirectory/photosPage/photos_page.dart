@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/constants/constant_colors.dart';
 import 'package:fyp_project/homeDirectory/photosPage/screens/add_photos.dart';
 import 'package:fyp_project/homeDirectory/photosPage/screens/shared_photos.dart';
+import 'package:fyp_project/users/current_user.dart';
+import 'package:provider/provider.dart';
 
 class PhotosPage extends StatelessWidget {
   const PhotosPage({Key? key}) : super(key: key);
@@ -30,6 +32,8 @@ class PhotosPage extends StatelessWidget {
             title: "       Add Your \n         Photos",
             icon: Icons.add_photo_alternate_outlined,
             onPressed: () {
+              print(
+                  Provider.of<CurrentUser>(context, listen: false).user.userId);
               Navigator.push(
                 context,
                 MaterialPageRoute(

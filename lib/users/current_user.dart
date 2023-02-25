@@ -28,9 +28,11 @@ class CurrentUser extends ChangeNotifier {
     notifyListeners();
   }
 
-  getUserInfo() async {
-    User? getUserInfoFromLocalStorage = await RememberUsersPrefs.readUserInfo();
-    _currentUser = getUserInfoFromLocalStorage!;
-    notifyListeners();
-  }
+  // getUserInfo() async {
+  //   User? getUserInfoFromLocalStorage = await RememberUsersPrefs.readUserInfo();
+  //   _currentUser = getUserInfoFromLocalStorage!;
+  //   notifyListeners();
+  // }
 }
+
+//esma user_preferences ma ani login ma comment xa..

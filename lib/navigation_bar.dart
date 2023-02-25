@@ -35,6 +35,7 @@ class _GoogleNavigationBarState extends State<GoogleNavigationBar> {
     final userId = context.read<CurrentUser>().user.userId;
     context.read<TrekkingPhotoFavoriteProvider>().getFavoriteTrek(userId);
     context.read<HikingPhotoFavoriteProvider>().getFavoriteHike(userId);
+    print(context.read<CurrentUser>().user.userId);
     super.initState();
   }
 

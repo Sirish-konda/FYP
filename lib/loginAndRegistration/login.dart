@@ -101,6 +101,11 @@ class _LoginState extends State<Login> {
                     LowerButton(
                       title: 'Login',
                       onPressed: () {
+                        FocusScopeNode currentFocus = FocusScope.of(context);
+
+                        if (!currentFocus.hasPrimaryFocus) {
+                          currentFocus.unfocus();
+                        }
                         if (formKey.currentState!.validate()) {
                           loginUserNow();
                         } else {}

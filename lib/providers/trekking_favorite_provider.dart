@@ -69,6 +69,7 @@ class TrekkingPhotoFavoriteProvider extends ChangeNotifier {
         var resFavoriteBody = jsonDecode(res.body);
         if (resFavoriteBody['success'] == true) {
           List<dynamic> userFavorites = resFavoriteBody['userFavorite'];
+          print(resFavoriteBody['userFavorite']);
           for (var favorite in userFavorites) {
             trekkingFavorites.add(
               int.parse(
@@ -82,5 +83,9 @@ class TrekkingPhotoFavoriteProvider extends ChangeNotifier {
     } catch (e) {
       print("sirish $e");
     }
+  }
+
+  void reset() {
+    trekkingFavorites.clear();
   }
 }

@@ -85,4 +85,9 @@ class HikingPhotoFavoriteProvider extends ChangeNotifier {
       print(e);
     }
   }
+
+  void reset() {
+    hikingFavorites.clear();
+    notifyListeners();
+  }
 }

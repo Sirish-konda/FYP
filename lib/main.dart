@@ -9,7 +9,7 @@ import 'package:fyp_project/providers/trekking_photo_provider.dart';
 import 'package:fyp_project/users/current_user.dart';
 import 'package:provider/provider.dart';
 
-void main() async {
+void main() async { 
   await ScreenUtil.ensureScreenSize();
   runApp(const TravelApp());
 }

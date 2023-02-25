@@ -59,6 +59,7 @@ class ChangeEmail extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: ConstantColors.kDarkGreen,
         leading: IconButton(
           onPressed: () {
@@ -148,6 +149,11 @@ class ChangeEmail extends StatelessWidget {
                     ProfileSettings(
                       title: 'Change',
                       buttonPressed: () {
+                        FocusScopeNode currentFocus = FocusScope.of(context);
+
+                        if (!currentFocus.hasPrimaryFocus) {
+                          currentFocus.unfocus();
+                        }
                         if (formKey1.currentState!.validate()) {
                           updateEmail(
                             oldEmail: oldEmailController.text,
