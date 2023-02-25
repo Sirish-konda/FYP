@@ -1,11 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:fyp_project/constants/constant_colors.dart';
 import 'package:fyp_project/models/trekking_model.dart';
-import 'package:fyp_project/providers/trekking_favourite_provider.dart';
-
+import 'package:fyp_project/providers/trekking_favorite_provider.dart';
 import 'package:fyp_project/users/current_user.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -95,15 +93,15 @@ class _DestinationDescTrekkingState extends State<DestinationDescTrekking> {
             actions: [
               IconButton(
                 onPressed: () {
-                  Provider.of<TrekkingPhotoFavouriteProvider>(context,
+                  Provider.of<TrekkingPhotoFavoriteProvider>(context,
                               listen: false)
-                          .favourites
+                          .trekkingFavorites
                           .contains(widget.trekkingModel.id)
                       ? showSnackBarRemoved(context)
                       : showSnackBarAdded(context);
                   final user =
                       Provider.of<CurrentUser>(context, listen: false).user;
-                  Provider.of<TrekkingPhotoFavouriteProvider>(context,
+                  Provider.of<TrekkingPhotoFavoriteProvider>(context,
                           listen: false)
                       .toggleFavorites(
                     widget.trekkingModel.id,
@@ -111,12 +109,12 @@ class _DestinationDescTrekkingState extends State<DestinationDescTrekking> {
                     user.userId,
                   );
                 },
-                icon: Consumer<TrekkingPhotoFavouriteProvider>(
+                icon: Consumer<TrekkingPhotoFavoriteProvider>(
                   builder: (context, value, child) {
-                    final isFavourite =
-                        value.favourites.contains(widget.trekkingModel.id);
+                    final isFavorite = value.trekkingFavorites
+                        .contains(widget.trekkingModel.id);
 
-                    return isFavourite
+                    return isFavorite
                         ? const Icon(Icons.favorite, color: Colors.red)
                         : const Icon(Icons.favorite_border);
                   },

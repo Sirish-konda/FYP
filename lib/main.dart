@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/loginAndRegistration/login.dart';
+import 'package:fyp_project/providers/hiking_favorite_provider.dart';
 import 'package:fyp_project/providers/hiking_photo_provider.dart';
 import 'package:fyp_project/providers/navigation_provider.dart';
-import 'package:fyp_project/providers/trekking_favourite_provider.dart';
+import 'package:fyp_project/providers/trekking_favorite_provider.dart';
 import 'package:fyp_project/providers/trekking_photo_provider.dart';
 import 'package:fyp_project/users/current_user.dart';
 import 'package:provider/provider.dart';
@@ -33,7 +34,10 @@ class TravelApp extends StatelessWidget {
           create: (BuildContext context) => NavigationProvider(),
         ),
         ChangeNotifierProvider(
-          create: (BuildContext context) => TrekkingPhotoFavouriteProvider(),
+          create: (BuildContext context) => TrekkingPhotoFavoriteProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (BuildContext context) => HikingPhotoFavoriteProvider(),
         ),
       ],
       child: ScreenUtilInit(

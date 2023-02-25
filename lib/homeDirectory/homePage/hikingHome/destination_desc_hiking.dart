@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/constants/constant_colors.dart';
 import 'package:fyp_project/models/hiking_model.dart';
-import 'package:fyp_project/providers/hiking_photo_provider.dart';
+import 'package:fyp_project/providers/hiking_favorite_provider.dart';
+import 'package:fyp_project/users/current_user.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../screens/components/desc_button.dart';
@@ -91,20 +92,33 @@ class _DestinationDescHikingState extends State<DestinationDescHiking> {
             actions: [
               IconButton(
                 onPressed: () {
-                  setState(
-                    () {
-                      Provider.of<HikingPhotoProvider>(context, listen: false)
-                          .toggleFavorites(widget.hikingModel.id);
+                  Provider.of<HikingPhotoFavoriteProvider>(context,
+                              listen: false)
+                          .hikingFavorites
+                          .contains(widget.hikingModel.id)
+                      ? showSnackBarRemoved(context)
+                      : showSnackBarAdded(context);
 
-                      widget.hikingModel.isFavorited
-                          ? showSnackBarAdded(context)
-                          : showSnackBarRemoved(context);
-                    },
+                  final user =
+                      Provider.of<CurrentUser>(context, listen: false).user;
+                  Provider.of<HikingPhotoFavoriteProvider>(context,
+                          listen: false)
+                      .toggleFavorites(
+                    widget.hikingModel.id,
+                    widget.hikingModel.title,
+                    user.userId,
                   );
                 },
-                icon: widget.hikingModel.isFavorited
-                    ? const Icon(Icons.favorite, color: Colors.red)
-                    : const Icon(Icons.favorite_border),
+                icon: Consumer<HikingPhotoFavoriteProvider>(
+                  builder: (context, value, child) {
+                    final isFavorite =
+                        value.hikingFavorites.contains(widget.hikingModel.id);
+
+                    return isFavorite
+                        ? const Icon(Icons.favorite, color: Colors.red)
+                        : const Icon(Icons.favorite_border);
+                  },
+                ),
               ),
             ],
           ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fyp_project/homeDirectory/favoritePage/widgets/when_empty.dart';
 import 'package:fyp_project/homeDirectory/favoritePage/trekkingFavorite/when_not_empty_trekking.dart';
 import 'package:fyp_project/models/trekking_model.dart';
-import 'package:fyp_project/providers/trekking_favourite_provider.dart';
+import 'package:fyp_project/providers/trekking_favorite_provider.dart';
 import 'package:fyp_project/providers/trekking_photo_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -21,11 +21,12 @@ class _FavoriteTrekScreenState extends State<FavoriteTrekScreen> {
     List<TrekkingModel> favorites = [];
 
     final favoriteTrekIds =
-        context.watch<TrekkingPhotoFavouriteProvider>().favourites;
+        context.watch<TrekkingPhotoFavoriteProvider>().trekkingFavorites;
 
     for (int i = 0; i < favoriteTrekIds.length; i++) {
-      final favTrek = trekkingProvider.trekkingDesc
-          .firstWhere((element) => element.id == favoriteTrekIds[i]);
+      final favTrek = trekkingProvider.trekkingDesc.firstWhere(
+        (element) => element.id == favoriteTrekIds[i],
+      );
       favorites.add(favTrek);
     }
 

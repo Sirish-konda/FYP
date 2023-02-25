@@ -5,7 +5,7 @@ class HikingModel {
   final String intro;
   final String desc;
   final Geo? location;
-  bool isFavorited;
+
   List<HikingImgModel> images;
 
   HikingModel({
@@ -14,7 +14,6 @@ class HikingModel {
     required this.imagePath,
     required this.images,
     required this.intro,
-    this.isFavorited = false,
     this.location,
     required this.title,
   });

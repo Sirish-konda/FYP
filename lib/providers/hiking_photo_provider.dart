@@ -371,13 +371,13 @@ class HikingPhotoProvider extends ChangeNotifier {
     return UnmodifiableListView(_hikingDesc);
   }
 
-  void toggleFavorites(int hikingId) {
-    final hikingIndex =
-        _hikingDesc.indexWhere((hiking) => hiking.id == hikingId);
-    _hikingDesc[hikingIndex].isFavorited =
-        !_hikingDesc[hikingIndex].isFavorited;
-    notifyListeners();
-  }
+  // void toggleFavorites(int hikingId) {
+  //   final hikingIndex =
+  //       _hikingDesc.indexWhere((hiking) => hiking.id == hikingId);
+  //   _hikingDesc[hikingIndex].isFavorited =
+  //       !_hikingDesc[hikingIndex].isFavorited;
+  //   notifyListeners();
+  // }
 
   int get imgLength => _hikingDesc.length;
 }

@@ -1,9 +1,6 @@
 import 'dart:collection';
-import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:fyp_project/models/trekking_model.dart';
-import 'package:http/http.dart' as http;
-import '../apiConnection/api_connection.dart';
 
 class TrekkingPhotoProvider extends ChangeNotifier {
   final List<TrekkingModel> _trekkingDesc = [
@@ -640,44 +637,6 @@ The Upper Mustang Trek is all about discovering the secret world of Mustang's hi
 
   UnmodifiableListView<TrekkingModel> get trekkingDesc {
     return UnmodifiableListView(_trekkingDesc);
-  }
-
-  // void toggleFavorites(int trekkingId) {
-  //   final trekkingIndex =
-  //       _trekkingDesc.indexWhere((trekking) => trekking.id == trekkingId);
-  //   _trekkingDesc[trekkingIndex].isFavorited =
-  //       !_trekkingDesc[trekkingIndex].isFavorited;
-  //   notifyListeners();
-  // }
-
-  void toogleFavoriteTrek(
-      int trekkingId, String trekkingName, String userId) async {
-    try {
-      var res = await http.post(
-        Uri.parse(API.favoriteTrek),
-        body: {
-          'user_id': userId,
-          'trek_id': trekkingId,
-          'trek_name': trekkingName,
-        },
-      );
-      if (res.statusCode == 200) {
-        var resFavoriteBody = jsonDecode(res.body);
-        if (resFavoriteBody['result'] == true) {
-          // final trekkingIndex =
-          //     _trekkingDesc.indexWhere((trekking) => trekking.id == trekkingId);
-          // _trekkingDesc[trekkingIndex].isFavorited =
-          //     !_trekkingDesc[trekkingIndex].isFavorited;
-          // notifyListeners();
-
-          print('Item saved in db.');
-        } else {
-          print('item not saved in db');
-        }
-      }
-    } catch (e) {
-      print(e);
-    }
   }
 
   int get imgLength => _trekkingDesc.length;

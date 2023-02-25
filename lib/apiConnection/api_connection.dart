@@ -14,20 +14,29 @@ class API {
   //validate email
   static const validateEmail = "$hostConnectUser/validate_email.php";
 
-  //login
+  // user login
   static const login = "$hostConnectUser/login.php";
 
-  //update profile
-
+  //update profile picture
   static const updateProfile = "$hostConnect/change_profile.php";
 
+//update email address
   static const updateEmail = "$hostConnectChange/change_email.php";
 
+//update password
   static const updatePassword = "$hostConnectChange/change_password.php";
 
-  static const favoriteTrek = "$hostConnectFavorite/toogle_favorite_trek.php";
+//change the favorite for trek
+  static const favoriteTrek = "$hostConnectFavorite/toggle_favorite_trek.php";
 
+//get data of users favorite trek
   static const getFavoriteTrek = "$hostConnectFavorite/get_trek_favorite.php";
+
+//change the favorite for hike
+  static const favoriteHike = "$hostConnectFavorite/toggle_favorite_hike.php";
+
+//get data of users favorite hike
+  static const getFavoriteHike = "$hostConnectFavorite/get_hike_favorite.php";
 }
 
 
