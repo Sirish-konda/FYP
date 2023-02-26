@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/loginAndRegistration/login.dart';
+import 'package:fyp_project/providers/heritage_photo_provider.dart';
 import 'package:fyp_project/providers/hiking_favorite_provider.dart';
 import 'package:fyp_project/providers/hiking_photo_provider.dart';
 import 'package:fyp_project/providers/navigation_provider.dart';
@@ -9,7 +10,7 @@ import 'package:fyp_project/providers/trekking_photo_provider.dart';
 import 'package:fyp_project/users/current_user.dart';
 import 'package:provider/provider.dart';
 
-void main() async { 
+void main() async {
   await ScreenUtil.ensureScreenSize();
   runApp(const TravelApp());
 }
@@ -38,6 +39,9 @@ class TravelApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (BuildContext context) => HikingPhotoFavoriteProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (BuildContext context) => HeritagePhotoProvider(),
         ),
       ],
       child: ScreenUtilInit(

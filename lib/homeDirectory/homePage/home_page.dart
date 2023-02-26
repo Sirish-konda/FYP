@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/constants/constant_colors.dart';
+import 'package:fyp_project/homeDirectory/homePage/heritageHome/heritage_slider_images.dart';
 import 'package:fyp_project/homeDirectory/homePage/hikingHome/hiking_slider_images.dart';
 
 import 'trekkingHome/trekking_slider_images.dart';
@@ -31,6 +32,10 @@ class HomePage extends StatelessWidget {
                 const SliverToBoxAdapter(
                   child: HikingSliderImages(),
                 ),
+                SliverPadding(padding: EdgeInsets.all(10.h)),
+                const SliverToBoxAdapter(
+                  child: HeritageSliderImages(),
+                )
               ],
             ))
           ],
