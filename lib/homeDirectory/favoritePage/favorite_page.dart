@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/constants/constant_colors.dart';
+import 'package:fyp_project/homeDirectory/favoritePage/siteFavorite/favorite_site_screen.dart';
 import 'hikingFavorite/favorite_hike_screen.dart';
 import 'trekkingFavorite/favorite_trek_screen.dart';
 
@@ -13,12 +14,12 @@ class FavoritePage extends StatefulWidget {
 
 class _FavoritePageState extends State<FavoritePage>
     with TickerProviderStateMixin {
-  List<String> items = ["Trek's", "Hike's"];
+  List<String> items = ["Trek's", "Hike's", "Site's"];
   int current = 0;
 
   @override
   Widget build(BuildContext context) {
-    TabController tabController = TabController(length: 2, vsync: this);
+    TabController tabController = TabController(length: 3, vsync: this);
     return Scaffold(
       backgroundColor: ConstantColors.kLightGreen,
       appBar: AppBar(
@@ -61,6 +62,7 @@ class _FavoritePageState extends State<FavoritePage>
                     tabs: const [
                       Tab(text: "Hike's"),
                       Tab(text: "Trek's"),
+                      Tab(text: "Site's"),
                     ],
                   ),
                 ),
@@ -74,6 +76,7 @@ class _FavoritePageState extends State<FavoritePage>
               children: const [
                 FavoriteHikeScreen(),
                 FavoriteTrekScreen(),
+                FavoriteSiteScreen(),
               ],
             ),
           )

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fyp_project/providers/heritage_favorite_provider.dart';
 import 'package:fyp_project/providers/trekking_favorite_provider.dart';
-import 'package:fyp_project/users/current_user.dart';
 import 'package:provider/provider.dart';
-
 import '../../../../constants/constant_colors.dart';
 import '../../../../providers/hiking_favorite_provider.dart';
 
@@ -48,6 +47,7 @@ class CustomDialog extends StatelessWidget {
                         onPressed: () {
                           context.read<TrekkingPhotoFavoriteProvider>().reset();
                           context.read<HikingPhotoFavoriteProvider>().reset();
+                          context.read<HeritagePhotoFavoriteProvider>().reset();
                           Navigator.pop(context);
                           Navigator.pop(context);
                         },

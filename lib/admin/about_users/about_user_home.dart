@@ -7,7 +7,7 @@ class AboutUserHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("About User's"),
+        title: const Text("About User's"),
       ),
     );
   }

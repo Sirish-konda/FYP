@@ -7,6 +7,7 @@ import 'package:fyp_project/constants/constant_colors.dart';
 import 'package:fyp_project/homeDirectory/profilePage/profileSettings/about_app.dart';
 import 'package:fyp_project/homeDirectory/profilePage/profileSettings/change_email.dart';
 import 'package:fyp_project/homeDirectory/profilePage/profileSettings/change_password.dart';
+import 'package:fyp_project/homeDirectory/profilePage/profileSettings/user_feedback.dart';
 import 'package:fyp_project/homeDirectory/profilePage/profileSettings/widgets/profile_list_tile.dart';
 import 'package:fyp_project/homeDirectory/profilePage/profileSettings/widgets/custom_dialog.dart';
 import 'package:fyp_project/homeDirectory/profilePage/profileSettings/widgets/square_settings.dart';
@@ -52,8 +53,8 @@ class _ProfilePageState extends State<ProfilePage> {
               children: [
                 Container(
                   margin: EdgeInsets.only(top: 20.h),
-                  height: 150.w,
-                  width: 150.w,
+                  height: 100.w,
+                  width: 100.w,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(100.r),
                       border: Border.all(
@@ -150,6 +151,17 @@ class _ProfilePageState extends State<ProfilePage> {
               },
               title: "Change Your Password",
             ),
+            ProfileListTile(
+                buttonPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => UserFeedback(),
+                    ),
+                  );
+                },
+                title: "We want to hear from you",
+                leadingIcon: Icons.message),
             SizedBox(height: 30.h),
             Padding(
               padding: EdgeInsets.only(left: 20.h, right: 20.h),
@@ -304,7 +316,7 @@ class _ProfilePageState extends State<ProfilePage> {
         Provider.of<CurrentUser>(context, listen: false)
             .updateUserProfile(jsonResponse['imageURL']);
       } else {
-        print('not working');
+        // print('not working');
       }
     } catch (e) {
       return e;

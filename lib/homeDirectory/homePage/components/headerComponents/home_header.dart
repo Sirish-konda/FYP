@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fyp_project/homeDirectory/profilePage/profile_page.dart';
-import 'package:fyp_project/navigation_bar.dart';
+
 import 'package:fyp_project/providers/navigation_provider.dart';
 
 import 'package:provider/provider.dart';

@@ -5,6 +5,7 @@ import 'package:fyp_project/homeDirectory/favoritePage/favorite_page.dart';
 import 'package:fyp_project/homeDirectory/homePage/home_page.dart';
 import 'package:fyp_project/homeDirectory/photosPage/photos_page.dart';
 import 'package:fyp_project/homeDirectory/profilePage/profile_page.dart';
+import 'package:fyp_project/providers/heritage_favorite_provider.dart';
 import 'package:fyp_project/providers/hiking_favorite_provider.dart';
 import 'package:fyp_project/providers/navigation_provider.dart';
 import 'package:fyp_project/providers/trekking_favorite_provider.dart';
@@ -31,11 +32,10 @@ class _GoogleNavigationBarState extends State<GoogleNavigationBar> {
 
   @override
   void initState() {
-    // TODO: implement initState
     final userId = context.read<CurrentUser>().user.userId;
     context.read<TrekkingPhotoFavoriteProvider>().getFavoriteTrek(userId);
     context.read<HikingPhotoFavoriteProvider>().getFavoriteHike(userId);
-    print(context.read<CurrentUser>().user.userId);
+    context.read<HeritagePhotoFavoriteProvider>().getFavoriteSite(userId);
     super.initState();
   }
 

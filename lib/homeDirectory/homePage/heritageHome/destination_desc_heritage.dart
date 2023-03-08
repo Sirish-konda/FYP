@@ -1,13 +1,12 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fyp_project/providers/heritage_photo_provider.dart';
+import 'package:fyp_project/providers/heritage_favorite_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
 import '../../../constants/constant_colors.dart';
 import '../../../models/heritage_model.dart';
-import '../../../providers/hiking_favorite_provider.dart';
+import '../../../users/current_user.dart';
 import '../screens/components/desc_button.dart';
 import '../screens/components/feedbackScreen/feedback_bottomsheet.dart';
 import '../screens/components/mapsScreen/maps_screen.dart';
@@ -91,36 +90,36 @@ class _DestinationDescHeritageState extends State<DestinationDescHeritage> {
               ),
             ),
             actions: [
-              // IconButton(
-              // onPressed: () {
-              // Provider.of<HeritagePhotoProvider>(context,
-              //             listen: false)
-              //         .hikingFavorites
-              //         .contains(widget.hikingModel.id)
-              //     ? showSnackBarRemoved(context)
-              //     : showSnackBarAdded(context);
+              IconButton(
+                onPressed: () {
+                  Provider.of<HeritagePhotoFavoriteProvider>(context,
+                              listen: false)
+                          .heritageFavorites
+                          .contains(widget.heritageModel.id)
+                      ? showSnackBarRemoved(context)
+                      : showSnackBarAdded(context);
 
-              // final user =
-              //     Provider.of<CurrentUser>(context, listen: false).user;
-              // Provider.of<HikingPhotoFavoriteProvider>(context,
-              //         listen: false)
-              //     .toggleFavorites(
-              //   widget.hikingModel.id,
-              //   widget.hikingModel.title,
-              //   user.userId,
-              // );
-              // },
-              // icon: Consumer<HikingPhotoFavoriteProvider>(
-              //   builder: (context, value, child) {
-              //     final isFavorite =
-              //         value.hikingFavorites.contains(widget.hikingModel.id);
+                  final user =
+                      Provider.of<CurrentUser>(context, listen: false).user;
+                  Provider.of<HeritagePhotoFavoriteProvider>(context,
+                          listen: false)
+                      .toggleFavorites(
+                    widget.heritageModel.id,
+                    widget.heritageModel.title,
+                    user.userId,
+                  );
+                },
+                icon: Consumer<HeritagePhotoFavoriteProvider>(
+                  builder: (context, value, child) {
+                    final isFavorite = value.heritageFavorites
+                        .contains(widget.heritageModel.id);
 
-              //     return isFavorite
-              //         ? const Icon(Icons.favorite, color: Colors.red)
-              //         : const Icon(Icons.favorite_border);
-              //   },
-              // ),
-              //),
+                    return isFavorite
+                        ? const Icon(Icons.favorite, color: Colors.red)
+                        : const Icon(Icons.favorite_border);
+                  },
+                ),
+              ),
             ],
           ),
           SliverToBoxAdapter(
@@ -210,7 +209,7 @@ class _DestinationDescHeritageState extends State<DestinationDescHeritage> {
                   ),
                   SizedBox(height: 5.h),
                   Text(
-                    'How to reach?',
+                    'Things to Know',
                     style:
                         TextStyle(fontSize: 22.sp, fontWeight: FontWeight.bold),
                   ),
@@ -220,6 +219,69 @@ class _DestinationDescHeritageState extends State<DestinationDescHeritage> {
                       fontSize: 16.sp,
                     ),
                     textAlign: TextAlign.justify,
+                  ),
+                  // SliverList(
+                  //   delegate: SliverChildBuilderDelegate(
+                  //     (BuildContext context, int index) {
+                  //       return ListTile(
+                  //         title: Text(
+                  //           widget.heritageModel.resturantNumber[index].name,
+                  //         ),
+                  //         subtitle: Text(widget
+                  //             .heritageModel.resturantNumber[index].number),
+                  //         trailing: IconButton(
+                  //           onPressed: () {},
+                  //           icon: Icon(
+                  //             Icons.phone,
+                  //             color: Colors.green.shade900,
+                  //           ),
+                  //         ),
+                  //       );
+                  //     },
+                  //     childCount: widget.heritageModel.resturantNumber
+                  //         .length, // 1000 list items
+                  //   ),
+                  // ),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  Text(
+                    "Places you might want to visit",
+                    style:
+                        TextStyle(fontSize: 22.sp, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(height: 10.h),
+                  Container(
+                    height: 200,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                        color: ConstantColors.kMidGreen,
+                        borderRadius: BorderRadius.circular(20.r)),
+                    child: ListView.builder(
+                      padding: EdgeInsets.only(top: 0.h),
+                      itemCount:
+                          widget.heritageModel.resturantNumber.toList().length,
+                      itemBuilder: (context, index) => ListTile(
+                        title: Text(
+                          widget.heritageModel.resturantNumber[index].name,
+                          style: TextStyle(
+                              fontSize: 14.sp, fontWeight: FontWeight.w600),
+                        ),
+                        subtitle: Text(
+                          widget.heritageModel.resturantNumber[index].number,
+                          style: const TextStyle(
+                            color: ConstantColors.kDarkGreen,
+                          ),
+                        ),
+                        trailing: IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.phone,
+                            color: Colors.green.shade900,
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
                   DescButtons(
                     title: 'Show in maps',

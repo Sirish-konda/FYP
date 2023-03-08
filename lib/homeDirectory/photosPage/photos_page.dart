@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/constants/constant_colors.dart';
 import 'package:fyp_project/homeDirectory/photosPage/screens/add_photos.dart';
+import 'package:fyp_project/homeDirectory/photosPage/screens/open_share_photo.dart';
 import 'package:fyp_project/homeDirectory/photosPage/screens/shared_photos.dart';
-import 'package:fyp_project/users/current_user.dart';
-import 'package:provider/provider.dart';
 
 class PhotosPage extends StatelessWidget {
   const PhotosPage({Key? key}) : super(key: key);
@@ -32,27 +31,25 @@ class PhotosPage extends StatelessWidget {
             title: "       Add Your \n         Photos",
             icon: Icons.add_photo_alternate_outlined,
             onPressed: () {
-              print(
-                  Provider.of<CurrentUser>(context, listen: false).user.userId);
+              // print(
+              //     Provider.of<CurrentUser>(context, listen: false).user.userId);
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => AddPhotos(),
+                  builder: (context) => const AddPhotos(),
                 ),
               );
             },
           ),
           SizedBox(height: 30.h),
           CustomPhotosWidget(
-            title: 'Saved Shared \n       Photos',
+            title: '      Save / Scan \n           Photos',
             icon: Icons.import_export_sharp,
             onPressed: () {
               Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => SharedPhotos(),
-                ),
-              );
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const SharedPhotos()));
             },
           ),
         ],

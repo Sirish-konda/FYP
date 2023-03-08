@@ -5,7 +5,7 @@ import 'package:fyp_project/homeDirectory/homePage/heritageHome/heritage_image_d
 import 'package:fyp_project/providers/heritage_photo_provider.dart';
 import 'package:provider/provider.dart';
 import '../../../constants/constant_colors.dart';
-import '../../../providers/hiking_photo_provider.dart';
+
 import '../screens/widgets/popular_title.dart';
 
 class HeritageSliderImages extends StatelessWidget {
@@ -24,7 +24,7 @@ class HeritageSliderImages extends StatelessWidget {
       ),
       child: Column(
         children: [
-          const PopularTitle(title: "Popular Hike's"),
+          const PopularTitle(title: "Heritage Site's"),
           CarouselSlider.builder(
             itemCount: Provider.of<HeritagePhotoProvider>(context).imgLength,
             itemBuilder: (context, index, realIndex) {

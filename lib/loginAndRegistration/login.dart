@@ -12,7 +12,6 @@ import 'package:fyp_project/loginAndRegistration/widgets/upper_part.dart';
 import 'package:fyp_project/loginAndRegistration/widgets/upper_text.dart';
 import 'package:fyp_project/navigation_bar.dart';
 import 'package:fyp_project/users/current_user.dart';
-import 'package:fyp_project/users/user_preferences.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 import '../models/user.dart';
@@ -129,7 +128,7 @@ class _LoginState extends State<Login> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => AdminLogin(),
+                            builder: (context) => const AdminLogin(),
                           ),
                         );
                       },
@@ -182,7 +181,7 @@ class _LoginState extends State<Login> {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => GoogleNavigationBar()));
+                      builder: (context) => const GoogleNavigationBar()));
             },
           );
         } else {

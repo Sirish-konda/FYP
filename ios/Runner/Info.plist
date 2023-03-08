@@ -2,7 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 	<dict>
-
 		<key>NSAppTransportSecurity</key>
 		<dict>
 			<key>NSAllowsArbitraryLoads</key>
@@ -40,6 +39,17 @@
 			<string>UIInterfaceOrientationLandscapeLeft</string>
 			<string>UIInterfaceOrientationLandscapeRight</string>
 		</array>
+
+		<!-- image picker permissions -->
+		<key>NSPhotoLibraryUsageDescription</key>
+		<string>allow user to pick image from gallery</string>
+
+		<key>NSCameraUsageDescription</key>
+		<string>allow user to pick image from camera</string>
+
+		<key>NSMicrophoneUsageDescription</key>
+		<string>allow microphone permission</string>
+
 		<key>UISupportedInterfaceOrientations~ipad</key>
 		<array>
 			<string>UIInterfaceOrientationPortrait</string>
@@ -53,7 +63,5 @@
 		<true />
 		<key>UIApplicationSupportsIndirectInputEvents</key>
 		<true />
-
-
 	</dict>
 </plist>

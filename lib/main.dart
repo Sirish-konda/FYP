@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/loginAndRegistration/login.dart';
+import 'package:fyp_project/providers/heritage_favorite_provider.dart';
 import 'package:fyp_project/providers/heritage_photo_provider.dart';
 import 'package:fyp_project/providers/hiking_favorite_provider.dart';
 import 'package:fyp_project/providers/hiking_photo_provider.dart';
@@ -12,7 +13,7 @@ import 'package:provider/provider.dart';
 
 void main() async {
   await ScreenUtil.ensureScreenSize();
-  runApp(const TravelApp());
+  runApp(TravelApp());
 }
 
 class TravelApp extends StatelessWidget {
@@ -43,9 +44,12 @@ class TravelApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (BuildContext context) => HeritagePhotoProvider(),
         ),
+        ChangeNotifierProvider(
+          create: (BuildContext context) => HeritagePhotoFavoriteProvider(),
+        ),
       ],
       child: ScreenUtilInit(
-        designSize: const Size(360, 690),
+        designSize: Size(360, 690),
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) {

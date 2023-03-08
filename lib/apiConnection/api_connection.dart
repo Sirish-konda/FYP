@@ -1,5 +1,5 @@
 class API {
-  static const hostConnect = "http://192.168.0.2/fyp_database";
+  static const hostConnect = "http://192.168.1.123/fyp_database";
   static const hostConnectUser = "$hostConnect/user";
   static const hostConnectAdmin = "$hostConnect/admin";
   static const hostConnectChange = "$hostConnect/change";
@@ -37,6 +37,16 @@ class API {
 
 //get data of users favorite hike
   static const getFavoriteHike = "$hostConnectFavorite/get_hike_favorite.php";
+
+  //get data of users favorite heritage site
+  static const getFavoriteSite = "$hostConnectFavorite/get_site_favorite.php";
+
+//change the favorite for hike
+  static const favoriteSite = "$hostConnectFavorite/toggle_favorite_site.php";
+
+  //user feedback for app
+
+  static const feedback = "$hostConnect/userFeedback/feedback.php";
 }
 
 

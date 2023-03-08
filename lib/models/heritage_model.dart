@@ -6,6 +6,7 @@ class HeritageModel {
   final String intro;
   final Geo? location;
   List<HeritageImgModel> images;
+  List<RestaurantModel> resturantNumber;
 
   HeritageModel({
     required this.id,
@@ -14,6 +15,7 @@ class HeritageModel {
     required this.desc,
     required this.images,
     required this.imagePath,
+    required this.resturantNumber,
     this.location,
   });
 }
@@ -32,4 +34,11 @@ class HeritageImgModel {
   final String imageUrl;
 
   HeritageImgModel(this.imageUrl);
+}
+
+class RestaurantModel {
+  final String name;
+  final String number;
+
+  RestaurantModel(this.name, this.number);
 }
