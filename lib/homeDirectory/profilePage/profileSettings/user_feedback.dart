@@ -45,12 +45,15 @@ class _UserFeedbackState extends State<UserFeedback> {
             },
           ),
         );
+
         if (res.statusCode == 200) {
           var resBodyOfFeedback = jsonDecode(res.body);
           if (resBodyOfFeedback['result'] == true) {
-            Fluttertoast.showToast(msg: "Working");
+            Fluttertoast.showToast(msg: "Your feedback has been submitted");
+            Navigator.pop(context);
           } else {
-            Fluttertoast.showToast(msg: "Not Working");
+            Fluttertoast.showToast(
+                msg: "Your feedback is currently not submitted");
           }
         }
       } catch (e) {

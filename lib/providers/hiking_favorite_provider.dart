@@ -49,7 +49,7 @@ class HikingPhotoFavoriteProvider extends ChangeNotifier {
         } else {}
       }
     } catch (e) {
-      print("Sirish $e");
+      print(e);
     }
   }
 
@@ -78,11 +78,12 @@ class HikingPhotoFavoriteProvider extends ChangeNotifier {
               ),
             );
           }
+
           notifyListeners();
         } else {}
       }
     } catch (e) {
-      print(e);
+      print("sirish9 + $e");
     }
   }
 

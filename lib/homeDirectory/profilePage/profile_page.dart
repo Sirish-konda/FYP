@@ -316,9 +316,10 @@ class _ProfilePageState extends State<ProfilePage> {
         Provider.of<CurrentUser>(context, listen: false)
             .updateUserProfile(jsonResponse['imageURL']);
       } else {
-        // print('not working');
+        print('not working');
       }
     } catch (e) {
+      print('this is the error $e');
       return e;
     }
   }

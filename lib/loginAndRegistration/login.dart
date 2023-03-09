@@ -11,6 +11,7 @@ import 'package:fyp_project/loginAndRegistration/widgets/lower_part.dart';
 import 'package:fyp_project/loginAndRegistration/widgets/upper_part.dart';
 import 'package:fyp_project/loginAndRegistration/widgets/upper_text.dart';
 import 'package:fyp_project/navigation_bar.dart';
+import 'package:fyp_project/providers/navigation_provider.dart';
 import 'package:fyp_project/users/current_user.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
@@ -106,6 +107,9 @@ class _LoginState extends State<Login> {
                           currentFocus.unfocus();
                         }
                         if (formKey.currentState!.validate()) {
+                          Provider.of<NavigationProvider>(context,
+                                  listen: false)
+                              .selectedIndex = 0;
                           loginUserNow();
                         } else {}
                       },

@@ -175,6 +175,7 @@ class _RegisterFirstState extends State<RegisterFirst> {
         }
       }
     } catch (e) {
+      print(e);
       Fluttertoast.showToast(msg: e.toString());
     }
   }
@@ -201,9 +202,11 @@ class _RegisterFirstState extends State<RegisterFirst> {
               msg: 'You have been successfully registered.',
               backgroundColor: Colors.green,
               fontSize: 16);
-          setState(() {
-            Navigator.pop(context);
-          });
+          setState(
+            () {
+              Navigator.pop(context);
+            },
+          );
         } else {
           Fluttertoast.showToast(
               msg: 'Error occured try again',
@@ -212,6 +215,7 @@ class _RegisterFirstState extends State<RegisterFirst> {
         }
       }
     } catch (e) {
+      print(e);
       Fluttertoast.showToast(msg: e.toString());
     }
   }

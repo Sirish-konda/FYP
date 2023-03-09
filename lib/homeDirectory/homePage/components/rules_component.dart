@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/constant_colors.dart';
@@ -60,11 +59,12 @@ class RulesWidget extends StatelessWidget {
                 style: TextStyle(
                     fontWeight: FontWeight.w500, letterSpacing: 0.5.sp),
               ),
-              Row(
+              Column(
                 children: [
                   Text(
                     "If you agree to follow these rules.",
                     style: TextStyle(
+                        fontSize: 14.sp,
                         color: Colors.green.shade900,
                         fontWeight: FontWeight.w700),
                   ),
