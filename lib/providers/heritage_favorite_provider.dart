@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:fyp_project/apiConnection/api_connection.dart';
 import 'package:http/http.dart' as http;
 
@@ -35,7 +36,6 @@ class HeritagePhotoFavoriteProvider extends ChangeNotifier {
         ),
       );
 
-      print(res.statusCode);
       if (res.statusCode == 200) {
         var resFavoriteBody = jsonDecode(res.body);
 
@@ -49,7 +49,7 @@ class HeritagePhotoFavoriteProvider extends ChangeNotifier {
         } else {}
       }
     } catch (e) {
-      print("Sirish $e");
+      Fluttertoast.showToast(msg: "$e");
     }
   }
 
@@ -82,7 +82,7 @@ class HeritagePhotoFavoriteProvider extends ChangeNotifier {
         } else {}
       }
     } catch (e) {
-      print(e);
+      Fluttertoast.showToast(msg: "$e");
     }
   }
 

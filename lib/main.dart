@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/loginAndRegistration/login.dart';
+import 'package:fyp_project/providers/add_image_provider.dart';
 import 'package:fyp_project/providers/heritage_favorite_provider.dart';
 import 'package:fyp_project/providers/heritage_photo_provider.dart';
 import 'package:fyp_project/providers/hiking_favorite_provider.dart';
@@ -47,9 +48,12 @@ class TravelApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (BuildContext context) => HeritagePhotoFavoriteProvider(),
         ),
+        ChangeNotifierProvider(
+          create: (BuildContext context) => AddImageProvider(),
+        ),
       ],
       child: ScreenUtilInit(
-        designSize: Size(360, 690),
+        designSize: const Size(360, 690),
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) {
