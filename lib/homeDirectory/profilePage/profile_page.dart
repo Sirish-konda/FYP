@@ -56,9 +56,10 @@ class _ProfilePageState extends State<ProfilePage> {
                   height: 100.w,
                   width: 100.w,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(100.r),
-                      border: Border.all(
-                          color: ConstantColors.kDarkGreen, width: 4)),
+                    borderRadius: BorderRadius.circular(100.r),
+                    border:
+                        Border.all(color: ConstantColors.kDarkGreen, width: 4),
+                  ),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(100.r),
                     child: pickedFile != null

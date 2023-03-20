@@ -49,7 +49,7 @@ class HeritagePhotoFavoriteProvider extends ChangeNotifier {
         } else {}
       }
     } catch (e) {
-      Fluttertoast.showToast(msg: "$e");
+      Fluttertoast.showToast(msg: "Error while toggle favorites +$e");
     }
   }
 
@@ -82,7 +82,7 @@ class HeritagePhotoFavoriteProvider extends ChangeNotifier {
         } else {}
       }
     } catch (e) {
-      Fluttertoast.showToast(msg: "$e");
+      Fluttertoast.showToast(msg: "Error while getting favorites +$e");
     }
   }
 

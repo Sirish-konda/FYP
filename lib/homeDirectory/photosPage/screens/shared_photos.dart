@@ -14,6 +14,7 @@ class SharedPhotos extends StatelessWidget {
     return Scaffold(
       backgroundColor: ConstantColors.kLightGreen,
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: ConstantColors.kDarkGreen,
         title: const Text("Shared Photos"),
       ),
@@ -24,11 +25,10 @@ class SharedPhotos extends StatelessWidget {
             title: "Saved Photo's",
             icon: Icons.download_done_sharp,
             onPressed: () {
-              context.push(OpenSharePhoto());
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(builder: (context) => OpenSharePhoto()),
-              // );
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SavedPhotos()),
+              );
             },
           ),
           SizedBox(height: 20.h),

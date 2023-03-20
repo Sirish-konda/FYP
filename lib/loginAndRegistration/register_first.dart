@@ -133,9 +133,11 @@ class _RegisterFirstState extends State<RegisterFirst> {
                       buttonText: 'Sign In',
                       onPressed: () {
                         Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const Login()));
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Login(),
+                          ),
+                        );
                       },
                     )
                   ],
@@ -175,28 +177,34 @@ class _RegisterFirstState extends State<RegisterFirst> {
         }
       }
     } catch (e) {
-      print(e);
+      print('e');
       Fluttertoast.showToast(msg: e.toString());
     }
   }
 
   registerAndSaveUserRecord() async {
-    User userModel = User(
-      1,
-      nameController.text.trim(),
-      emailController.text.trim(),
-      passwordController.text,
-      "",
-    );
+    // User userModel = User(
+    //   1,
+    //   nameController.text.trim(),
+    //   emailController.text.trim(),
+    //   passwordController.text,
+    //   "",
+    // );
 
     try {
       var res = await http.post(
         Uri.parse(API.signUp),
-        body: userModel.toJson(),
+        body: {
+          'user_name': nameController.text.trim(),
+          'user_email': emailController.text.trim(),
+          'user_password': passwordController.text.trim(),
+          'user_profile': '',
+        },
       );
 
       if (res.statusCode == 200) {
         var resBodyOfSignUp = jsonDecode(res.body);
+
         if (resBodyOfSignUp['success'] == true) {
           Fluttertoast.showToast(
               msg: 'You have been successfully registered.',
@@ -215,8 +223,9 @@ class _RegisterFirstState extends State<RegisterFirst> {
         }
       }
     } catch (e) {
-      print(e);
-      Fluttertoast.showToast(msg: e.toString());
+      Fluttertoast.showToast(
+        msg: e.toString(),
+      );
     }
   }
 }

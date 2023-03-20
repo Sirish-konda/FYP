@@ -3,9 +3,22 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/admin/about_users/about_user_home.dart';
 import 'package:fyp_project/constants/constant_colors.dart';
 import 'package:fyp_project/homeDirectory/profilePage/profileSettings/widgets/square_settings.dart';
+import 'package:fyp_project/providers/admin/users_details_provider.dart';
+import 'package:provider/provider.dart';
 
-class AdminHome extends StatelessWidget {
+class AdminHome extends StatefulWidget {
   const AdminHome({super.key});
+
+  @override
+  State<AdminHome> createState() => _AdminHomeState();
+}
+
+class _AdminHomeState extends State<AdminHome> {
+  @override
+  void initState() {
+    context.read<UsersDetailsProvider>().fetchUsers();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

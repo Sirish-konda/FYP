@@ -60,8 +60,8 @@ class _FavoritePageState extends State<FavoritePage>
                     labelColor: ConstantColors.kNeutralSkin,
                     unselectedLabelColor: Colors.black,
                     tabs: const [
-                      Tab(text: "Hike's"),
                       Tab(text: "Trek's"),
+                      Tab(text: "Hike's"),
                       Tab(text: "Site's"),
                     ],
                   ),
@@ -74,8 +74,8 @@ class _FavoritePageState extends State<FavoritePage>
               physics: const NeverScrollableScrollPhysics(),
               controller: tabController,
               children: const [
-                FavoriteHikeScreen(),
                 FavoriteTrekScreen(),
+                FavoriteHikeScreen(),
                 FavoriteSiteScreen(),
               ],
             ),

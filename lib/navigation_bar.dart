@@ -5,6 +5,7 @@ import 'package:fyp_project/homeDirectory/favoritePage/favorite_page.dart';
 import 'package:fyp_project/homeDirectory/homePage/home_page.dart';
 import 'package:fyp_project/homeDirectory/photosPage/photos_page.dart';
 import 'package:fyp_project/homeDirectory/profilePage/profile_page.dart';
+import 'package:fyp_project/providers/add_image_provider.dart';
 import 'package:fyp_project/providers/heritage_favorite_provider.dart';
 import 'package:fyp_project/providers/hiking_favorite_provider.dart';
 import 'package:fyp_project/providers/navigation_provider.dart';
@@ -36,6 +37,7 @@ class _GoogleNavigationBarState extends State<GoogleNavigationBar> {
     context.read<TrekkingPhotoFavoriteProvider>().getFavoriteTrek(userId);
     context.read<HikingPhotoFavoriteProvider>().getFavoriteHike(userId);
     context.read<HeritagePhotoFavoriteProvider>().getFavoriteSite(userId);
+    context.read<AddImageProvider>().getImage(userId);
     super.initState();
   }
 

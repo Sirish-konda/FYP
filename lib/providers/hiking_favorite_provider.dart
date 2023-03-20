@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:fyp_project/apiConnection/api_connection.dart';
 import 'package:http/http.dart' as http;
 
@@ -35,7 +36,6 @@ class HikingPhotoFavoriteProvider extends ChangeNotifier {
         ),
       );
 
-      print(res.statusCode);
       if (res.statusCode == 200) {
         var resFavoriteBody = jsonDecode(res.body);
 
@@ -49,7 +49,7 @@ class HikingPhotoFavoriteProvider extends ChangeNotifier {
         } else {}
       }
     } catch (e) {
-      print(e);
+      Fluttertoast.showToast(msg: "Error while togggle favorite hike + $e");
     }
   }
 
@@ -83,7 +83,7 @@ class HikingPhotoFavoriteProvider extends ChangeNotifier {
         } else {}
       }
     } catch (e) {
-      print("sirish9 + $e");
+      Fluttertoast.showToast(msg: "Error while getting favorites hike + $e");
     }
   }
 

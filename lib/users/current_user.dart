@@ -5,6 +5,7 @@ import '../models/user.dart';
 
 class CurrentUser extends ChangeNotifier {
   User _currentUser = User(0, '', '', '', '');
+List<User> _listUser =[];
 
   User get user => _currentUser;
 

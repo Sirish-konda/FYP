@@ -3,21 +3,21 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/constants/constant_colors.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
-class OpenSharePhoto extends StatefulWidget {
-  const OpenSharePhoto({super.key});
+class SavedPhotos extends StatefulWidget {
+  const SavedPhotos({super.key});
 
   @override
-  State<OpenSharePhoto> createState() => _OpenSharePhotoState();
+  State<SavedPhotos> createState() => _SavedPhotosState();
 }
 
-class _OpenSharePhotoState extends State<OpenSharePhoto> {
+class _SavedPhotosState extends State<SavedPhotos> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: ConstantColors.kDarkGreen,
-        title: Text('Your Photo'),
+        title: const Text('Your Photo'),
       ),
       body: Container(
         height: MediaQuery.of(context).size.height,
@@ -42,7 +42,7 @@ class _OpenSharePhotoState extends State<OpenSharePhoto> {
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                  color: Colors.black12,
+                  color: Colors.black26,
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20.r),
                       topRight: Radius.circular(20.r)),

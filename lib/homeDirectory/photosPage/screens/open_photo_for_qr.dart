@@ -6,15 +6,15 @@ import 'package:qr_flutter/qr_flutter.dart';
 
 import '../../../constants/constant_colors.dart';
 
-class PhotoQr extends StatefulWidget {
-  final String path;
-  const PhotoQr({super.key, required this.path});
+class OpenPhotoForQr extends StatefulWidget {
+  final String network;
+  const OpenPhotoForQr({super.key, required this.network});
 
   @override
-  State<PhotoQr> createState() => _PhotoQrState();
+  State<OpenPhotoForQr> createState() => _OpenPhotoForQrState();
 }
 
-class _PhotoQrState extends State<PhotoQr> {
+class _OpenPhotoForQrState extends State<OpenPhotoForQr> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,8 +35,8 @@ class _PhotoQrState extends State<PhotoQr> {
               width: 300.w,
               color: Colors.amber,
               child: ClipRRect(
-                child: Image.file(
-                  File(widget.path),
+                child: Image.network(
+                  widget.network,
                   fit: BoxFit.cover,
                   filterQuality: FilterQuality.high,
                 ),
@@ -47,7 +47,7 @@ class _PhotoQrState extends State<PhotoQr> {
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                  color: Colors.black12,
+                  color: Colors.black26,
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20.r),
                       topRight: Radius.circular(20.r)),
@@ -79,7 +79,7 @@ class _PhotoQrState extends State<PhotoQr> {
                         borderRadius: BorderRadius.circular(20.r),
                       ),
                       child: QrImage(
-                        data: widget.path,
+                        data: widget.network,
                         version: QrVersions.auto,
                         size: 200,
                       ),

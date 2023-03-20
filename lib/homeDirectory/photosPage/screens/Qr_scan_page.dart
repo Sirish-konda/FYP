@@ -1,7 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/constants/constant_colors.dart';
+import 'package:fyp_project/loginAndRegistration/widgets/lower_button.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
 class QrScanPage extends StatefulWidget {
@@ -40,39 +42,58 @@ class _QrScanPageState extends State<QrScanPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: ConstantColors.kDarkGreen,
+        title: const Text("Scan Qr"),
+      ),
       backgroundColor: ConstantColors.kLightGreen,
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('scan this code '),
+          SizedBox(height: 20.h),
+          Text(
+            'Scan this code.',
+            style: TextStyle(fontSize: 26.sp, fontWeight: FontWeight.w700),
+          ),
+          SizedBox(height: 10.h),
+          Text(
+            'So that the photo will be saved in the saved photos page.',
+            style:
+                TextStyle(fontSize: 16.sp, color: ConstantColors.kNeutralSkin),
+            textAlign: TextAlign.center,
+          ),
           SizedBox(
-            height: 30,
+            height: 30.h,
           ),
           Container(
-            height: 300,
-            width: 300,
+            height: 350,
+            width: 350,
             color: Colors.white,
             child: buildQrView(context),
           ),
           SizedBox(
-            height: 30,
+            height: 30.h,
           ),
-          GestureDetector(
-            onTap: () {
+          TextButton(
+            onPressed: () {
               print(scannedData);
             },
             child: Container(
-              height: 50,
-              width: 120,
+              alignment: Alignment.center,
+              height: 45.h,
+              width: 328.w,
+              decoration: BoxDecoration(
+                color: ConstantColors.kDarkGreen,
+                borderRadius: BorderRadius.circular(20.r),
+              ),
               child: Text(
-                'save image',
+                'Save Image',
                 style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                ),
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 21.sp),
               ),
             ),
-          )
+          ),
         ],
       ),
     );
