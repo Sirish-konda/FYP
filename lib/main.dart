@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/loginAndRegistration/login.dart';
 import 'package:fyp_project/providers/add_image_provider.dart';
+import 'package:fyp_project/providers/admin/user_list_provider.dart';
 import 'package:fyp_project/providers/admin/users_details_provider.dart';
 import 'package:fyp_project/providers/heritage_favorite_provider.dart';
 import 'package:fyp_project/providers/heritage_photo_provider.dart';
@@ -54,6 +55,9 @@ class TravelApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (BuildContext context) => UsersDetailsProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (BuildContext context) => UserListProvider(),
         ),
       ],
       child: ScreenUtilInit(

@@ -1,5 +1,5 @@
 class API {
-  static const hostConnect = "http://192.168.0.6/fyp_database";
+  static const hostConnect = "http://192.168.0.4/fyp_database";
   static const hostConnectUser = "$hostConnect/user";
   static const hostConnectAdmin = "$hostConnect/admin";
   static const hostConnectChange = "$hostConnect/change";
@@ -18,6 +18,7 @@ class API {
       "$hostConnectAdmin/delete_user_feedback.php";
   static const adminDeleteUser = "$hostConnectAdmin/delete_user.php";
 
+  static const getUserList = "$hostConnectAdmin/get_users.php";
   //signup User
   static const signUp = "$hostConnectUser/signup.php";
 

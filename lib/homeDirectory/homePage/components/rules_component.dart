@@ -47,14 +47,21 @@ class RulesWidget extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                "Rules and regulations to follow while going on a trek one of these treks in Nepal:",
+                "Conditions to follow while going on a trek in Nepal:",
                 style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w600),
               ),
+              SizedBox(height: 10.h),
               Text(
                 '''
-1. You should drink water
-2. You should eat food.
-3. This looks good to be honest.
+1. Trekkers should respect local customs and traditions and must not indulge in any activity that goes against the established norms and culture of the society.
+
+2. Individual trekking in Restricted Areas is strictly forbidden. There should be minimum two trekkers.
+
+3. Daily remuneration, safety gears and appropriate clothes, Personal Accident insurance must be provided to Nepali citizen accompanying travel group as guide/porter/any other supporting roles.
+
+4. Trekkers should trek only in the specified or designated route as per the Trekking Permit. They are not allowed to change route. Or concerned trekking agency/trekking guide accompanying the group must not let trekkers change the route.
+
+5. Trekkers should comply with instructions given by authorized Officials in trekking zone (Restricted Area).
 ''',
                 style: TextStyle(
                     fontWeight: FontWeight.w500, letterSpacing: 0.5.sp),

@@ -1,19 +1,19 @@
 class UsersDetailsModel {
-  final int id;
-  final String name;
-  final String email;
-  final String feedback;
-  final String rating;
-  final String satisfaction;
+  int? id;
+  String? name;
+  String? email;
+  String? feedback;
+  String? rating;
+  String? satisfaction;
   String? profile;
 
   UsersDetailsModel(
-      {required this.id,
-      required this.name,
-      required this.email,
-      required this.feedback,
-      required this.rating,
-      required this.satisfaction,
+      {this.id,
+      this.name,
+      this.email,
+      this.feedback,
+      this.rating,
+      this.satisfaction,
       this.profile});
 
   factory UsersDetailsModel.fromJson(Map<String, dynamic> json) {
@@ -24,7 +24,7 @@ class UsersDetailsModel {
       feedback: json['feedback'],
       rating: json['rating'],
       satisfaction: json['satisfaction'],
-      profile: json['photo'],
+      profile: json['user_profile'],
     );
   }
 }

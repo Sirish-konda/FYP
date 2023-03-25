@@ -1,12 +1,14 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:fyp_project/constants/constant_colors.dart';
 import 'package:fyp_project/models/trekking_model.dart';
 import 'package:fyp_project/providers/trekking_favorite_provider.dart';
 import 'package:fyp_project/users/current_user.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../components/rules_component.dart';
 import '../screens/components/desc_button.dart';
 
@@ -252,7 +254,18 @@ class _DestinationDescTrekkingState extends State<DestinationDescTrekking> {
                             ),
                           ),
                           trailing: IconButton(
-                            onPressed: () {},
+                            onPressed: () async {
+                              final Uri url = Uri(
+                                scheme: 'tel',
+                                path: "9865456214",
+                              );
+                              if (await canLaunchUrl(url)) {
+                                await launchUrl(url);
+                              } else {
+                                Fluttertoast.showToast(
+                                    msg: 'Cannot contact at the moment.');
+                              }
+                            },
                             icon: Icon(
                               Icons.phone,
                               color: Colors.green.shade900,

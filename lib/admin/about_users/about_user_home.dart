@@ -3,15 +3,28 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/admin/about_users/user_description.dart';
 import 'package:fyp_project/apiConnection/api_connection.dart';
 import 'package:fyp_project/constants/constant_colors.dart';
+import 'package:fyp_project/providers/admin/user_list_provider.dart';
 import 'package:fyp_project/providers/admin/users_details_provider.dart';
 import 'package:provider/provider.dart';
 
-class AboutUserHome extends StatelessWidget {
+class AboutUserHome extends StatefulWidget {
   const AboutUserHome({super.key});
 
   @override
+  State<AboutUserHome> createState() => _AboutUserHomeState();
+}
+
+class _AboutUserHomeState extends State<AboutUserHome> {
+  @override
+  void initState() {
+    context.read<UserListProvider>().getUsers();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final UserProvider = Provider.of<UsersDetailsProvider>(context);
+    final userProvider = Provider.of<UserListProvider>(context);
+
     return Scaffold(
       backgroundColor: ConstantColors.kLightGreen,
       appBar: AppBar(
@@ -36,15 +49,22 @@ class AboutUserHome extends StatelessWidget {
                   margin: EdgeInsets.only(left: 10.h, right: 10.h, top: 10.h),
                   child: ListTile(
                     title: Text(
-                      UserProvider.usersDetails[index].name.toUpperCase(),
+                      userProvider.userList[index].userName.toUpperCase(),
                     ),
                     subtitle: Text(
-                      UserProvider.usersDetails[index].id.toString(),
+                      userProvider.userList[index].userId.toString(),
                     ),
-                    leading: UserProvider.usersDetails[index].profile != null
-                        ? Image.network(
-                            "${API.hostConnect}/profilepicture/${UserProvider.usersDetails[index].profile}")
-                        : Icon(Icons.person),
+                    leading: CircleAvatar(
+                      backgroundColor: Colors.grey,
+                      backgroundImage: userProvider
+                                  .userList[index].userProfile !=
+                              ""
+                          ? NetworkImage(
+                              "${API.hostConnect}/profilepicture/${userProvider.userList[index].userProfile}",
+                            )
+                          : const NetworkImage(
+                              "${API.hostConnect}/profilepicture/profile.png"),
+                    ),
                     trailing: Icon(
                       Icons.keyboard_arrow_right_rounded,
                       size: 30.sp,
@@ -56,21 +76,20 @@ class AboutUserHome extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20.r),
                     ),
                     onTap: () {
-                      final userDesc = UserProvider.usersDetails[index];
+                      final userDesc = userProvider.userList[index].userId;
+
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) =>
-                              UserDescription(userDesc: userDesc),
+                              UserDescription(userId: userDesc),
                         ),
                       );
                     },
                   ),
                 );
               },
-              itemCount: Provider.of<UsersDetailsProvider>(context)
-                  .usersDetails
-                  .length,
+              itemCount: Provider.of<UserListProvider>(context).userList.length,
             ),
           ),
         ],

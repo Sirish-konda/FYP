@@ -20,7 +20,7 @@ class _QrScanPageState extends State<QrScanPage> {
 
   Barcode? barcode;
 
-  late String scannedData;
+  late String  scannedData;
 
   @override
   void dispose() {

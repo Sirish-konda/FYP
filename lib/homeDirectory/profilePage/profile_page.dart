@@ -140,6 +140,7 @@ class _ProfilePageState extends State<ProfilePage> {
               },
               title: "Change Your Email",
             ),
+            SizedBox(height: 8.h),
             ProfileListTile(
               leadingIcon: Icons.password_outlined,
               buttonPressed: () {
@@ -152,6 +153,7 @@ class _ProfilePageState extends State<ProfilePage> {
               },
               title: "Change Your Password",
             ),
+            SizedBox(height: 8.h),
             ProfileListTile(
                 buttonPressed: () {
                   Navigator.push(

@@ -1,9 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:fyp_project/providers/heritage_favorite_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../../constants/constant_colors.dart';
 import '../../../models/heritage_model.dart';
 import '../../../users/current_user.dart';
@@ -274,7 +276,19 @@ class _DestinationDescHeritageState extends State<DestinationDescHeritage> {
                           ),
                         ),
                         trailing: IconButton(
-                          onPressed: () {},
+                          onPressed: () async {
+                            final Uri url = Uri(
+                              scheme: 'tel',
+                              path: widget
+                                  .heritageModel.resturantNumber[index].number,
+                            );
+                            if (await canLaunchUrl(url)) {
+                              await launchUrl(url);
+                            } else {
+                              Fluttertoast.showToast(
+                                  msg: 'Cannot contact at the moment.');
+                            }
+                          },
                           icon: Icon(
                             Icons.phone,
                             color: Colors.green.shade900,
