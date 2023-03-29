@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fyp_project/homeDirectory/homePage/components/rules_component.dart';
+import 'package:fyp_project/homeDirectory/homePage/heritageHome/destination_desc_heritage.dart';
+import 'package:fyp_project/homeDirectory/homePage/hikingHome/destination_desc_hiking.dart';
 import 'package:fyp_project/homeDirectory/homePage/trekkingHome/destination_desc_trekking.dart';
+import 'package:fyp_project/homeDirectory/profilePage/profileSettings/change_email.dart';
 import 'package:fyp_project/models/trekking_model.dart';
 import '../../../../../constants/constant_colors.dart';
 
-class TrekkkingImageDescription extends StatelessWidget {
+class TrekkkingImageDescription extends StatefulWidget {
   final TrekkingModel trekking;
   const TrekkkingImageDescription({
     super.key,
@@ -12,15 +16,20 @@ class TrekkkingImageDescription extends StatelessWidget {
   });
 
   @override
+  State<TrekkkingImageDescription> createState() =>
+      _TrekkkingImageDescriptionState();
+}
+
+class _TrekkkingImageDescriptionState extends State<TrekkkingImageDescription> {
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) =>
-                DestinationDescTrekking(trekkingModel: trekking),
-          ),
+              builder: (context) =>
+                  DestinationDescTrekking(trekkingModel: widget.trekking)),
         );
       },
       child: Container(
@@ -41,7 +50,7 @@ class TrekkkingImageDescription extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(10.r),
               child: Image.asset(
-                trekking.imagePath,
+                widget.trekking.imagePath,
                 height: 150.h,
                 fit: BoxFit.cover,
               ),
@@ -50,7 +59,7 @@ class TrekkkingImageDescription extends StatelessWidget {
               height: 10.h,
             ),
             Text(
-              trekking.title,
+              widget.trekking.title,
               style: TextStyle(
                   decorationColor: Colors.black26,
                   fontSize: 28.sp,

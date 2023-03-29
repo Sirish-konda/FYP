@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:fyp_project/providers/navigation_provider.dart';
-
 import 'package:provider/provider.dart';
 import '../../../../apiConnection/api_connection.dart';
 import '../../../../constants/constant_colors.dart';
@@ -21,7 +19,8 @@ class HomeHeader extends StatelessWidget {
           child: Container(
             height: 100.h,
             decoration: BoxDecoration(
-                color: ConstantColors.kDarkGreen.withOpacity(0.3)),
+              color: ConstantColors.kDarkGreen.withOpacity(0.3),
+            ),
             padding: EdgeInsets.all(20.h),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -11,6 +11,8 @@ class API {
 
   static const deleteImage = "$hostConnect/images/delete_image.php";
 
+  static const getAllImage = "$hostConnect/get_all_images.php";
+
   //admin login in
   static const adminLogin = "$hostConnectAdmin/login.php";
   static const adminViewDetails = "$hostConnectAdmin/users_details.php";

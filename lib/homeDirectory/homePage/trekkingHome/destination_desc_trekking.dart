@@ -12,8 +12,6 @@ import 'package:url_launcher/url_launcher.dart';
 import '../components/rules_component.dart';
 import '../screens/components/desc_button.dart';
 
-import '../screens/components/mapsScreen/maps_screen.dart';
-
 class DestinationDescTrekking extends StatefulWidget {
   final TrekkingModel trekkingModel;
   const DestinationDescTrekking({Key? key, required this.trekkingModel})
@@ -278,10 +276,19 @@ class _DestinationDescTrekkingState extends State<DestinationDescTrekking> {
                     DescButtons(
                       title: 'Show in maps',
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const MapsScreen()));
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            duration: const Duration(milliseconds: 1000),
+                            backgroundColor: ConstantColors.kDarkGreen,
+                            content: Text(
+                              "Currenly this feature is not available",
+                              style: TextStyle(
+                                fontSize: 14.sp,
+                                color: ConstantColors.kNeutralSkin,
+                              ),
+                            ),
+                          ),
+                        );
                       },
                     ),
                     // DescButtons(

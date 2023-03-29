@@ -1,7 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/constants/constant_colors.dart';
+import 'package:fyp_project/homeDirectory/homePage/hikingHome/hiking_maps_screen.dart';
 import 'package:fyp_project/models/hiking_model.dart';
 import 'package:fyp_project/providers/hiking_favorite_provider.dart';
 import 'package:fyp_project/users/current_user.dart';
@@ -9,7 +11,6 @@ import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../screens/components/desc_button.dart';
 import '../screens/components/feedbackScreen/feedback_bottomsheet.dart';
-import '../screens/components/mapsScreen/maps_screen.dart';
 
 class DestinationDescHiking extends StatefulWidget {
   final HikingModel hikingModel;
@@ -226,22 +227,26 @@ class _DestinationDescHikingState extends State<DestinationDescHiking> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const MapsScreen(),
+                          builder: (context) => HikingMapsScreen(
+                            mapsLocation: GeoPoint(
+                                latitude: widget.hikingModel.location!.lat,
+                                longitude: widget.hikingModel.location!.long),
+                          ),
                         ),
                       );
                     },
                   ),
-                  DescButtons(
-                    title: 'Give Feedback',
-                    onPressed: () {
-                      showModalBottomSheet(
-                        context: context,
-                        builder: (context) {
-                          return const FeedbackBottomSheet();
-                        },
-                      );
-                    },
-                  ),
+                  // DescButtons(
+                  //   title: 'Give Feedback',
+                  //   onPressed: () {
+                  //     showModalBottomSheet(
+                  //       context: context,
+                  //       builder: (context) {
+                  //         return const FeedbackBottomSheet();
+                  //       },
+                  //     );
+                  //   },
+                  // ),
                 ],
               ),
             ),

@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -50,7 +49,9 @@ class _UserFeedbackState extends State<UserFeedback> {
           var resBodyOfFeedback = jsonDecode(res.body);
           if (resBodyOfFeedback['result'] == true) {
             Fluttertoast.showToast(msg: "Your feedback has been submitted");
-            Navigator.pop(context);
+            if(mounted){
+              Navigator.pop(context);
+            }
           } else {
             Fluttertoast.showToast(
                 msg: "Your feedback is currently not submitted");
@@ -76,6 +77,7 @@ class _UserFeedbackState extends State<UserFeedback> {
         ),
       ),
       body: SingleChildScrollView(
+        physics: const ClampingScrollPhysics(),
         child: Column(
           children: [
             Container(
@@ -115,9 +117,11 @@ class _UserFeedbackState extends State<UserFeedback> {
                     },
                     updateOnDrag: true,
                     onRatingUpdate: (rating) {
-                      setState(() {
-                        this.rating = rating;
-                      });
+                      setState(
+                        () {
+                          this.rating = rating;
+                        },
+                      );
                     },
                   ),
                   Text(

@@ -21,7 +21,7 @@ Bhaktapur Durbar Square" the city is also known as a museum of medieval art and 
         HeritageImgModel("assets/images/heritageDestination/bhaktapur5.PNG"),
       ],
       imagePath: "assets/images/heritageDestination/bhaktapurMAIN.PNG",
-      location: Geo(lat: 22.0, long: 22.0),
+      location: Geo(lat: 27.6720791, long: 85.4259136),
       resturantNumber: [
         RestaurantModel(
           'Mayur Restro',
@@ -60,7 +60,7 @@ Bhaktapur Durbar Square" the city is also known as a museum of medieval art and 
         HeritageImgModel("assets/images/heritageDestination/boudha5.PNG"),
       ],
       imagePath: "assets/images/heritageDestination/boudhaMAIN.PNG",
-      location: Geo(lat: 22.0, long: 22.0),
+      location: Geo(lat: 27.7215109, long: 85.3598087),
       resturantNumber: [
         RestaurantModel(
           'Roadhouse Café',
@@ -99,7 +99,7 @@ Bhaktapur Durbar Square" the city is also known as a museum of medieval art and 
         HeritageImgModel("assets/images/heritageDestination/changu5.PNG"),
       ],
       imagePath: "assets/images/heritageDestination/changuMAIN.PNG",
-      location: Geo(lat: 22.0, long: 22.0),
+      location: Geo(lat: 27.7164501, long: 85.4258423),
       resturantNumber: [
         RestaurantModel(
           'Bamboo brunch restaurant',
@@ -137,7 +137,7 @@ Bhaktapur Durbar Square" the city is also known as a museum of medieval art and 
         HeritageImgModel("assets/images/heritageDestination/kathmandu4.PNG"),
       ],
       imagePath: "assets/images/heritageDestination/kathmanduMAIN.PNG",
-      location: Geo(lat: 22.0, long: 22.0),
+      location: Geo(lat: 27.7042, long: 85.3067),
       resturantNumber: [
         RestaurantModel(
           'Heritage Rooftop Café',
@@ -176,7 +176,7 @@ Bhaktapur Durbar Square" the city is also known as a museum of medieval art and 
         HeritageImgModel("assets/images/heritageDestination/lumbini5.PNG"),
       ],
       imagePath: "assets/images/heritageDestination/lumbiniMAIN.PNG",
-      location: Geo(lat: 22.0, long: 22.0),
+      location: Geo(lat: 27.9207, long: 82.7347),
       resturantNumber: [
         RestaurantModel(
           'G.G Café & Restaurant',
@@ -214,7 +214,7 @@ Bhaktapur Durbar Square" the city is also known as a museum of medieval art and 
         HeritageImgModel("assets/images/heritageDestination/bpasupati5.PNG"),
       ],
       imagePath: "assets/images/heritageDestination/pashupatiMAIN.PNG",
-      location: Geo(lat: 22.0, long: 22.0),
+      location: Geo(lat: 27.7105167, long: 85.3466238),
       resturantNumber: [
         RestaurantModel(
           'Bambooze Restro',
@@ -253,7 +253,7 @@ Bhaktapur Durbar Square" the city is also known as a museum of medieval art and 
         HeritageImgModel("assets/images/heritageDestination/patan5.PNG"),
       ],
       imagePath: "assets/images/heritageDestination/patanMAIN.PNG",
-      location: Geo(lat: 22.0, long: 22.0),
+      location: Geo(lat: 27.6727, long: 85.3253),
       resturantNumber: [
         RestaurantModel(
           'Café De Patan',
@@ -293,7 +293,7 @@ Bhaktapur Durbar Square" the city is also known as a museum of medieval art and 
         HeritageImgModel("assets/images/heritageDestination/swayambhu6.PNG"),
       ],
       imagePath: "assets/images/heritageDestination/swayambhuMAIN.PNG",
-      location: Geo(lat: 22.0, long: 22.0),
+      location: Geo(lat: 27.7149043, long: 85.288207),
       resturantNumber: [
         RestaurantModel(
           'Yangkus The Momo Palette',

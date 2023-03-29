@@ -640,4 +640,9 @@ The Upper Mustang Trek is all about discovering the secret world of Mustang's hi
   }
 
   int get imgLength => _trekkingDesc.length;
+  // bool isread = true;
+
+  // void changeRead() {
+  //   isread = false;
+  // }
 }

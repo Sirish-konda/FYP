@@ -1,7 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:fyp_project/homeDirectory/homePage/heritageHome/heritage_maps_screen.dart';
 import 'package:fyp_project/providers/heritage_favorite_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -10,8 +12,6 @@ import '../../../constants/constant_colors.dart';
 import '../../../models/heritage_model.dart';
 import '../../../users/current_user.dart';
 import '../screens/components/desc_button.dart';
-import '../screens/components/feedbackScreen/feedback_bottomsheet.dart';
-import '../screens/components/mapsScreen/maps_screen.dart';
 
 class DestinationDescHeritage extends StatefulWidget {
   final HeritageModel heritageModel;
@@ -303,22 +303,26 @@ class _DestinationDescHeritageState extends State<DestinationDescHeritage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const MapsScreen(),
+                          builder: (context) => HeritageMapsScreen(
+                            mapsLocation: GeoPoint(
+                                latitude: widget.heritageModel.location!.lat,
+                                longitude: widget.heritageModel.location!.long),
+                          ),
                         ),
                       );
                     },
                   ),
-                  DescButtons(
-                    title: 'Give Feedback',
-                    onPressed: () {
-                      showModalBottomSheet(
-                        context: context,
-                        builder: (context) {
-                          return const FeedbackBottomSheet();
-                        },
-                      );
-                    },
-                  ),
+                  // DescButtons(
+                  //   title: 'Give Feedback',
+                  //   onPressed: () {
+                  //     showModalBottomSheet(
+                  //       context: context,
+                  //       builder: (context) {
+                  //         return const FeedbackBottomSheet();
+                  //       },
+                  //     );
+                  //   },
+                  // ),
                 ],
               ),
             ),
