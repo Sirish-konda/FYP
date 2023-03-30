@@ -4,6 +4,7 @@ class API {
   static const hostConnectAdmin = "$hostConnect/admin";
   static const hostConnectChange = "$hostConnect/change";
   static const hostConnectFavorite = "$hostConnect/favorite";
+  static const hostConnectSharing = "$hostConnect/sharedImages";
 
   static const addImage = "$hostConnect/add_image.php";
 
@@ -11,7 +12,9 @@ class API {
 
   static const deleteImage = "$hostConnect/images/delete_image.php";
 
-  static const getAllImage = "$hostConnect/get_all_images.php";
+  static const getAllImage = "$hostConnectSharing/get_all_images.php";
+  static const setSharedImage = "$hostConnectSharing/set_shared_images.php";
+  static const getSharedImage = "$hostConnectSharing/get_shared_images.php";
 
   //admin login in
   static const adminLogin = "$hostConnectAdmin/login.php";

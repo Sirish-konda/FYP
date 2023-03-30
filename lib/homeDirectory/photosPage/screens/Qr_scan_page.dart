@@ -5,7 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:fyp_project/apiConnection/api_connection.dart';
 import 'package:fyp_project/constants/constant_colors.dart';
-import 'package:fyp_project/loginAndRegistration/widgets/lower_button.dart';
+import 'package:fyp_project/users/current_user.dart';
+import 'package:provider/provider.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:http/http.dart' as http;
 
@@ -21,22 +22,29 @@ class _QrScanPageState extends State<QrScanPage> {
 
   List<String> imageList = [];
 
+  bool codeRead = false;
+
   QRViewController? controller;
 
   Barcode? barcode;
 
   late String scannedData;
+  late String imageName;
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     controller?.dispose();
   }
 
   @override
+  void initState() {
+    checkImages();
+    super.initState();
+  }
+
+  @override
   void reassemble() async {
-    // TODO: implement reassemble
     super.reassemble();
     if (Platform.isAndroid) {
       await controller!.pauseCamera();
@@ -47,9 +55,6 @@ class _QrScanPageState extends State<QrScanPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        checkImages();
-      }),
       appBar: AppBar(
         backgroundColor: ConstantColors.kDarkGreen,
         title: const Text("Scan Qr"),
@@ -94,7 +99,7 @@ class _QrScanPageState extends State<QrScanPage> {
                       borderRadius: BorderRadius.circular(10.r),
                     ),
                     child: Text(
-                      barcode != null ? '${barcode!.code}' : 'Scan Code',
+                      barcode != null ? 'QR found' : 'Scan Code',
                       maxLines: 3,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -105,26 +110,22 @@ class _QrScanPageState extends State<QrScanPage> {
             SizedBox(
               height: 30.h,
             ),
-            TextButton(
-              style: ElevatedButton.styleFrom(
-                disabledBackgroundColor: ConstantColors.kMidGreen,
-                backgroundColor: ConstantColors.kLightGreen,
-              ),
-              onPressed: barcode != null
-                  ? imageList.contains(barcode!.code)
-                      ? () {
-                          Fluttertoast.showToast(
-                            msg: barcode!.code.toString(),
-                          );
-                        }
-                      : null
-                  : null,
-              child: Text(
-                'Save Image',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 21.sp),
+            Visibility(
+              visible: codeRead,
+              child: TextButton(
+                style: TextButton.styleFrom(
+                  backgroundColor: ConstantColors.kDarkGreen,
+                ),
+                onPressed: () {
+                  setImage(setImageName: imageName);
+                },
+                child: Text(
+                  'Save Image',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 21.sp),
+                ),
               ),
             ),
           ],
@@ -151,12 +152,23 @@ class _QrScanPageState extends State<QrScanPage> {
       this.controller = controller;
     });
 
-    controller.scannedDataStream.listen((barcode) {
-      setState(() {
-        this.barcode = barcode;
-        scannedData = barcode.code!;
-      });
-    });
+    controller.scannedDataStream.listen(
+      (barcode) {
+        setState(
+          () {
+            this.barcode = barcode;
+            scannedData = barcode.code!;
+            String imageUrl = scannedData;
+            imageName = imageUrl.substring(imageUrl.lastIndexOf('/') + 1);
+            if (imageList.contains(barcode.code)) {
+              codeRead = true;
+            } else {
+              codeRead = false;
+            }
+          },
+        );
+      },
+    );
   }
 
   Future<void> checkImages() async {
@@ -169,16 +181,42 @@ class _QrScanPageState extends State<QrScanPage> {
         var responseDecode = jsonDecode(response.body);
 
         if (responseDecode['success']) {
-          List<dynamic> AllPhotos = responseDecode['AllPhotos'];
-          for (var photos in AllPhotos) {
+          List<dynamic> allPhotos = responseDecode['AllPhotos'];
+          for (var photos in allPhotos) {
             //  ${API.hostConnect}/profilePicture/${Provider.of<CurrentUser>(context).user.userProfile!}"
             imageList.add('${API.hostConnect}/userimages/$photos');
           }
         }
       }
-      print(imageList);
     } catch (e) {
-      print(e);
+      Fluttertoast.showToast(msg: "$e");
+    }
+  }
+
+  Future<void> setImage({required String setImageName}) async {
+    try {
+      var response = await http.post(
+        Uri.parse(API.setSharedImage),
+        body: jsonEncode(
+          {
+            'user_id':
+                Provider.of<CurrentUser>(context, listen: false).user.userId,
+            'photo_name': setImageName
+          },
+        ),
+      );
+
+      if (response.statusCode == 200) {
+        var responseBody = jsonDecode(response.body);
+
+        if (responseBody['success'] == true) {
+          Fluttertoast.showToast(msg: "Image saved");
+        } else {
+          Fluttertoast.showToast(msg: "You already have this image");
+        }
+      }
+    } catch (e) {
+      Fluttertoast.showToast(msg: '$e');
     }
   }
 }

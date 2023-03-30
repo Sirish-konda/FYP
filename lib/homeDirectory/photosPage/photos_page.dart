@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/constants/constant_colors.dart';
 import 'package:fyp_project/homeDirectory/photosPage/screens/add_photos.dart';
-import 'package:fyp_project/homeDirectory/photosPage/screens/open_share_photo.dart';
+import 'package:fyp_project/homeDirectory/photosPage/screens/saved_photos.dart';
 import 'package:fyp_project/homeDirectory/photosPage/screens/shared_photos.dart';
 
 class PhotosPage extends StatelessWidget {

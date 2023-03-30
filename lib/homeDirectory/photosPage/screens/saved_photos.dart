@@ -1,50 +1,33 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:fyp_project/apiConnection/api_connection.dart';
 import 'package:fyp_project/constants/constant_colors.dart';
-import 'package:fyp_project/homeDirectory/photosPage/screens/saved_photos.dart';
-import 'package:fyp_project/homeDirectory/photosPage/screens/open_photo_for_qr.dart';
-import 'package:fyp_project/providers/add_image_provider.dart';
 import 'package:fyp_project/users/current_user.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
+import 'package:provider/provider.dart';
 
-import '../../../apiConnection/api_connection.dart';
-
-class AddPhotos extends StatefulWidget {
-  const AddPhotos({super.key});
+class SavedPhotos extends StatefulWidget {
+  const SavedPhotos({super.key});
 
   @override
-  State<AddPhotos> createState() => _AddPhotosState();
+  State<SavedPhotos> createState() => _SavedPhotosState();
 }
 
-class _AddPhotosState extends State<AddPhotos> {
-  final ImagePicker imagePicker = ImagePicker();
+class _SavedPhotosState extends State<SavedPhotos> {
+  List<String> imageList = [];
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    getSharedImages();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    final imageList = Provider.of<AddImageProvider>(context).imageFileList;
-    void selectImages() async {
-      final List<XFile>? selectImages = await imagePicker.pickMultiImage();
-      if (selectImages!.isNotEmpty) {
-        if (imageList.contains(selectImages)) {
-          return null;
-        } else {
-          await Provider.of<AddImageProvider>(context, listen: false)
-              .uploadImages(
-                  selectImages,
-                  Provider.of<CurrentUser>(context, listen: false)
-                      .user
-                      .userId
-                      .toString());
-        }
-      }
-    }
-
     showSnackBarDelete(BuildContext context, int index, String name) {
       final addedSnackBar = SnackBar(
         behavior: SnackBarBehavior.floating,
@@ -65,14 +48,6 @@ class _AddPhotosState extends State<AddPhotos> {
                     backgroundColor: Colors.red,
                   ),
                   onPressed: () {
-                    Provider.of<AddImageProvider>(context, listen: false)
-                        .deleteImage(
-                      name,
-                      Provider.of<CurrentUser>(context, listen: false)
-                          .user
-                          .userId,
-                      index,
-                    );
                     ScaffoldMessenger.of(context).hideCurrentSnackBar();
                   },
                   child: const Text('Yes'),
@@ -99,21 +74,7 @@ class _AddPhotosState extends State<AddPhotos> {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: ConstantColors.kDarkGreen,
-        automaticallyImplyLeading: false,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: const Icon(Icons.arrow_back_ios_new_rounded),
-        ),
-        title: const Text("Your photos"),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          selectImages();
-        },
-        backgroundColor: ConstantColors.kDarkGreen,
-        child: const Icon(Icons.add),
+        title: const Text('Your Photo'),
       ),
       body: Padding(
         padding: EdgeInsets.only(top: 10.h, left: 7.h, right: 7.h),
@@ -126,32 +87,48 @@ class _AddPhotosState extends State<AddPhotos> {
           itemBuilder: (context, index) {
             return GestureDetector(
               child: Image.network(
-                imageList[index].path,
+                imageList[index],
                 fit: BoxFit.cover,
                 filterQuality: FilterQuality.high,
               ),
               onLongPress: () {
-                showSnackBarDelete(
-                  context,
-                  index,
-                  imageList[index].name,
-                );
+                showSnackBarDelete(context, index, imageList[index]);
               },
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => OpenPhotoForQr(
-                      network: imageList[index].path,
-                    ),
-                  ),
-                );
-              },
+              onTap: () {},
             );
           },
           itemCount: imageList.length,
         ),
       ),
     );
+  }
+
+  Future<void> getSharedImages() async {
+    try {
+      var response = await http.post(
+        Uri.parse(API.getSharedImage),
+        body: jsonEncode(
+          {
+            'user_id': 2,
+          },
+        ),
+      );
+
+      if (response.statusCode == 200) {
+        var responseBody = jsonDecode(response.body);
+
+        if (responseBody['success'] == true) {
+          List<dynamic> allPhotos = responseBody['AllPhotos'];
+          for (var photos in allPhotos) {
+            //  ${API.hostConnect}/profilePicture/${Provider.of<CurrentUser>(context).user.userProfile!}"
+            setState(() {
+              imageList.add('${API.hostConnect}/userimages/$photos');
+            });
+          }
+        }
+      }
+    } catch (e) {
+      Fluttertoast.showToast(msg: '$e');
+    }
   }
 }

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/constants/constant_colors.dart';
 import 'package:fyp_project/homeDirectory/photosPage/photos_page.dart';
-import 'package:fyp_project/homeDirectory/photosPage/screens/Qr_scan_page.dart';
-import 'package:fyp_project/homeDirectory/photosPage/screens/open_share_photo.dart';
+import 'package:fyp_project/homeDirectory/photosPage/screens/qr_scan_page.dart';
+import 'package:fyp_project/homeDirectory/photosPage/screens/saved_photos.dart';
 import 'package:fyp_project/navigator_extension.dart';
 
 class SharedPhotos extends StatelessWidget {
