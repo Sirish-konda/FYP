@@ -4,7 +4,6 @@ import 'package:fyp_project/constants/constant_colors.dart';
 import 'package:fyp_project/homeDirectory/photosPage/photos_page.dart';
 import 'package:fyp_project/homeDirectory/photosPage/screens/qr_scan_page.dart';
 import 'package:fyp_project/homeDirectory/photosPage/screens/saved_photos.dart';
-import 'package:fyp_project/navigator_extension.dart';
 
 class SharedPhotos extends StatelessWidget {
   const SharedPhotos({super.key});
@@ -27,7 +26,7 @@ class SharedPhotos extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => SavedPhotos()),
+                MaterialPageRoute(builder: (context) => const SavedPhotos()),
               );
             },
           ),
@@ -37,7 +36,7 @@ class SharedPhotos extends StatelessWidget {
             icon: Icons.qr_code_scanner_outlined,
             onPressed: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => QrScanPage()));
+                  MaterialPageRoute(builder: (context) => const QrScanPage()));
             },
           ),
           SizedBox(height: 20.h),

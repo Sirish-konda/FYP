@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fyp_project/homeDirectory/homePage/components/rules_component.dart';
-import 'package:fyp_project/homeDirectory/homePage/heritageHome/destination_desc_heritage.dart';
-import 'package:fyp_project/homeDirectory/homePage/hikingHome/destination_desc_hiking.dart';
 import 'package:fyp_project/homeDirectory/homePage/trekkingHome/destination_desc_trekking.dart';
-import 'package:fyp_project/homeDirectory/profilePage/profileSettings/change_email.dart';
 import 'package:fyp_project/models/trekking_model.dart';
 import '../../../../../constants/constant_colors.dart';
 

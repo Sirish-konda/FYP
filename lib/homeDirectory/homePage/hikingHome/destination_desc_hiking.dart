@@ -10,7 +10,6 @@ import 'package:fyp_project/users/current_user.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../screens/components/desc_button.dart';
-import '../screens/components/feedbackScreen/feedback_bottomsheet.dart';
 
 class DestinationDescHiking extends StatefulWidget {
   final HikingModel hikingModel;

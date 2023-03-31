@@ -52,7 +52,7 @@ class ChangeEmail extends StatelessWidget {
           }
         }
       } catch (e) {
-        print(e);
+        Fluttertoast.showToast(msg: '$e');
       }
     }
 

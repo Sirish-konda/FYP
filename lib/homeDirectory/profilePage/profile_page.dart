@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:fyp_project/apiConnection/api_connection.dart';
 import 'package:fyp_project/constants/constant_colors.dart';
 import 'package:fyp_project/homeDirectory/profilePage/profileSettings/about_app.dart';
@@ -159,7 +160,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => UserFeedback(),
+                      builder: (context) => const UserFeedback(),
                     ),
                   );
                 },
@@ -316,14 +317,12 @@ class _ProfilePageState extends State<ProfilePage> {
         final responseString = await response.stream.bytesToString();
         final jsonResponse = jsonDecode(responseString);
 
+        // ignore: use_build_context_synchronously
         Provider.of<CurrentUser>(context, listen: false)
             .updateUserProfile(jsonResponse['imageURL']);
-      } else {
-        print('not working');
-      }
+      } else {}
     } catch (e) {
-      print('this is the error $e');
-      return e;
+      Fluttertoast.showToast(msg: '$e');
     }
   }
 }

@@ -15,7 +15,6 @@ class UserListProvider extends ChangeNotifier {
   Future<void> getUsers() async {
     try {
       final response = await http.get(Uri.parse(API.getUserList));
-      print(response.statusCode);
 
       if (response.statusCode == 200) {
         var responseBody = jsonDecode(response.body);
@@ -34,7 +33,6 @@ class UserListProvider extends ChangeNotifier {
         throw Exception('Failed to load users');
       }
     } catch (e) {
-      print(e);
       Fluttertoast.showToast(msg: "Problem with fetchUsers() $e");
     }
   }

@@ -7,7 +7,6 @@ import 'package:fyp_project/loginAndRegistration/widgets/lower_part.dart';
 import 'package:fyp_project/loginAndRegistration/widgets/upper_part.dart';
 import 'package:fyp_project/loginAndRegistration/widgets/upper_text.dart';
 import '../constants/constant_colors.dart';
-import '../models/user.dart';
 import 'login.dart';
 import 'package:http/http.dart' as http;
 
@@ -177,7 +176,6 @@ class _RegisterFirstState extends State<RegisterFirst> {
         }
       }
     } catch (e) {
-      print('e');
       Fluttertoast.showToast(msg: e.toString());
     }
   }

@@ -21,54 +21,12 @@ class _SavedPhotosState extends State<SavedPhotos> {
 
   @override
   void initState() {
-    // TODO: implement initState
     getSharedImages();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    showSnackBarDelete(BuildContext context, int index, String name) {
-      final addedSnackBar = SnackBar(
-        behavior: SnackBarBehavior.floating,
-        backgroundColor: ConstantColors.kDarkGreen,
-        duration: const Duration(seconds: 2),
-        content: Column(
-          children: [
-            Text(
-              'Do you want to delete this image?',
-              style: TextStyle(
-                  fontSize: 18.sp, color: ConstantColors.kNeutralSkin),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                TextButton(
-                  style: TextButton.styleFrom(
-                    backgroundColor: Colors.red,
-                  ),
-                  onPressed: () {
-                    ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                  },
-                  child: const Text('Yes'),
-                ),
-                TextButton(
-                  style: TextButton.styleFrom(
-                    backgroundColor: ConstantColors.kLightGreen,
-                  ),
-                  onPressed: () {
-                    ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                  },
-                  child: const Text('No'),
-                ),
-              ],
-            )
-          ],
-        ),
-      );
-      ScaffoldMessenger.of(context).showSnackBar(addedSnackBar);
-    }
-
     return Scaffold(
       backgroundColor: ConstantColors.kLightGreen,
       appBar: AppBar(
@@ -92,7 +50,49 @@ class _SavedPhotosState extends State<SavedPhotos> {
                 filterQuality: FilterQuality.high,
               ),
               onLongPress: () {
-                showSnackBarDelete(context, index, imageList[index]);
+                //showSnackBarDelete(context, index, imageList[index]);
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    behavior: SnackBarBehavior.floating,
+                    backgroundColor: ConstantColors.kDarkGreen,
+                    duration: const Duration(seconds: 2),
+                    content: Column(
+                      children: [
+                        Text(
+                          'Do you want to delete this image?',
+                          style: TextStyle(
+                              fontSize: 18.sp,
+                              color: ConstantColors.kNeutralSkin),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            TextButton(
+                              style: TextButton.styleFrom(
+                                backgroundColor: Colors.red,
+                              ),
+                              onPressed: () {
+                                ScaffoldMessenger.of(context)
+                                    .hideCurrentSnackBar();
+                              },
+                              child: const Text('Yes'),
+                            ),
+                            TextButton(
+                              style: TextButton.styleFrom(
+                                backgroundColor: ConstantColors.kLightGreen,
+                              ),
+                              onPressed: () {
+                                ScaffoldMessenger.of(context)
+                                    .hideCurrentSnackBar();
+                              },
+                              child: const Text('No'),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                );
               },
               onTap: () {},
             );
@@ -109,7 +109,8 @@ class _SavedPhotosState extends State<SavedPhotos> {
         Uri.parse(API.getSharedImage),
         body: jsonEncode(
           {
-            'user_id': 2,
+            'user_id':
+                Provider.of<CurrentUser>(context, listen: false).user.userId,
           },
         ),
       );

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -15,12 +14,20 @@ class HeritageMapsScreen extends StatefulWidget {
   _HeritageMapsScreenState createState() => _HeritageMapsScreenState();
 }
 
-class _HeritageMapsScreenState extends State<HeritageMapsScreen> {
+class _HeritageMapsScreenState extends State<HeritageMapsScreen>
+    with OSMMixinObserver {
   final MapController mapController = MapController();
 
   @override
   void initState() {
     super.initState();
+    mapController.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    mapController.dispose();
   }
 
   @override
@@ -121,5 +128,10 @@ class _HeritageMapsScreenState extends State<HeritageMapsScreen> {
         ),
       ),
     );
+  }
+
+  @override
+  Future<void> mapIsReady(bool isReady) async {
+    _onMapIsReady(isReady);
   }
 }

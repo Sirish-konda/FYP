@@ -49,7 +49,7 @@ class _UserFeedbackState extends State<UserFeedback> {
           var resBodyOfFeedback = jsonDecode(res.body);
           if (resBodyOfFeedback['result'] == true) {
             Fluttertoast.showToast(msg: "Your feedback has been submitted");
-            if(mounted){
+            if (mounted) {
               Navigator.pop(context);
             }
           } else {
@@ -58,7 +58,7 @@ class _UserFeedbackState extends State<UserFeedback> {
           }
         }
       } catch (e) {
-        print(e);
+        Fluttertoast.showToast(msg: '$e');
       }
     }
 

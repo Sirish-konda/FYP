@@ -58,7 +58,7 @@ class ChangePassword extends StatelessWidget {
           }
         }
       } catch (e) {
-        print(e);
+        Fluttertoast.showToast(msg: '$e');
       }
     }
 
@@ -155,17 +155,13 @@ class ChangePassword extends StatelessWidget {
                       title: 'Change',
                       buttonPressed: () {
                         if (formKey.currentState!.validate()) {
-                          print('object');
                           updatePassword(
                             oldUserPassword: oldPasswordController.text,
                             newUserPassword: confirmNewPasswordController.text,
                           );
                         } else {
-                          print(Provider.of<CurrentUser>(context, listen: false)
-                              .user
-                              .userPassword);
-
-                          print('error');
+                          Fluttertoast.showToast(
+                              msg: 'Error while performing the task.');
                         }
                       },
                     ),

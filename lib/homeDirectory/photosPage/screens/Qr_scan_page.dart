@@ -99,7 +99,7 @@ class _QrScanPageState extends State<QrScanPage> {
                       borderRadius: BorderRadius.circular(10.r),
                     ),
                     child: Text(
-                      barcode != null ? 'QR found' : 'Scan Code',
+                      barcode != null ? 'Code found' : 'Scan Code',
                       maxLines: 3,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -112,19 +112,30 @@ class _QrScanPageState extends State<QrScanPage> {
             ),
             Visibility(
               visible: codeRead,
-              child: TextButton(
-                style: TextButton.styleFrom(
-                  backgroundColor: ConstantColors.kDarkGreen,
-                ),
-                onPressed: () {
-                  setImage(setImageName: imageName);
-                },
-                child: Text(
-                  'Save Image',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 21.sp),
+              child: SizedBox(
+                width: 200.w,
+                child: TextButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                        ConstantColors.kDarkGreen),
+                    foregroundColor: MaterialStateProperty.all<Color>(
+                        ConstantColors.kNeutralSkin),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0.r),
+                      ),
+                    ),
+                  ),
+                  onPressed: () {
+                    setImage(setImageName: imageName);
+                  },
+                  child: Text(
+                    'Save Image',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 21.sp),
+                  ),
                 ),
               ),
             ),
@@ -210,9 +221,15 @@ class _QrScanPageState extends State<QrScanPage> {
         var responseBody = jsonDecode(response.body);
 
         if (responseBody['success'] == true) {
-          Fluttertoast.showToast(msg: "Image saved");
+          Fluttertoast.showToast(
+            msg: "Image saved",
+            backgroundColor: Colors.green.shade600,
+          );
         } else {
-          Fluttertoast.showToast(msg: "You already have this image");
+          Fluttertoast.showToast(
+            msg: "You already have this image",
+            backgroundColor: Colors.red.shade600,
+          );
         }
       }
     } catch (e) {

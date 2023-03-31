@@ -36,9 +36,7 @@ class UsersDetailsProvider extends ChangeNotifier {
 
             _usersDetails = userDetails;
             notifyListeners();
-          } else {
-            
-          }
+          } else {}
         } else {
           throw Exception('Failed to load users');
         }
@@ -46,7 +44,6 @@ class UsersDetailsProvider extends ChangeNotifier {
         throw Exception('Failed to load users');
       }
     } catch (e) {
-      print(e);
       // Displays a toast message if there's an error while fetching the list of users
       Fluttertoast.showToast(msg: "Problem with fetchUsers() $e");
     }

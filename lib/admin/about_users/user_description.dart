@@ -127,7 +127,7 @@ class _UserDescriptionState extends State<UserDescription> {
                       .setUsersDetails();
                   Navigator.pop(context);
                 },
-                icon: Icon(Icons.arrow_back_ios_new_rounded),
+                icon: const Icon(Icons.arrow_back_ios_new_rounded),
               ),
               centerTitle: true,
               backgroundColor: ConstantColors.kDarkGreen,
@@ -341,7 +341,7 @@ class _UserDescriptionState extends State<UserDescription> {
                       .setUsersDetails();
                   Navigator.pop(context);
                 },
-                icon: Icon(Icons.arrow_back_ios_new_rounded),
+                icon: const Icon(Icons.arrow_back_ios_new_rounded),
               ),
               centerTitle: true,
               backgroundColor: ConstantColors.kDarkGreen,

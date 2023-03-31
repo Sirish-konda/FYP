@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fyp_project/providers/add_image_provider.dart';
-import 'package:fyp_project/providers/admin/users_details_provider.dart';
 import 'package:fyp_project/providers/heritage_favorite_provider.dart';
 import 'package:fyp_project/providers/trekking_favorite_provider.dart';
 import 'package:provider/provider.dart';

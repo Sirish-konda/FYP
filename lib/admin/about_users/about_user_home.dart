@@ -4,7 +4,6 @@ import 'package:fyp_project/admin/about_users/user_description.dart';
 import 'package:fyp_project/apiConnection/api_connection.dart';
 import 'package:fyp_project/constants/constant_colors.dart';
 import 'package:fyp_project/providers/admin/user_list_provider.dart';
-import 'package:fyp_project/providers/admin/users_details_provider.dart';
 import 'package:provider/provider.dart';
 
 class AboutUserHome extends StatefulWidget {

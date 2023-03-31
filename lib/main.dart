@@ -16,7 +16,7 @@ import 'package:provider/provider.dart';
 
 void main() async {
   await ScreenUtil.ensureScreenSize();
-  runApp(TravelApp());
+  runApp(const TravelApp());
 }
 
 class TravelApp extends StatelessWidget {

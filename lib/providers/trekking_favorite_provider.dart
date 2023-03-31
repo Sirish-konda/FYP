@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import '../apiConnection/api_connection.dart';
 import 'package:http/http.dart' as http;
 
@@ -48,7 +49,7 @@ class TrekkingPhotoFavoriteProvider extends ChangeNotifier {
         } else {}
       }
     } catch (e) {
-      print(e);
+      Fluttertoast.showToast(msg: '$e');
     }
   }
 
@@ -81,7 +82,7 @@ class TrekkingPhotoFavoriteProvider extends ChangeNotifier {
         } else {}
       }
     } catch (e) {
-      print("sirish $e");
+      Fluttertoast.showToast(msg: '$e');
     }
   }
 

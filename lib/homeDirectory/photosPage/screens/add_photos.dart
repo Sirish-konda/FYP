@@ -1,19 +1,11 @@
-import 'dart:convert';
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:fyp_project/constants/constant_colors.dart';
-import 'package:fyp_project/homeDirectory/photosPage/screens/saved_photos.dart';
 import 'package:fyp_project/homeDirectory/photosPage/screens/open_photo_for_qr.dart';
 import 'package:fyp_project/providers/add_image_provider.dart';
 import 'package:fyp_project/users/current_user.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
-import 'package:http/http.dart' as http;
-
-import '../../../apiConnection/api_connection.dart';
 
 class AddPhotos extends StatefulWidget {
   const AddPhotos({super.key});
@@ -29,6 +21,7 @@ class _AddPhotosState extends State<AddPhotos> {
   Widget build(BuildContext context) {
     final imageList = Provider.of<AddImageProvider>(context).imageFileList;
     void selectImages() async {
+      // ignore: unnecessary_nullable_for_final_variable_declarations
       final List<XFile>? selectImages = await imagePicker.pickMultiImage();
       if (selectImages!.isNotEmpty) {
         if (imageList.contains(selectImages)) {
@@ -45,6 +38,7 @@ class _AddPhotosState extends State<AddPhotos> {
       }
     }
 
+//adding snackbar so that the user gets the option to delete or put the image.
     showSnackBarDelete(BuildContext context, int index, String name) {
       final addedSnackBar = SnackBar(
         behavior: SnackBarBehavior.floating,
