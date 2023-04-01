@@ -76,6 +76,15 @@ class _ProfilePageState extends State<ProfilePage> {
                                 ""
                             ? Image.network(
                                 "${API.hostConnect}/profilePicture/${Provider.of<CurrentUser>(context).user.userProfile!}",
+                                loadingBuilder:
+                                    (context, child, loadingProgress) {
+                                  if (loadingProgress == null) return child;
+                                  return const CircularProgressIndicator(
+                                    backgroundColor:
+                                        ConstantColors.kNeutralSkin,
+                                    color: ConstantColors.kDarkGreen,
+                                  );
+                                },
                                 fit: BoxFit.cover,
                               )
                             : Image.asset(

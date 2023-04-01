@@ -121,6 +121,15 @@ class _AddPhotosState extends State<AddPhotos> {
             return GestureDetector(
               child: Image.network(
                 imageList[index].path,
+                loadingBuilder: (context, child, loadingProgress) {
+                  if (loadingProgress == null) return child;
+                  return const Center(
+                    child: CircularProgressIndicator(
+                      backgroundColor: ConstantColors.kNeutralSkin,
+                      color: ConstantColors.kDarkGreen,
+                    ),
+                  );
+                },
                 fit: BoxFit.cover,
                 filterQuality: FilterQuality.high,
               ),
@@ -131,6 +140,7 @@ class _AddPhotosState extends State<AddPhotos> {
                   imageList[index].name,
                 );
               },
+              //cached netwrok image
               onTap: () {
                 Navigator.push(
                   context,

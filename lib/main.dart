@@ -15,6 +15,7 @@ import 'package:fyp_project/users/current_user.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
+  // Ensure the screen size is available before running the app.
   await ScreenUtil.ensureScreenSize();
   runApp(const TravelApp());
 }
@@ -25,6 +26,7 @@ class TravelApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
+      // Create a set of providers to be used by the app.
       providers: [
         ChangeNotifierProvider(
           create: (BuildContext context) => TrekkingPhotoProvider(),
@@ -61,10 +63,13 @@ class TravelApp extends StatelessWidget {
         ),
       ],
       child: ScreenUtilInit(
+        // Set the design size of the screen for scaling the UI.
         designSize: const Size(360, 690),
+        // Allow the text size to adapt to the screen size.
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) {
+          // Build the app using the MaterialApp widget.
           return const MaterialApp(
             debugShowCheckedModeBanner: false,
             home: Login(),
