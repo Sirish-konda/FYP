@@ -24,6 +24,7 @@ class _UserFeedbackState extends State<UserFeedback> {
 
   @override
   Widget build(BuildContext context) {
+    // function to send feedback to the API
     Future<void> sendFeedback(
       int userId,
       String userName,
@@ -48,16 +49,20 @@ class _UserFeedbackState extends State<UserFeedback> {
         if (res.statusCode == 200) {
           var resBodyOfFeedback = jsonDecode(res.body);
           if (resBodyOfFeedback['result'] == true) {
+            // show feedback submission successful toast
             Fluttertoast.showToast(msg: "Your feedback has been submitted");
             if (mounted) {
+              // close feedback page
               Navigator.pop(context);
             }
           } else {
+            // show feedback submission failed toast
             Fluttertoast.showToast(
                 msg: "Your feedback is currently not submitted");
           }
         }
       } catch (e) {
+        // show error toast
         Fluttertoast.showToast(msg: '$e');
       }
     }
@@ -71,6 +76,7 @@ class _UserFeedbackState extends State<UserFeedback> {
         title: const Text("We want to hear from you"),
         leading: IconButton(
           onPressed: () {
+            // go back to previous page
             Navigator.pop(context);
           },
           icon: const Icon(Icons.arrow_back_ios_new_rounded),
@@ -262,6 +268,11 @@ class _UserFeedbackState extends State<UserFeedback> {
             ProfileSettings(
               title: 'Submit',
               buttonPressed: () {
+                FocusScopeNode currentFocus = FocusScope.of(context);
+
+                if (!currentFocus.hasPrimaryFocus) {
+                  currentFocus.unfocus();
+                }
                 sendFeedback(
                     Provider.of<CurrentUser>(context, listen: false)
                         .user

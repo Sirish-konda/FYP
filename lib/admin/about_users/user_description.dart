@@ -194,7 +194,7 @@ class _UserDescriptionState extends State<UserDescription> {
                   SingleChildScrollView(
                     child: Container(
                       width: double.infinity,
-                      height: 450.h,
+                      height: 500.h,
                       padding: EdgeInsets.only(
                         top: 10.h,
                         left: 10.h,

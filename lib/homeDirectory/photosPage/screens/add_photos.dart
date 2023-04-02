@@ -20,6 +20,7 @@ class _AddPhotosState extends State<AddPhotos> {
   @override
   Widget build(BuildContext context) {
     final imageList = Provider.of<AddImageProvider>(context).imageFileList;
+
     void selectImages() async {
       // ignore: unnecessary_nullable_for_final_variable_declarations
       final List<XFile>? selectImages = await imagePicker.pickMultiImage();

@@ -47,42 +47,45 @@ class _OpenPhotoForQrState extends State<OpenPhotoForQr> {
                 decoration: BoxDecoration(
                   color: Colors.black26,
                   borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(20.r),
-                      topRight: Radius.circular(20.r)),
+                    topLeft: Radius.circular(20.r),
+                    topRight: Radius.circular(20.r),
+                  ),
                 ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Text(
-                      "Share this photo",
-                      style: TextStyle(
-                          fontSize: 20.sp,
-                          fontWeight: FontWeight.w700,
-                          color: ConstantColors.kNeutralSkin),
-                    ),
-                    Text(
-                      "Scan this QR code to add this photo to \n your account",
-                      style: TextStyle(
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w500,
-                        color: ConstantColors.kNeutralSkin.withOpacity(0.6),
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(
+                        "Share this photo",
+                        style: TextStyle(
+                            fontSize: 20.sp,
+                            fontWeight: FontWeight.w700,
+                            color: ConstantColors.kNeutralSkin),
                       ),
-                      textAlign: TextAlign.center,
-                    ),
-                    Container(
-                      height: 200.h,
-                      width: 200.h,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20.r),
+                      Text(
+                        "Scan this QR code to add this photo to \n your account",
+                        style: TextStyle(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w500,
+                          color: ConstantColors.kNeutralSkin.withOpacity(0.6),
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      child: QrImage(
-                        data: widget.network,
-                        version: QrVersions.auto,
-                        size: 200,
-                      ),
-                    )
-                  ],
+                      Container(
+                        height: 200.h,
+                        width: 200.h,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20.r),
+                        ),
+                        child: QrImage(
+                          data: widget.network,
+                          version: QrVersions.auto,
+                          size: 200,
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             )

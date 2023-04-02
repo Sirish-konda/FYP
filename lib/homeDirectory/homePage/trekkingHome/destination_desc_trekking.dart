@@ -231,14 +231,14 @@ class _DestinationDescTrekkingState extends State<DestinationDescTrekking> {
                           fontSize: 22.sp, fontWeight: FontWeight.bold),
                     ),
                     Container(
-                      height: 200,
+                      height: 80,
                       width: double.infinity,
                       decoration: BoxDecoration(
                           color: ConstantColors.kMidGreen,
                           borderRadius: BorderRadius.circular(20.r)),
                       child: ListView.builder(
                         padding: EdgeInsets.only(top: 0.h),
-                        itemCount: 3,
+                        itemCount: 1,
                         itemBuilder: (context, index) => ListTile(
                           title: Text(
                             "Guide - Sirish konda",

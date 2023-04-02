@@ -46,7 +46,7 @@ class _ProfilePageState extends State<ProfilePage> {
         ),
       ),
       backgroundColor: ConstantColors.kLightGreen,
-      body: SafeArea(
+      body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [

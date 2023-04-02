@@ -29,71 +29,73 @@ class _ShowFavoriteContainerTrekkingState
           ),
         );
       },
-      child: Container(
-        height: 400.h,
-        width: 300.w,
-        decoration: BoxDecoration(
-          color: ConstantColors.kNeutralSkin,
-          border: Border.all(color: ConstantColors.kDarkGreen, width: 4),
-          borderRadius: BorderRadius.circular(20.r),
-          // border: Border.all(color: Colors.black, width: 4),
-        ),
-        child: Column(
-          children: [
-            Column(
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  height: 180.h,
-                  width: 300.w,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(15),
-                    child: Image.asset(
-                      widget.trekking.imagePath,
-                      fit: BoxFit.cover,
+      child: SingleChildScrollView(
+        child: Container(
+          height: 400.h,
+          width: 300.w,
+          decoration: BoxDecoration(
+            color: ConstantColors.kNeutralSkin,
+            border: Border.all(color: ConstantColors.kDarkGreen, width: 4),
+            borderRadius: BorderRadius.circular(20.r),
+            // border: Border.all(color: Colors.black, width: 4),
+          ),
+          child: Column(
+            children: [
+              Column(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
                     ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SizedBox(
                     height: 180.h,
-                    child: Column(
-                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          widget.trekking.title,
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 22.sp,
-                              fontWeight: FontWeight.w700,
-                              decoration: TextDecoration.underline),
-                        ),
-                        const Spacer(
-                          flex: 5,
-                        ),
-                        Text(
-                          widget.trekking.intro,
-                          style: TextStyle(
-                            color: ConstantColors.kDarkGreen,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 14.sp,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                          maxLines: 9,
-                        ),
-                        const Spacer(
-                          flex: 20,
-                        )
-                      ],
+                    width: 300.w,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(15),
+                      child: Image.asset(
+                        widget.trekking.imagePath,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
-          ],
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SizedBox(
+                      height: 180.h,
+                      child: Column(
+                        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            widget.trekking.title,
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 22.sp,
+                                fontWeight: FontWeight.w700,
+                                decoration: TextDecoration.underline),
+                          ),
+                          const Spacer(
+                            flex: 5,
+                          ),
+                          Text(
+                            widget.trekking.intro,
+                            style: TextStyle(
+                              color: ConstantColors.kDarkGreen,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 14.sp,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                            maxLines: 9,
+                          ),
+                          const Spacer(
+                            flex: 20,
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
