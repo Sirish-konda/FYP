@@ -205,7 +205,7 @@ class _RegisterFirstState extends State<RegisterFirst> {
 
         if (resBodyOfSignUp['success'] == true) {
           Fluttertoast.showToast(
-              msg: 'You have been successfully registered.',
+              msg: 'Please verify your user to log in',
               backgroundColor: Colors.green,
               fontSize: 16);
           setState(

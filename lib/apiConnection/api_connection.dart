@@ -1,5 +1,5 @@
 class API {
-  static const hostConnect = "http://100.64.246.119/fyp_database";
+  static const hostConnect = "http://192.168.0.4/fyp_database";
   static const hostConnectUser = "$hostConnect/user";
   static const hostConnectAdmin = "$hostConnect/admin";
   static const hostConnectChange = "$hostConnect/change";

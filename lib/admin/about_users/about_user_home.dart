@@ -40,57 +40,70 @@ class _AboutUserHomeState extends State<AboutUserHome> {
               fontWeight: FontWeight.w800,
             ),
           ),
-          Flexible(
-            child: ListView.builder(
-              shrinkWrap: true,
-              itemBuilder: (context, int index) {
-                return Container(
-                  margin: EdgeInsets.only(left: 10.h, right: 10.h, top: 10.h),
-                  child: ListTile(
-                    title: Text(
-                      userProvider.userList[index].userName.toUpperCase(),
+          userProvider.userList.isEmpty
+              ? Center(
+                  child: Text(
+                    "NO USER'S REGISTERED.",
+                    style: TextStyle(
+                      fontSize: 20.sp,
+                      color: ConstantColors.kNeutralSkin,
                     ),
-                    subtitle: Text(
-                      userProvider.userList[index].userId.toString(),
-                    ),
-                    leading: CircleAvatar(
-                      backgroundColor: Colors.grey,
-                      backgroundImage: userProvider
-                                  .userList[index].userProfile !=
-                              ""
-                          ? NetworkImage(
-                              "${API.hostConnect}/profilepicture/${userProvider.userList[index].userProfile}",
-                            )
-                          : const NetworkImage(
-                              "${API.hostConnect}/profilepicture/profile.png"),
-                    ),
-                    trailing: Icon(
-                      Icons.keyboard_arrow_right_rounded,
-                      size: 30.sp,
-                    ),
-                    iconColor: Colors.white,
-                    textColor: Colors.white,
-                    tileColor: ConstantColors.kDarkGreen,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.r),
-                    ),
-                    onTap: () {
-                      final userDesc = userProvider.userList[index].userId;
+                  ),
+                )
+              : Flexible(
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    itemBuilder: (context, int index) {
+                      return Container(
+                        margin:
+                            EdgeInsets.only(left: 10.h, right: 10.h, top: 10.h),
+                        child: ListTile(
+                          title: Text(
+                            userProvider.userList[index].userName.toUpperCase(),
+                          ),
+                          subtitle: Text(
+                            userProvider.userList[index].userId.toString(),
+                          ),
+                          leading: CircleAvatar(
+                            backgroundColor: Colors.grey,
+                            backgroundImage: userProvider
+                                        .userList[index].userProfile !=
+                                    ""
+                                ? NetworkImage(
+                                    "${API.hostConnect}/profilepicture/${userProvider.userList[index].userProfile}",
+                                  )
+                                : const NetworkImage(
+                                    "${API.hostConnect}/profilepicture/profile.png"),
+                          ),
+                          trailing: Icon(
+                            Icons.keyboard_arrow_right_rounded,
+                            size: 30.sp,
+                          ),
+                          iconColor: Colors.white,
+                          textColor: Colors.white,
+                          tileColor: ConstantColors.kDarkGreen,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20.r),
+                          ),
+                          onTap: () {
+                            final userDesc =
+                                userProvider.userList[index].userId;
 
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              UserDescription(userId: userDesc),
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    UserDescription(userId: userDesc),
+                              ),
+                            );
+                          },
                         ),
                       );
                     },
+                    itemCount:
+                        Provider.of<UserListProvider>(context).userList.length,
                   ),
-                );
-              },
-              itemCount: Provider.of<UserListProvider>(context).userList.length,
-            ),
-          ),
+                ),
         ],
       ),
     );

@@ -40,11 +40,78 @@ class _TrekkingSliderImagesState extends State<TrekkingSliderImages> {
       ),
       child: Column(
         children: [
-          const PopularTitle(
-            title: "Popular Trek's",
+          Row(
+            children: [
+              const Spacer(
+                flex: 2,
+              ),
+              const PopularTitle(
+                title: "Popular Trek's",
+              ),
+              IconButton(
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        // contentPadding: EdgeInsets.zero,
+                        actionsPadding:
+                            EdgeInsets.only(top: 0.h, left: 10.h, right: 10.h),
+                        scrollable: true,
+                        title: Text(
+                          "Conditions to follow while going on a trek in Nepal:",
+                          style: TextStyle(
+                              fontSize: 16.sp, fontWeight: FontWeight.w600),
+                        ),
+                        content: Text(
+                          '''
+                1. Trekkers should respect local customs and traditions and must not indulge in any activity that goes against the established norms and culture of the society.
+                
+                2. Individual trekking in Restricted Areas is strictly forbidden. There should be minimum two trekkers.
+                
+                3. Daily remuneration, safety gears and appropriate clothes, Personal Accident insurance must be provided to Nepali citizen accompanying travel group as guide/porter/any other supporting roles.
+                
+                4. Trekkers should trek only in the specified or designated route as per the Trekking Permit. They are not allowed to change route. Or concerned trekking agency/trekking guide accompanying the group must not let trekkers change the route.
+                
+                5. Trekkers should comply with instructions given by authorized Officials in trekking zone (Restricted Area).''',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              letterSpacing: 0.5.sp,
+                              fontSize: 12.sp),
+                        ),
+                        actions: [
+                          SizedBox(
+                            width: double.infinity,
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                disabledBackgroundColor:
+                                    ConstantColors.kMidGreen,
+                                backgroundColor: ConstantColors.kLightGreen,
+                              ),
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              child: Text(
+                                "Continue",
+                                style: TextStyle(
+                                    color: ConstantColors.kNeutralSkin,
+                                    fontSize: 12.sp),
+                              ),
+                            ),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                },
+                icon: Icon(
+                  Icons.info_outline_rounded,
+                  size: 20.h,
+                ),
+              ),
+              const Spacer(),
+            ],
           ),
-          // const PopularTitle(title: "Popular Trek's"),
-          SizedBox(height: 10.h),
           CarouselSlider.builder(
             carouselController: controller,
             itemCount: Provider.of<TrekkingPhotoProvider>(context).imgLength,

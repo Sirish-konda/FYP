@@ -27,13 +27,13 @@ class UserListProvider extends ChangeNotifier {
           );
           notifyListeners();
         } else {
-          throw Exception('Failed to load users');
+          throw Exception('No users');
         }
       } else {
         throw Exception('Failed to load users');
       }
     } catch (e) {
-      Fluttertoast.showToast(msg: "Problem with fetchUsers() $e");
+      Fluttertoast.showToast(msg: "$e");
     }
   }
 

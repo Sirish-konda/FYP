@@ -55,17 +55,26 @@ class HomeHeader extends StatelessWidget {
                       onTap: () {
                         context.read<NavigationProvider>().selectedIndex = 3;
                       },
-                      child:
-                          Provider.of<CurrentUser>(context).user.userProfile !=
-                                  ""
-                              ? Image.network(
-                                  "${API.hostConnect}/profilePicture/${Provider.of<CurrentUser>(context).user.userProfile!}",
-                                  fit: BoxFit.cover,
-                                )
-                              : Image.asset(
-                                  'assets/images/profile.png',
-                                  fit: BoxFit.cover,
-                                ),
+                      child: Provider.of<CurrentUser>(context)
+                                  .user
+                                  .userProfile !=
+                              ""
+                          ? Image.network(
+                              "${API.hostConnect}/profilePicture/${Provider.of<CurrentUser>(context).user.userProfile!}",
+                              loadingBuilder:
+                                  (context, child, loadingProgress) {
+                                if (loadingProgress == null) return child;
+                                return const CircularProgressIndicator(
+                                  backgroundColor: ConstantColors.kNeutralSkin,
+                                  color: ConstantColors.kDarkGreen,
+                                );
+                              },
+                              fit: BoxFit.cover,
+                            )
+                          : Image.asset(
+                              'assets/images/profile.png',
+                              fit: BoxFit.cover,
+                            ),
                     ),
                   ),
                 ),
