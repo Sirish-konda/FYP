@@ -129,7 +129,7 @@ class _AboutAppState extends State<AboutApp> {
                                           color: ConstantColors.kDarkGreen),
                                     ),
                                     Text(
-                                      "Everything about us came from a box",
+                                      "",
                                       style: TextStyle(fontSize: 18.sp),
                                     ),
                                   ],

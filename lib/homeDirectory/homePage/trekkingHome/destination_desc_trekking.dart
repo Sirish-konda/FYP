@@ -1,8 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:fyp_project/constants/constant_colors.dart';
+import 'package:fyp_project/homeDirectory/homePage/trekkingHome/trekking_maps_screen.dart';
 import 'package:fyp_project/models/trekking_model.dart';
 import 'package:fyp_project/providers/trekking_favorite_provider.dart';
 import 'package:fyp_project/users/current_user.dart';
@@ -271,19 +273,32 @@ class _DestinationDescTrekkingState extends State<DestinationDescTrekking> {
                   DescButtons(
                     title: 'Show in maps',
                     onPressed: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          duration: const Duration(milliseconds: 1000),
-                          backgroundColor: ConstantColors.kDarkGreen,
-                          content: Text(
-                            "Currenly this feature is not available",
-                            style: TextStyle(
-                              fontSize: 14.sp,
-                              color: ConstantColors.kNeutralSkin,
-                            ),
-                          ),
-                        ),
-                      );
+                      widget.trekkingModel.location == null
+                          ? ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                duration: const Duration(milliseconds: 1000),
+                                backgroundColor: ConstantColors.kDarkGreen,
+                                content: Text(
+                                  "Currenly this feature is not available",
+                                  style: TextStyle(
+                                    fontSize: 14.sp,
+                                    color: ConstantColors.kNeutralSkin,
+                                  ),
+                                ),
+                              ),
+                            )
+                          : Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => TrekkingMapsScreen(
+                                  mapsLocation: GeoPoint(
+                                      latitude:
+                                          widget.trekkingModel.location!.lat,
+                                      longitude:
+                                          widget.trekkingModel.location!.long),
+                                ),
+                              ),
+                            );
                     },
                   ),
                   // DescButtons(

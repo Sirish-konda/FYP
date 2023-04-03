@@ -5,6 +5,7 @@ import 'package:fyp_project/models/trekking_model.dart';
 class TrekkingPhotoProvider extends ChangeNotifier {
   final List<TrekkingModel> _trekkingDesc = [
     TrekkingModel(
+      location: Geo(lat: 28.5300181, long: 83.8692452),
       title: "Annapurna Base Camp",
       imagePath: "assets/images/trekkingDestination/ABC.png",
       desc: '''
@@ -54,6 +55,7 @@ The Annapurna Region Trekking is a difficult journey to a high altitude adventur
 ''',
     ),
     TrekkingModel(
+        location: Geo(lat: 27.9870398, long: 86.8101752),
         intro: '''
 The EBC trek is one of the world's finest treks, centered on the world's highest peak, Mt. Everest. It has a special place in the hearts of people from all walks of life, not just hikers. It is a revered landmark and source of cash for locals, a formidable conquest for adventurers, a journey to lose and find yourself for casual hikers, a wonderland of diverse flora and fauna for biologists.
 ''',
@@ -99,6 +101,7 @@ The EBC trek is one of the world's finest treks, centered on the world's highest
         ''',
         id: 2),
     TrekkingModel(
+        location: Geo(lat: 27.9537995, long: 86.6925405),
         intro: '''
 Gokyo Ri is an Everest region hidden treasure that gives breathtaking views of Gokyo Lake, cold rivers, glaciers, and snow-capped pinnacles such as Everest, Cho Oyu, Lhotse, Pumori, and Makalu.
 ''',
@@ -143,6 +146,7 @@ Gokyo Ri is an Everest region hidden treasure that gives breathtaking views of G
 
         '''),
     TrekkingModel(
+        location: Geo(lat: 28.0822962, long: 85.4113789),
         intro: '''
 The Gosainkunda Trek is well-known for its spectacular beauty. The place also gained popularity due to legendary ideas. Gosainkunda trip is amazing because of the numerous lakes and snow-capped peaks.
 ''',
@@ -174,6 +178,7 @@ The Gosainkunda Trek is well-known for its spectacular beauty. The place also ga
 
         '''),
     TrekkingModel(
+        location: Geo(lat: 28.4721231, long: 83.7062946),
         intro: '''
 It is magnificient eco-friendly nature trek. This trek provides stunning views of Mt Dhaulagiri, Annapurna, Nilgiri, Tukuche Peak, and Dhampus Peak, as well as one of the most beautiful valleys on the Kali Gandaki River.
 ''',
@@ -216,6 +221,7 @@ It is magnificient eco-friendly nature trek. This trek provides stunning views o
 
         '''),
     TrekkingModel(
+        location: Geo(lat: 28.2577471, long: 85.4622722),
         intro: '''
 Langtang Trek is a beautiful trekking trail via Tamang heritage that is dominated by Tamang culture. It provides a magnificent view of the mountain with a broad countryside. The walk encompasses the best of Himalayan trekking, including breathtaking scenery and the traditions and cultures of indigenous tribes.
 ''',
@@ -252,6 +258,7 @@ Langtang Trek is a beautiful trekking trail via Tamang heritage that is dominate
 
         '''),
     TrekkingModel(
+        location: Geo(lat: 27.835607, long: 87.0738447),
         intro: '''
 The Makalu Base Camp journey is great for nature lovers looking to explore a diversity of landscapes and cultures, as well as unique views of some of the world's tallest mountains, including Everest.
 ''',
@@ -310,6 +317,7 @@ The Makalu Base Camp journey is great for nature lovers looking to explore a div
 
         '''),
     TrekkingModel(
+        location: Geo(lat: 28.6018033, long: 84.6187524),
         intro: '''
 The Manaslu Circuit Trek circles the Manaslu Conservation Area, giving trekkers a taste of the trails beneath the magnificent Manaslu range. Another worthwhile experience is firsthand exposure to Tibetan cultural treasures along the Tibetan plateau.
 ''',
@@ -358,6 +366,7 @@ The Manaslu Circuit Trek circles the Manaslu Conservation Area, giving trekkers 
 
         '''),
     TrekkingModel(
+        location: Geo(lat: 28.449088, long: 83.8677832),
         intro: '''
 The Mardi Himal Trek provides stunning views of the Himalayan range minus the crowds. The trek is culturally rich and beautiful, passing through sparkling rivers and streams as well as the forest.
 ''',
@@ -400,6 +409,7 @@ The Mardi Himal Trek provides stunning views of the Himalayan range minus the cr
 
         '''),
     TrekkingModel(
+        location: Geo(lat: 28.74414, long: 83.942779),
         intro: '''
 The Nar Phu Valley trek is a true Himalayan wilderness adventure that is as breathtaking as it is unforgettable. Nar Phu is a true hidden gem that provides trekkers with a once-in-a-lifetime opportunity to experience pristine valleys brimming with raw Himalayan environment and ancient Buddhist culture. 
 ''',
@@ -452,6 +462,7 @@ The Nar Phu Valley trek is a true Himalayan wilderness adventure that is as brea
 
         '''),
     TrekkingModel(
+        location: Geo(lat: 28.4002147, long: 83.6805438),
         intro: '''
 The Ghandruk Poonhill trek provides breathtaking views of the Himalayas. This is a short yet breathtaking walk that will make you fall in love with the Himalayas. Aside from mountain views, this trek offers a wealth of cultural experiences in the well-known Ghandruk village.
 ''',
@@ -490,6 +501,7 @@ The Ghandruk Poonhill trek provides breathtaking views of the Himalayas. This is
 
         '''),
     TrekkingModel(
+        location: Geo(lat: 29.5292205, long: 82.0758429),
         intro: '''
 The Jumla Rara Lake trip takes place in the Karnali Region's remote districts of Mugu and Jumla. It is an excellent location for bird watchers, who can expect to see water birds, coots, common teal, blood pheasants, and the Danfe, Nepal's national bird.
 ''',

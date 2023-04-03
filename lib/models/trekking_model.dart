@@ -4,6 +4,7 @@ class TrekkingModel {
   final String title;
   final String intro;
   final String desc;
+  final Geo? location;
 
   List<TrekkingImgModel> images;
 
@@ -14,6 +15,17 @@ class TrekkingModel {
     required this.imagePath,
     required this.desc,
     required this.images,
+    this.location,
+  });
+}
+
+class Geo {
+  final double lat;
+  final double long;
+
+  Geo({
+    required this.lat,
+    required this.long,
   });
 }
 
