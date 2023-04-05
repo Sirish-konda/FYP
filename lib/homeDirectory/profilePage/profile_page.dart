@@ -75,7 +75,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                     .userProfile !=
                                 ""
                             ? Image.network(
-                                "${API.hostConnect}/profilePicture/${Provider.of<CurrentUser>(context).user.userProfile!}",
+                                "${API.hostConnect}/profilepicture/${Provider.of<CurrentUser>(context).user.userProfile!}",
                                 loadingBuilder:
                                     (context, child, loadingProgress) {
                                   if (loadingProgress == null) return child;
